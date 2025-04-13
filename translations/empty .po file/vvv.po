@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VVV 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-29 15:43+0100\n"
+"POT-Creation-Date: 2025-04-13 16:52+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:212
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:910
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4207
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4208
 msgid "Catalog"
 msgstr ""
 
@@ -69,12 +69,12 @@ msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:291
 #: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:267
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:404
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:424
 msgid "The volume path is missing"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:296
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:400
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:420
 msgid "The volume name is missing"
 msgstr ""
 
@@ -127,107 +127,112 @@ msgid "(Use default language)"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:96
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2479
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2480
 msgid "Bulgarian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:97
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2463
-msgid "Chinese"
+msgid "Simplified Chinese"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:98
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2474
-msgid "Croatian"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2464
+msgid "Traditional Chinese"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:99
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2469
-msgid "Czech"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2475
+msgid "Croatian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:100
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2480
-msgid "Dutch"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2470
+msgid "Czech"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:101
-msgid "English"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2481
+msgid "Dutch"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:102
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2466
-msgid "French"
+msgid "English"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:103
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2467
-msgid "German"
+msgid "French"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:104
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2468
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2471
-msgid "Hungarian"
+msgid "German"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:105
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2477
-msgid "Italian"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2469
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2472
+msgid "Hungarian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:106
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2476
-msgid "Japanese"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2478
+msgid "Italian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:107
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2470
-msgid "Polish"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2477
+msgid "Japanese"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:108
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2464
-msgid "Portuguese"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2471
+msgid "Polish"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:109
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2478
-msgid "Romanian"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2465
+msgid "Portuguese"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:110
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2472
-msgid "Russian"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2479
+msgid "Romanian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:111
-msgid "Serbian (cyrillic)"
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2473
+msgid "Russian"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:112
-msgid "Serbian (latin)"
+msgid "Serbian (cyrillic)"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:113
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2465
-msgid "Spanish"
+msgid "Serbian (latin)"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:114
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2473
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2466
+msgid "Spanish"
+msgstr ""
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:115
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2474
 msgid "Ukrainian"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:123
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:124
 msgid "Select your preferred language"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:124
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:125
 msgid "Language selection"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:138
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:139
 msgid "You must restart the program for this change to take effect."
 msgstr ""
 
@@ -636,7 +641,7 @@ msgid "&Search View"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:872
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3310
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3311
 msgid "Show in physical view"
 msgstr ""
 
@@ -646,14 +651,14 @@ msgid "Go &Up One Level"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:874
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2711
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2744
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2712
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2745
 msgid "Expand"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:875
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2712
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2745
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2713
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2746
 msgid "Collapse"
 msgstr ""
 
@@ -672,7 +677,7 @@ msgid "Vie&w"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:883
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3319
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3320
 msgid "Open with default program"
 msgstr ""
 
@@ -689,69 +694,69 @@ msgid "&About VVV..."
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:904
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4201
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4202
 msgid "New"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:904
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4201
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4202
 msgid "Create a new catalog"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:907
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4204
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4205
 msgid "Open"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:907
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4204
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4205
 msgid "Open an existing catalog"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:910
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4207
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4208
 msgid "Catalog a new volume"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:913
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4210
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4211
 msgid "Up"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:913
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4210
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4211
 msgid "Move up one level"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:917
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4214
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4215
 msgid "Physical"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:917
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4214
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4215
 msgid "Show the physical view"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:920
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4217
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4218
 msgid "Virtual"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:920
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4217
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4218
 msgid "Show the virtual view"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:923
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1012
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1018
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4220
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4221
 msgid "Search"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:923
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4220
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4221
 msgid "Show the search view"
 msgstr ""
 
@@ -783,7 +788,7 @@ msgid "Open catalog"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1491
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3794
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3795
 msgid "VVV  files (*.vvv)|*.vvv|All files (*.*)|*.*"
 msgstr ""
 
@@ -796,12 +801,12 @@ msgid "New virtual subfolder"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2110
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3552
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3553
 msgid "Enter the new folder name"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2125
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3563
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3564
 msgid "The new folder name is already present in the database"
 msgstr ""
 
@@ -868,7 +873,7 @@ msgid "Do you want to convert the catalog creating a new one?"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2263
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2492
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2493
 msgid ""
 "Unable to create a new catalog.\n"
 "\n"
@@ -881,7 +886,7 @@ msgid "Convert to a new catalog"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2275
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2504
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2505
 msgid ""
 "Unable to find the database backup to restore.\n"
 "\n"
@@ -895,7 +900,7 @@ msgid ""
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2458
-msgid "Copyright (C) 2007-2023 The VVV Team"
+msgid "Copyright (C) 2007-2024 The VVV Team"
 msgstr ""
 
 #: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2459
@@ -920,82 +925,82 @@ msgid ""
 "LICENSE"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2475
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2476
 msgid "Serbian"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2496
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2497
 msgid "New catalog"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2546
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2547
 msgid "Multiple items"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2709
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3316
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2710
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3317
 msgid "Add To Virtual Folder"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2714
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2715
 msgid "Object information..."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2717
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2718
 msgid "Rename..."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2718
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2749
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3312
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2719
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2750
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3313
 msgid "Delete"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2719
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2720
 msgid "Update Volume..."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2742
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2743
 msgid "New Subfolder"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2748
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2749
 msgid "Rename"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2890
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2891
 msgid "Please enter some search data"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2909
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2910
 msgid "Incorrect file name search data"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2920
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2921
 msgid "Incorrect extension search data"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2932
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2933
 msgid "Incorrect description search data"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3043
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3044
 msgid "The search did not find anything"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3202
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3203
 msgid "Objects: "
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3209
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3210
 msgid "Total size: "
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3322
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3323
 msgid "Object Information..."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3460
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3461
 msgid ""
 "This command will delete the selected virtual folder, but it will not change "
 "the folders in the physical view.\n"
@@ -1003,13 +1008,13 @@ msgid ""
 "Do you really want to delete the selected virtual folder?"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3486
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3487
 msgid ""
 "This command will delete this volume:\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3486
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3487
 msgid ""
 "\n"
 "\n"
@@ -1018,29 +1023,29 @@ msgid ""
 "Do you really want to delete this volume?"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3496
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3497
 msgid ""
 "Unable to delete this volume: at least one of its files is used in the "
 "virtual view"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3518
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3519
 msgid "Enter the new volume name"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3518
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3519
 msgid "Rename volume"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3531
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3532
 msgid "The new volume name is already present in the database"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3552
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3553
 msgid "Rename virtual folder"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3675
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3676
 msgid ""
 "This command will delete the selected files from the virtual view, but it "
 "will not change the files in the physical view.\n"
@@ -1048,45 +1053,45 @@ msgid ""
 "Do you really want to delete the selected virtual files?"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3817
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3894
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3818
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3895
 msgid ""
 "Unable to continue. You have choosen an existing file:\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3817
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3894
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3976
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3818
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3895
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3977
 msgid ""
 "\n"
 "\n"
 "You must type the name of a non-existing file."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3826
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3903
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3985
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3827
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3904
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3986
 msgid ""
 "Unable to continue: you have choosen a folder where you do not have the "
 "right to create a file."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3871
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3872
 #: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:254
 #: Z:/Sviluppo_C++/VVV/src/restore.cpp:285
 msgid "VVV backup files (*.vvvbk)|*.vvvbk|All files (*.*)|*.*"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3872
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3873
 msgid "Backup catalog"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3917
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3918
 msgid "Backup completed"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3940
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3941
 msgid ""
 "Unable to restore.\n"
 "\n"
@@ -1094,36 +1099,36 @@ msgid ""
 "execute this command on the server to be able to restore a catalog."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3954
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:396
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3955
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:416
 msgid "The catalog name is missing"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3958
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3959
 msgid "The backup name is missing"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3976
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3977
 msgid ""
 "Unable to continue. You have choosen an existing catalog:\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4013
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4014
 msgid "Restore completed"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4423
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4424
 msgid ""
 "This volume has been cataloged with an older version of VVV. You need to "
 "update it in order to open files."
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4444
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4445
 msgid "Unable to find the folder:"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4450
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4451
 msgid "Unable to find the file:"
 msgstr ""
 
@@ -1293,34 +1298,53 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:300 Z:/Sviluppo_C++/VVV/src/vvv.cpp:356
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:184
+msgid "An error happened while parsing the command line"
+msgstr ""
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:248
+msgid ""
+"The command line asks for a volume update but the catalog name is missing"
+msgstr ""
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:251
+msgid ""
+"The command line asks for a volume update but the volume name is missing"
+msgstr ""
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:254
+msgid ""
+"The command line asks for a volume update but the volume path is missing"
+msgstr ""
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:320 Z:/Sviluppo_C++/VVV/src/vvv.cpp:376
 msgid ""
 "Unable to connect to the server\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:302 Z:/Sviluppo_C++/VVV/src/vvv.cpp:308
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:358 Z:/Sviluppo_C++/VVV/src/vvv.cpp:364
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:322 Z:/Sviluppo_C++/VVV/src/vvv.cpp:328
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:378 Z:/Sviluppo_C++/VVV/src/vvv.cpp:384
 msgid ""
 "An unexpected error has occurred. Here is a description of the error:\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:314 Z:/Sviluppo_C++/VVV/src/vvv.cpp:370
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:334 Z:/Sviluppo_C++/VVV/src/vvv.cpp:390
 msgid "An unexpected error has occurred. This application will be terminated"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:382 Z:/Sviluppo_C++/VVV/src/vvv.cpp:466
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:402 Z:/Sviluppo_C++/VVV/src/vvv.cpp:486
 msgid ""
 "An unexpected error has happened. Here is a description of the error:\n"
 "\n"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:408
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:428
 msgid "The volume path does not exists"
 msgstr ""
 
-#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:449
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:469
 msgid "Volume name not found"
 msgstr ""
 

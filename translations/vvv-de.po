@@ -4,15 +4,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-29 11:21+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Oliver <zocker22@gmx.net>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: Z:\\Sviluppo_C++\\VVV\\src\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SearchPath-0: Z:\\Sviluppo_C++\\VVV\\src\n"
+"X-Poedit-Basepath: Z:/Sviluppo_C++/VVV/src\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-SearchPath-0: Z:/Sviluppo_C++/VVV/src\n"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:177
 msgid "Enter or select the volume to catalog"
@@ -52,12 +52,12 @@ msgstr "&Hilfe"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:910
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4207
 msgid "Catalog"
-msgstr "Katalogisieren"
+msgstr "Katalog"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:215
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:209
 msgid "&Close"
-msgstr "S&chließen"
+msgstr "Schließen"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:218
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:212
@@ -66,7 +66,7 @@ msgstr "Aktueller Ordner"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:221
 msgid "Previously cataloged volumes"
-msgstr "Bisher katalogisierte Datenträger"
+msgstr "Früher katalogisierte Datenträger"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:291
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:267
@@ -81,7 +81,7 @@ msgstr "Der Datenträgername fehlt"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:313
 msgid "This volume name is already present in the database"
-msgstr "Dieser Datenträgername existiert bereits in der Datenbank"
+msgstr "Dieser Datenträgername ist bereits in der Datenbank vorhanden"
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume.cpp:360
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:294
@@ -101,7 +101,8 @@ msgstr "Anzahl der aktualisierten Dateien: "
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume_functions.cpp:343
 #: Z:\Sviluppo_C++\VVV\src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:337
 msgid "Number of deleted files (not counting those in deleted folders): "
-msgstr "Anzahl der gelöschten Dateien (ohne die aus gelöschten Ordnern): "
+msgstr ""
+"Anzahl der gelöschten Dateien (ohne die Dateien in gelöschten Ordnern): "
 
 #: Z:\Sviluppo_C++\VVV\src/catalog_volume_functions.cpp:344
 #: Z:\Sviluppo_C++\VVV\src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:338
@@ -121,7 +122,7 @@ msgstr "Wollen Sie den Datenträger wirklich aktualisieren?"
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:77
 #, c-format
 msgid "Unknown locale code '%s' in registry."
-msgstr "Unbekannter lokaler Code '%s' in der Registry."
+msgstr "Unbekannter Lokalcode '%s' in der Registry."
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:94
 msgid "(Use default language)"
@@ -134,38 +135,37 @@ msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:97
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2463
-#, fuzzy
 msgid "Chinese"
-msgstr "Kanäle"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:98
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2474
 msgid "Croatian"
-msgstr "Kroatisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:99
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2469
 msgid "Czech"
-msgstr "Tschechisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:100
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2480
 msgid "Dutch"
-msgstr "Niederländisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:101
 msgid "English"
-msgstr "Englisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:102
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2466
 msgid "French"
-msgstr "Französisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:103
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2467
 msgid "German"
-msgstr "Deutsch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:104
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2468
@@ -176,7 +176,7 @@ msgstr ""
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:105
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2477
 msgid "Italian"
-msgstr "Italienisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:106
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2476
@@ -186,59 +186,59 @@ msgstr ""
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:107
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2470
 msgid "Polish"
-msgstr "Polnisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:108
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2464
 msgid "Portuguese"
-msgstr "Portugiesisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:109
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2478
 msgid "Romanian"
-msgstr "Rumänisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:110
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2472
 msgid "Russian"
-msgstr "Russisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:111
 msgid "Serbian (cyrillic)"
-msgstr "Serbisch (kyrillisch)"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:112
 msgid "Serbian (latin)"
-msgstr "Serbisch (lateinisch)"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:113
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2465
 msgid "Spanish"
-msgstr "Spanisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:114
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2473
 msgid "Ukrainian"
-msgstr "Ukrainisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:123
 msgid "Select your preferred language"
-msgstr "Wählen Sie ihre bevorzugte Sprache"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:124
 msgid "Language selection"
-msgstr "Sprachauswahl"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/chooselang.cpp:138
 msgid "You must restart the program for this change to take effect."
-msgstr "Sie müssen das Programm neustarten um die Änderungen zu übernehmen."
+msgstr "Sie müssen das Programm neu starten, um die Änderungen zu übernehmen."
 
 #: Z:\Sviluppo_C++\VVV\src/choose_virtual_folder.cpp:162
 msgid ""
 "Please select the virtual folder that will receive the selected files and/or "
 "folders:"
 msgstr ""
-"Wählen Sie den virtuellen Ordner der die ausgewählten Dateien und/oder "
+"Wählen Sie den virtuellen Ordner, der die ausgewählten Dateien und/oder "
 "Ordner empfangen soll:"
 
 #: Z:\Sviluppo_C++\VVV\src/choose_virtual_folder.cpp:174
@@ -274,17 +274,16 @@ msgid ""
 "Conversion is about to start: a message will tell you when it will be "
 "completed."
 msgstr ""
-"Die Konvertierung startet jetzt: eine Nachricht sagt Ihnen wenn sie fertig "
-"ist."
+"Konvertierung startet: eine Benachrichtung wird Ihnen mitteilen, wenn sie "
+"beendet ist."
 
 #: Z:\Sviluppo_C++\VVV\src/convert_db_unicode.cpp:546
 msgid "Conversion completed"
 msgstr "Konvertierung beendet"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:157
-#, fuzzy
 msgid "Description:"
-msgstr "Beschreibung"
+msgstr "Beschreibung:"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:257
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:537
@@ -294,9 +293,8 @@ msgid "Name"
 msgstr "Name"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:261
-#, fuzzy
 msgid "Value"
-msgstr "Datenträger"
+msgstr "Wert"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:312
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:1458
@@ -364,21 +362,19 @@ msgid "Artist"
 msgstr "Künstler"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:331
-#, fuzzy
 msgid "File date"
-msgstr "Dateiname"
+msgstr "Dateidatum"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:333
-#, fuzzy
 msgid "File size"
-msgstr "Dateiname"
+msgstr "Dateigröße"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:333
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:358
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:385
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:400
 msgid "bytes"
-msgstr ""
+msgstr "Bytes"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:334
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:978
@@ -388,9 +384,8 @@ msgstr "Dateiname"
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:342
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:367
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:409
-#, fuzzy
 msgid "Virtual path"
-msgstr "Virtuell"
+msgstr "Virtueller Pfad"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:346
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:371
@@ -401,51 +396,44 @@ msgstr "Physikalischer Pfad"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:356
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:398
-#, fuzzy
 msgid "Folder date"
-msgstr "Dateiname"
+msgstr "Ordnerdatum"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:358
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:400
-#, fuzzy
 msgid "Folder size"
-msgstr "Dateiname"
+msgstr "Ordergröße"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:359
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:401
-#, fuzzy
 msgid "Folder name"
-msgstr "Dateiname"
+msgstr "Ordnername"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:379
-#, fuzzy
 msgid "Last updated"
 msgstr "Zuletzt verändert"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:382
-#, fuzzy
 msgid "Cataloged"
-msgstr "Katalogisieren"
+msgstr "Katalogisiert"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:385
-#, fuzzy
 msgid "Volume size"
-msgstr "Daten&träger"
+msgstr "Datenträgergröße"
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:437
-#, fuzzy
 msgid "Folder information"
-msgstr "&Objektbeschreibung..."
+msgstr "Ordnerinformation"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:441
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.h:45
 msgid "File information"
-msgstr ""
+msgstr "Dateiinformation"
 
 #: Z:\Sviluppo_C++\VVV\src/dlg_file_information.cpp:469
 msgid "Copy to clipboard\tCtrl+C"
-msgstr ""
+msgstr "In die Zwischenablage kopieren\tStrg+C"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:190
 msgid "Use this window to export data to a CSV file"
@@ -457,11 +445,11 @@ msgstr "Komma"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:195
 msgid "TAB"
-msgstr "TAB"
+msgstr "Tabulator"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:196
 msgid "Pipe"
-msgstr "Pipe"
+msgstr "Senkrechter Strich"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:197
 msgid "Separator"
@@ -483,7 +471,7 @@ msgstr "Ausgewählte physikalische Datenträger/Ordner"
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:208
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:1011
 msgid "Selected virtual folder"
-msgstr "Ausgewählte virtuelle Datenträger"
+msgstr "Ausgewählte virtuelle Ordner"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:209
 msgid "Export"
@@ -495,20 +483,20 @@ msgstr "Dateiname:"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:308
 msgid "CSV files (*.csv;*.txt)|*.csv;*.txt|All files (*.*)|*.*"
-msgstr "CSV Dateien  (*.csv;*.txt)|*.csv;*.txt|Alle Dateien (*.*)|*.*"
+msgstr "CSV-Dateien (*.csv;*.txt)|*.csv;*.txt|Alle Dateien (*.*)|*.*"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:335
 msgid "Please enter a file name"
-msgstr "Bitte einen Dateinnamen eingeben"
+msgstr "Bitte geben sie einen Dateinamen ein"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:340
 msgid "The output file already exists: do you want to overwrite it?"
-msgstr "Die Ausgabedatei existiert bereits: Wollen Sie sie überschreiben?"
+msgstr "Die Datei existiert bereits: Möchten Sie sie überschreiben?"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:343
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:357
 msgid "Unable to create the file."
-msgstr "Datei konnte nicht erstellt werden."
+msgstr "Die Datei konnte nicht erstellt werden."
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:537
 #: Z:\Sviluppo_C++\VVV\src/exportdata.cpp:539
@@ -552,9 +540,7 @@ msgstr "Pfad"
 msgid ""
 "This catalog file does not exist:\n"
 "\n"
-msgstr ""
-"Diese Katalogdatei existiert nicht:\n"
-"\n"
+msgstr "Diese Katalogdatei existiert nicht:\n"
 
 # Part of the File menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:839
@@ -564,7 +550,7 @@ msgstr "&Neu..."
 # Part of the File menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:840
 msgid "&Open..."
-msgstr "Ö&ffnen..."
+msgstr "&Öffnen..."
 
 # Part of the File menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:841
@@ -579,7 +565,7 @@ msgstr "&Sicherung..."
 # Part of the File menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:844
 msgid "&Restore..."
-msgstr "&Wiederherstellen..."
+msgstr "&Wiederherstellung..."
 
 # Part of the File menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:846
@@ -593,7 +579,7 @@ msgstr "&Datei"
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:849
 msgid "&Add To Virtual Folder..."
-msgstr "Zu virtuellem Ordner &hinzufügen..."
+msgstr "&Zum virtuellen Ordner hinzufügen..."
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:851
@@ -607,19 +593,18 @@ msgstr "&Löschen"
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:854
-#, fuzzy
 msgid "&Object Information..."
-msgstr "&Objektbeschreibung..."
+msgstr "&Objektinformationen..."
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:856
 msgid "&New Virtual Root Folder..."
-msgstr "&Neues virtuelles Wurzelverzeichnis..."
+msgstr "&Neuer virtueller Wurzelordner..."
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:857
 msgid "New Virtual &Subfolder..."
-msgstr "Neues &virtuelles Unterverzeichnis..."
+msgstr "Neuer virtueller &Unterordner..."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:859
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:888
@@ -633,7 +618,7 @@ msgstr "&Bearbeiten"
 # Part of the Volumes menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:863
 msgid "&Catalog Volume..."
-msgstr "Datenträger &katalogisieren..."
+msgstr "&Datenträger katalogisieren..."
 
 # Part of the Volumes menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:864
@@ -662,7 +647,7 @@ msgstr "&Suchansicht"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:872
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3310
 msgid "Show in physical view"
-msgstr "In physikalischer Ansicht zeigen"
+msgstr "In physikalische Ansicht zeigen"
 
 # Part of the View menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:873
@@ -684,12 +669,12 @@ msgstr "Einklappen"
 # Part of the View menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:877
 msgid "&Toolbar"
-msgstr "Symbol&leiste"
+msgstr "S&ymbolleiste"
 
 # Part of the View menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:879
 msgid "Status &Bar"
-msgstr "Status&zeile"
+msgstr "Statusl&eiste"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:881
 msgid "Vie&w"
@@ -698,7 +683,7 @@ msgstr "&Ansicht"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:883
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3319
 msgid "Open with default program"
-msgstr ""
+msgstr "Mit verknüpftem Standardprogramm öffnen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:890
 msgid "&Tools"
@@ -706,11 +691,11 @@ msgstr "&Extras"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:892
 msgid "Help &Contents"
-msgstr "&Inhalt"
+msgstr "&Hilfe"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:896
 msgid "&About VVV..."
-msgstr "Ü&ber VVV..."
+msgstr "Über &VVV..."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:904
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4201
@@ -720,7 +705,7 @@ msgstr "Neu"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:904
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4201
 msgid "Create a new catalog"
-msgstr "Einen neuen Katalog erstellen"
+msgstr "Neuen Katalog erstellen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:907
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4204
@@ -730,12 +715,12 @@ msgstr "Öffnen"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:907
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4204
 msgid "Open an existing catalog"
-msgstr "Einen existierenden Katalog öffnen"
+msgstr "Existierenden Katalog öffnen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:910
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4207
 msgid "Catalog a new volume"
-msgstr "Einen neuen Datenträger katalogisieren"
+msgstr "Neuen Datenträger katalogisieren"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:913
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4210
@@ -782,17 +767,17 @@ msgstr "Die Suchansicht zeigen"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:975
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:996
 msgid "Is equal to:"
-msgstr "Ist gleich zu:"
+msgstr "Entspricht:"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:976
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:997
 msgid "Starts with:"
-msgstr "Fängt an mit:"
+msgstr "Beginnt mit:"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:977
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:998
 msgid "Contains:"
-msgstr "Enthält:"
+msgstr "Enhält:"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:987
 msgid "Extension:"
@@ -800,24 +785,24 @@ msgstr "Erweiterung:"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:1010
 msgid "Selected physical folder"
-msgstr "Ausgewählte physikalische Ordner"
+msgstr "Ausgewählter physikalischer Ordner"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:1487
 msgid "Open catalog"
-msgstr "Öffne Katalog"
+msgstr "Katalog öffnen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:1491
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3794
 msgid "VVV  files (*.vvv)|*.vvv|All files (*.*)|*.*"
-msgstr "VVV Dateien (*.vvv)|*.vvv|Alle Dateien (*.*)|*.*"
+msgstr "VVV-Dateien (*.vvv)|*.vvv|Alle Dateien (*.*)|*.*"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2064
 msgid "New virtual root folder"
-msgstr "Neues virtuelles Stammverzeichnis"
+msgstr "Neuer virtueller Wurzelordner"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2092
 msgid "New virtual subfolder"
-msgstr "Neues virtuelles Unterverzeichnis"
+msgstr "Neuer virtueller Unterordner"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2110
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3552
@@ -827,11 +812,11 @@ msgstr "Geben Sie den neuen Ordnernamen ein"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2125
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3563
 msgid "The new folder name is already present in the database"
-msgstr "Der neue Ordnername existiert bereits in der Datenbank"
+msgstr "Der neue Ordnername befindet sich bereits in der Datenbank"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2178
 msgid "This catalog file does not exist any more"
-msgstr "Diese Katalogdatei exisitiert nicht mehr"
+msgstr "Diese Katalogdatei existiert nicht mehr"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2208
 msgid ""
@@ -854,7 +839,7 @@ msgid ""
 "Unable to connect to the following server:\n"
 "\n"
 msgstr ""
-"Außerstande zum folgenden Server zu verbinden:\n"
+"Es konnte nicht zum folgenden Server verbundenw werden:\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2219
@@ -866,10 +851,11 @@ msgid ""
 "database server (Tools/Options menu)."
 msgstr ""
 "Der Katalog konnte nicht geöffnet werden.\n"
-"Bitte beachten Sie, dass Sie nicht zum Datenbankserver verbunden sind und "
-"deshalb keine Kataloge auf anderen Computern des Netzwerks öffnen können.\n"
-"Wenn Sie Kataloge auf einem anderen Computer öffnen wollen müssen Sie zum "
-"Datenbankserver verbunden sein (Extras/Optionen Menü)."
+"Bitte beachte, dass Sie nicht zu einem Datenbankserver verbunden sind und "
+"Sie daher keinen Katalog auf einem anderen Computer im Netzwerk öffnen "
+"können.\n"
+"Wenn Sie einen Katalog auf einem anderen Computer öffnen möchten, müssen Sie "
+"zum Datenbankserver eine eine Verbindung herstellen (Menü Extras/Optionen)."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2241
 msgid ""
@@ -878,11 +864,11 @@ msgid ""
 "\n"
 "You can try reinstalling the program to solve this problem."
 msgstr ""
-"Dieser Katalog wurde mit einer älteren Version von VVV erstellt und müsste "
-"deshalb aktualisiert werden, aber die Datei die die Veränderungen beinhaltet "
-"fehlt.\n"
+"Dieser Katalog wurde mit einer früheren Version dieses Programms erstellt "
+"und muss aktualisiert werden, aber die Datei, die die Aktualisierungsliste "
+"enthält, fehlt.\n"
 "\n"
-"Sie können eine Neuinstallation des Programms versuchen um das Problem zu "
+"Sie können versuchen das Programm neu zu installieren, um dieses Problem zu "
 "lösen."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2245
@@ -895,8 +881,8 @@ msgid ""
 "convert it to a newer format.\n"
 "\n"
 msgstr ""
-"Dieser Katalog wurde mit einer älteren Version von VVV erstellt und muss "
-"deshalb in ein neueres Format konvertiert werden.\n"
+"Dieser Katalog wurde mit einer früheren Version dieses Programms erstellt "
+"und muss in ein neueres Format aktualisiert werden.\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2258
@@ -906,15 +892,14 @@ msgid ""
 "catalog any more.\n"
 "\n"
 msgstr ""
-"Die Konvertierung erstellt einen neuen Katalog mit den selben Daten des "
-"alten Katalogs. Danach sollten Sie nur noch den neuen Katalog mit VVV "
-"nutzen. Den alten Katalog benötigen Sie danach nicht mehr.\n"
+"Die Konvertierung wird einen neuen Katalog mit den selben Daten wie der alte "
+"erstellen. Dann werden Sie diesen neuen Katalog anstatt dem alten in VVV "
+"nutzen.\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2259
-#, fuzzy
 msgid "Do you want to convert the catalog creating a new one?"
-msgstr "Wollen Sie den Katalog in einen neu erstellten konvertieren?"
+msgstr "Möchten Sie den Katalog konvertieren und einen neuen erstellen?"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2263
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2492
@@ -924,10 +909,10 @@ msgid ""
 "You are connecting to a database server on another computer. You must "
 "execute this program on the server to be able to create a new catalog."
 msgstr ""
-"Es konnte kein neuer Katalog erstellt werden.\n"
+"Der neue Katalog konnte nicht erstellt werden.\n"
 "\n"
-"Sie sind mit dem Datenbankserver eines anderen Computers verbunden. Sie "
-"müssen das Programm auf dem Server ausführen um einen neuen Katalog "
+"Sie sind zu einem Datenbankserver auf einem anderen Computer verbunden. Sie "
+"müssen dieses Programm auf dem Server starten, um einen neuen Katalog "
 "erstellen zu können."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2267
@@ -941,9 +926,10 @@ msgid ""
 "\n"
 "You can try reinstalling the program to solve this problem."
 msgstr ""
-"Die wiederherzustellende Datenbanksicherung konnte nicht gefunden werden.\n"
+"Die Sicherung der Datenbank zur Wiederherstellung konnte nicht gefunden "
+"werden.\n"
 "\n"
-"Sie können eine Neuinstallation des Programms versuchen um das Problem zu "
+"Sie können versuchen das Programm neu zu installieren, um dieses Problem zu "
 "lösen."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2457
@@ -951,13 +937,12 @@ msgid ""
 "VVV (Virtual Volumes View): a program to catalog removable devices like CDs "
 "and DVDs"
 msgstr ""
-"VVV (Virtual Volumes View): ein Programm zum katalogisieren austauschbarer "
-"Datenträger wie CDs und DVDs"
+"VVV (Virtual Volumes View): Ein Programm, um Wechseldatenträger wie CDs und "
+"DVDs zu katalogisieren"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2458
-#, fuzzy
 msgid "Copyright (C) 2007-2023 The VVV Team"
-msgstr "Copyright (C) 2007-2010 Das VVV Team"
+msgstr "Copyright (C) 2007-2023 Das VVV Team"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2459
 msgid "Fulvio Senore: main developer"
@@ -970,25 +955,25 @@ msgid ""
 "icon"
 msgstr ""
 "\n"
-"Jan Albartus: arbeitete an der portablen Version und entwarf das Programmicon"
+"Jan Albartus: Arbeitete an der portablen Version und entwarf das Programmicon"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2461
 msgid ""
 "This program uses icons from the Gnome, Ubuntu and Crystal icons projects"
 msgstr ""
-"Dieses Programm benutzt Icons vom Gnome, Ubuntu und dem Crystal icons Projekt"
+"Dieses Programm nutzt Icons von Gnome, Ubuntu und dem Crystal Icons Projekt"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2462
 msgid ""
 "This is open source software, distributed under the GNU GENERAL PUBLIC "
 "LICENSE"
 msgstr ""
-"Dies ist Open Source Software, die unter der GNU GENERAL PUBLIC LICENSE "
-"verteilt wird"
+"Dies ist Open Source Software, bereitgestellt unter der GNU GENERAL PUBLIC "
+"LICENSE"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2475
 msgid "Serbian"
-msgstr "Serbisch"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2496
 msgid "New catalog"
@@ -1001,13 +986,12 @@ msgstr "Mehrere Elemente"
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2709
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3316
 msgid "Add To Virtual Folder"
-msgstr "Zu virtuellem Ordner hinzufügen"
+msgstr "Zum virtuellen Ordner hinzufügen"
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2714
-#, fuzzy
 msgid "Object information..."
-msgstr "&Objektbeschreibung..."
+msgstr "Objektinformation..."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2717
 msgid "Rename..."
@@ -1022,11 +1006,11 @@ msgstr "Löschen"
 # Part of the Volumes menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2719
 msgid "Update Volume..."
-msgstr "Datenträger &aktualisieren..."
+msgstr "Datenträger aktualisieren..."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2742
 msgid "New Subfolder"
-msgstr "Neues Unterverzeichnis"
+msgstr "Neuer Unterordner"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2748
 msgid "Rename"
@@ -1038,15 +1022,15 @@ msgstr "Bitte geben Sie Suchdaten ein"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2909
 msgid "Incorrect file name search data"
-msgstr "Fehlerhafte Suchdaten für Dateinamen"
+msgstr "Nicht korrekte Dateinamensuchdaten"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2920
 msgid "Incorrect extension search data"
-msgstr "Fehlerhafte Suchdaten für Dateierweiterung"
+msgstr "Nicht korrekte Erweiterungssuchdaten"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:2932
 msgid "Incorrect description search data"
-msgstr "Fehlerhafte Suchdaten für Beschreibung"
+msgstr "Nicht korrekte Beschreibungssuchdaten"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3043
 msgid "The search did not find anything"
@@ -1062,9 +1046,8 @@ msgstr "Gesamtgröße: "
 
 # Part of the Edit menu
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3322
-#, fuzzy
 msgid "Object Information..."
-msgstr "&Objektbeschreibung..."
+msgstr "Objektinformation..."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3460
 msgid ""
@@ -1073,18 +1056,16 @@ msgid ""
 "\n"
 "Do you really want to delete the selected virtual folder?"
 msgstr ""
-"Dieser Befehl löscht den ausgewählten virtuellen Ordner, aber verändert "
-"nicht die Ordner in der physikalischen Ansicht.\n"
+"Dieser Befehl wird die ausgewählten virtuellen Ordner löschen, aber nicht "
+"die Ordner in der physikalischen Ansicht ändern.\n"
 "\n"
-"Wollen Sie den ausgewählten virtuellen Ordner wirklich löschen?"
+"Möchten Sie wirklich die ausgewählten virtuellen Ordner löschen?"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3486
 msgid ""
 "This command will delete this volume:\n"
 "\n"
-msgstr ""
-"Dieser Befehl wird den Datenträger:\n"
-"\n"
+msgstr "Dieser Befehl wird diesen Datenträger:\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3486
 msgid ""
@@ -1096,18 +1077,18 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"aus dem VVV Katalog löschen. Er wird keine Dateien von der Festplatte "
+"aus dem VVV-Katalog löschen. Er wird keine Dateien von den Datenträgern "
 "löschen.\n"
 "\n"
-"Wollen Sie diesen Datenträger wirklich löschen?"
+"Möchten Sie wirklich diesen Datenträger löschen?"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3496
 msgid ""
 "Unable to delete this volume: at least one of its files is used in the "
 "virtual view"
 msgstr ""
-"Der Datenträger konnte nicht gelöscht werden: Mindestens eine Datei wird in "
-"der virtuellen Ansicht benutzt"
+"Datenträger konnte nicht gelöscht werden: Mindestens einer seiner Dateien "
+"ist noch in der virtuellen Ansicht geöffnet"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3518
 msgid "Enter the new volume name"
@@ -1119,24 +1100,23 @@ msgstr "Datenträger umbenennen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3531
 msgid "The new volume name is already present in the database"
-msgstr "Der neue Datenträgername existiert bereits in der Datenbank"
+msgstr "Der neue Datenträgername ist bereis in der Datenbank vorhanden"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3552
 msgid "Rename virtual folder"
 msgstr "Virtuellen Ordner umbenennen"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3675
-#, fuzzy
 msgid ""
 "This command will delete the selected files from the virtual view, but it "
 "will not change the files in the physical view.\n"
 "\n"
 "Do you really want to delete the selected virtual files?"
 msgstr ""
-"Dieser Befehl löscht die ausgewählten virtuellen Dateien, aber verändert "
-"nicht die Dateien in der physikalischen Ansicht.\n"
+"Dieser Befehl wird die ausgewählten Dateien aus der virtuellen Ansicht "
+"löschen, aber nicht die Dateien in der physikalischen Ansicht ändern.\n"
 "\n"
-"Wollen Sie die ausgewählten virtuellen Dateien wirklich löschen?"
+"Möchten Sie wirklich die ausgewählten virtuellen Dateien löschen?"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3817
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3894
@@ -1144,8 +1124,8 @@ msgid ""
 "Unable to continue. You have choosen an existing file:\n"
 "\n"
 msgstr ""
-"Der Vorgang wurde abgebrochen: Sie haben eine bereits existierende Datei "
-"gewählt:\n"
+"Es kann nicht fortgesetzt werden. Sie haben eine bereits existierende Datei "
+"ausgewählt:\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3817
@@ -1158,7 +1138,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Sie müssen den Namen einer nicht bereits existierenden Datei eingeben."
+"Sie müssen den Namen einer Datei angeben, die nicht existiert."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3826
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3903
@@ -1167,18 +1147,18 @@ msgid ""
 "Unable to continue: you have choosen a folder where you do not have the "
 "right to create a file."
 msgstr ""
-"Der Vorgang wurde abgebrochen: Sie haben einen Ordner gewählt in dem Sie "
-"keine Rechte haben Dateien zu erstellen."
+"Es kann nicht fortgesetzt werden: Sie haben einen Ordner ausgewählt, bei dem "
+"Sie keine Rechte besitzen, eine Datei zu erstellen."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3871
 #: Z:\Sviluppo_C++\VVV\src/opencatalog.cpp:254
 #: Z:\Sviluppo_C++\VVV\src/restore.cpp:285
 msgid "VVV backup files (*.vvvbk)|*.vvvbk|All files (*.*)|*.*"
-msgstr "VVV Sicherungsdateien (*.vvvbk)|*.vvvbk|Alle Dateien (*.*)|*.*"
+msgstr "VVV-Sicherungsdateien (*.vvvbk)|*.vvvbk|Alle Dateien (*.*)|*.*"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3872
 msgid "Backup catalog"
-msgstr "Katalog sichern"
+msgstr "Sicherungskatalog"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3917
 msgid "Backup completed"
@@ -1191,11 +1171,11 @@ msgid ""
 "You are connecting to a database server on another computer. You must "
 "execute this command on the server to be able to restore a catalog."
 msgstr ""
-"Die Wiederherstellung konnte nicht ausgeführt werden.\n"
+"Wiederherstellung nicht möglich.\n"
 "\n"
-"Sie sind mit dem Datenbankserver eines anderen Computers verbunden. Sie "
-"müssen den Befehl auf dem Server ausführen um einen Katalog wiederherstellen "
-"zu können."
+"Sie verbinden sich zu einem Datenbankserver auf einem anderen Computer. Sie "
+"müssen diesen Befehl auf dem Server ausführen, um den Katalog "
+"wiederherstellen zu können."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3954
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:396
@@ -1204,15 +1184,15 @@ msgstr "Der Katalogname fehlt"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3958
 msgid "The backup name is missing"
-msgstr "Der Name der Sicherungsdatei fehlt"
+msgstr "Der Sicherungsname fehlt"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:3976
 msgid ""
 "Unable to continue. You have choosen an existing catalog:\n"
 "\n"
 msgstr ""
-"Der Vorgang wurde abgebrochen: Sie haben einen bereits existierenden Katalog "
-"gewählt:\n"
+"Kann nicht fortfahren. Sie haben einen bereits existierenden Katalog "
+"ausgewählt:\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4013
@@ -1220,28 +1200,24 @@ msgid "Restore completed"
 msgstr "Wiederherstellung beendet"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4423
-#, fuzzy
 msgid ""
 "This volume has been cataloged with an older version of VVV. You need to "
 "update it in order to open files."
 msgstr ""
-"Dieser Katalog wurde mit einer älteren Version von VVV erstellt und muss "
-"deshalb in ein neueres Format konvertiert werden.\n"
-"\n"
+"Dieser Datenträger wurde unter einer älteren Version von VVV katalogisiert. "
+"Sie müssen ihn erst aktualisieren, um Dateien öffnen zu können."
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4444
-#, fuzzy
 msgid "Unable to find the folder:"
-msgstr "Datei konnte nicht erstellt werden."
+msgstr "Ordner kann nicht gefunden werden:"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.cpp:4450
-#, fuzzy
 msgid "Unable to find the file:"
-msgstr "Datei konnte nicht erstellt werden."
+msgstr "Datei kann nicht gefunden werden:"
 
 #: Z:\Sviluppo_C++\VVV\src/object_description.cpp:146
 msgid "Please enter the description for the following object:"
-msgstr "Geben Sie die Beschreibung für das folgende Objekt ein:"
+msgstr "Bitte geben Sie eine Beschreibung für das folgende Objekt an:"
 
 #: Z:\Sviluppo_C++\VVV\src/object_description.cpp:149
 msgid "OBJECT NAME"
@@ -1254,16 +1230,16 @@ msgid ""
 "Enter the alias or the complete path to the catalog file.\n"
 "Remember that the path must be relative to the server, not to the client."
 msgstr ""
-"Sie sind dabei einen Katalog auf dem Server zu öffnen.\n"
+"Sie sind dabei, einen Katalog auf einem Server zu öffnen.\n"
 "\n"
-"Geben Sie den Alias oder den kompletten Pfad zur Katalogdatei ein.\n"
-"Bedenken Sie, dass der Pfad relativ zum Server und nicht zum Client sein "
-"muss."
+"Geben Sie das Alias ein oder vervollständigen Sie den Pfad zur "
+"Katalogdatei.\n"
+"Bedenken Sie, dass der Pfad relativ zum Server sein muss, nicht zum Client."
 
 #: Z:\Sviluppo_C++\VVV\src/opencatalog.cpp:256
 #: Z:\Sviluppo_C++\VVV\src/restore.cpp:303
 msgid "VVV files (*.vvv)|*.vvv|All files (*.*)|*.*"
-msgstr "VVV Dateien  (*.vvv)|*.vvv|Alle Dateien (*.*)|*.*"
+msgstr "VVV-Dateien (*.vvv)|*.vvv|Alle Dateien (*.*)|*.*"
 
 #: Z:\Sviluppo_C++\VVV\src/opencatalog.cpp:276
 #: Z:\Sviluppo_C++\VVV\src/opencatalog.h:63
@@ -1286,11 +1262,11 @@ msgid ""
 "be created.\n"
 "You cannot enter the name of an existing catalog."
 msgstr ""
-"Sie sind dabei einen neuen Katalog aus einer Sicherungsdatei zu erstellen.\n"
+"Sie sind dabei, einen neuen Katalog aus einer Sicherungsdatei zu erstellen.\n"
 "\n"
-"Geben Sie den kompletten Pfad zur Sicherungsdatei und der zu erstellenden "
-"Katalogdatei ein.\n"
-"Sie können keinen Namen eines bereits existierenden Katalogs angeben."
+"Geben Sie den kompletten Pfad zur Sicherungsdatei und zur zu erstellenden "
+"Kataltogdatei an.\n"
+"Sie können nicht den Namen eines bereits existierenden Katalogs verwenden."
 
 #: Z:\Sviluppo_C++\VVV\src/restore.cpp:157
 msgid "Backup file:"
@@ -1310,33 +1286,31 @@ msgstr "Katalogdatei"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:175
 msgid "Reopen the last used catalog at startup"
-msgstr "Zuletzt benutzten Katalog beim Start öffnen"
+msgstr "Zuletzt verwendeten Katalog beim nächsten Start wieder öffnen"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:179
 msgid "Alternate row colors"
-msgstr ""
+msgstr "Abwechselnde Zeilenfarben"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:185
 msgid "Beep for tasks longer than (seconds):"
-msgstr "Piepton für Aufgaben länger als (Sekunden):"
+msgstr "Sound abspielen bei Aufgaben, die länger dauern als (Sekunden):"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:193
 msgid "Change language"
-msgstr "Sprache wechseln"
+msgstr ""
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:196
 msgid "General"
 msgstr "Allgemein"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:204
-#, fuzzy
 msgid "Catalog audio metadata"
-msgstr "Datenträger katalogisieren"
+msgstr "Audiometadaten katalogisieren"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:210
-#, fuzzy
 msgid "Show the following data for audio files:"
-msgstr "Zeige die folgenden Daten von MP3-Dateien:"
+msgstr "Zeige folgende Daten für Audiodateien:"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:233
 msgid "Track number"
@@ -1344,7 +1318,7 @@ msgstr "Tracknummer"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:259
 msgid "Audio files"
-msgstr ""
+msgstr "Audiodateien"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:267
 msgid ""
@@ -1355,16 +1329,16 @@ msgid ""
 "stored in this computer and you do not want to share them\n"
 "with other computers."
 msgstr ""
-"Makieren Sie dieses Kontrollkästchen wenn Sie auf Kataloge eines\n"
-"Netzwerkservers zugreifen wollen. Jedem Computer des Netzwerks wird\n"
-"es möglich sein auf die Kataloge des Servers zugreifen zu können.\n"
-"Markieren Sie dieses Kontrollkästchen NICHT wenn Sie nur auf Kataloge\n"
-"auf diesem Computer zugreifen wollen und Sie diese nicht mit anderen\n"
-"Computern teilen wollen."
+"Markieren Sie dieses Kontrollkästchen, wenn Sie auf die Kataloge eines\n"
+"Netzwerkservers zugreifen möchten. Jeder Computer des Netzwerks wird\n"
+"in der Lage sein, auf die Kataloge dieses Servers zuzugreifen.\n"
+"Markieren Sie dieses Kontrollkästchen NICHT, wenn Sie nur auf Kataloge\n"
+"auf diesem Computer zugreifen möchten und diese nicht mit anderen\n"
+"Computern teilen möchten."
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:272
 msgid "Connect to a network server"
-msgstr "Verbinde zu einem Netzwerkserver"
+msgstr "Zu einem Netzwerkserver verbinden"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:278
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:303
@@ -1397,19 +1371,19 @@ msgstr "Sie müssen ein Passwort angeben"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:463
 msgid "You must enter the server name or address"
-msgstr "Sie müssen den  Servernamen oder die Serveradresse angeben"
+msgstr "Sie müssen den Servernamen oder die Serveradresse eingeben"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:468
 msgid "Unable to connect to the server"
-msgstr "Außerstande eine Serververbindung herzustellen"
+msgstr "Verbindung zum Server nicht möglich"
 
 #: Z:\Sviluppo_C++\VVV\src/settings.cpp:470
 msgid "Server connection successful"
-msgstr "Serververbindung erfolgreich"
+msgstr "Verbindung zum Server hergestellt"
 
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:178
 msgid "You are about to update the following volume:"
-msgstr "Sie sind dabei folgende Datenträger zu aktualisieren:"
+msgstr "Sie sind dabei, folgenden Datenträger zu aktualisieren:"
 
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:181
 msgid "VOLUME NAME"
@@ -1417,7 +1391,7 @@ msgstr "DATENTRÄGERNAME"
 
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:186
 msgid "Enter or select the path to volume to update"
-msgstr "Eingabe oder Auswahl des zu aktualisiernden Datenträgers"
+msgstr "Geben oder wählen Sie den Pfad zum zu aktualisierenden Datenträger"
 
 #: Z:\Sviluppo_C++\VVV\src/update_volume.cpp:206
 msgid "Update"
@@ -1427,9 +1401,7 @@ msgstr "Aktualisieren"
 msgid ""
 "Unable to connect to the server\n"
 "\n"
-msgstr ""
-"Außerstande eine Serververbindung herzustellen\n"
-"\n"
+msgstr "Verbindung zum Server nicht möglich\n"
 
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:302 Z:\Sviluppo_C++\VVV\src/vvv.cpp:308
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:358 Z:\Sviluppo_C++\VVV\src/vvv.cpp:364
@@ -1437,22 +1409,22 @@ msgid ""
 "An unexpected error has occurred. Here is a description of the error:\n"
 "\n"
 msgstr ""
-"Ein unerwarteter Fehler ist aufgetreten. Hier ist eine Beschreibung des "
+"Ein unverhergesehener Fehler ist aufgetreten. Hier ist eine Beschreibung des "
 "Fehlers:\n"
 "\n"
 
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:314 Z:\Sviluppo_C++\VVV\src/vvv.cpp:370
 msgid "An unexpected error has occurred. This application will be terminated"
-msgstr "Ein unerwarteter Fehler ist aufgetreten. Das Programm wird beendet."
+msgstr ""
+"Ein unverhergesehener Fehler ist aufgetreten. Die Anwendung wird beendet"
 
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:382 Z:\Sviluppo_C++\VVV\src/vvv.cpp:466
 msgid ""
 "An unexpected error has happened. Here is a description of the error:\n"
 "\n"
 msgstr ""
-"Ein unerwarteter Fehler ist aufgetreten. Hier ist eine Beschreibung des "
-"Fehlers:\n"
-"\n"
+"Ein unverhergesehener Fehler hat sich ereignet. Hier ist eine Beschreibung "
+"des Fehlers:\n"
 
 #: Z:\Sviluppo_C++\VVV\src/vvv.cpp:408
 msgid "The volume path does not exists"
@@ -1468,11 +1440,11 @@ msgstr "Datenträger katalogisieren"
 
 #: Z:\Sviluppo_C++\VVV\src/choose_virtual_folder.h:68
 msgid "Choose virtual folder"
-msgstr "Virtuellen Ordner wählen"
+msgstr "Wählen Sie einen virtuellen Ordner"
 
 #: Z:\Sviluppo_C++\VVV\src/exportdata.h:65
 msgid "Export data"
-msgstr "Exportiere Daten"
+msgstr "Daten exportieren"
 
 #: Z:\Sviluppo_C++\VVV\src/mainframe.h:85
 msgid "VVV"
@@ -1494,28 +1466,26 @@ msgstr "Einstellungen"
 msgid "Update Volume"
 msgstr "Datenträger aktualisieren"
 
-#~ msgid "New Root Folder"
-#~ msgstr "Neues Wurzelverzeichnis"
+msgid "New Root Folder"
+msgstr "Neuer Wurzelordner"
 
-#~ msgid "Object description"
-#~ msgstr "Objektbeschreibung"
+msgid "Object description"
+msgstr "Objektbeschreibung"
 
-#, fuzzy
-#~ msgid "File description"
-#~ msgstr "Objektbeschreibung"
+msgid "File description"
+msgstr "Dateibeschreibung"
 
-#~ msgid "Edit Description..."
-#~ msgstr "Bearbeite Beschreibung..."
+msgid "Edit Description..."
+msgstr "Bearbeite Beschreibung..."
 
-#~ msgid "MP3"
-#~ msgstr "MP3"
+msgid "MP3"
+msgstr "MP3"
 
-#~ msgid "Use VVV in English (restart required)"
-#~ msgstr "Use VVV in English (restart required)"
+msgid "Use VVV in English (restart required)"
+msgstr "Use VVV in English (restart required)"
 
-#, fuzzy
-#~ msgid "Missing volume name"
-#~ msgstr "Datenträgername ermitteln"
+msgid "Missing volume name"
+msgstr "Datenträgername fehlt"
 
-#~ msgid "Enter the new forder name"
-#~ msgstr "Geben Sie den neuen Ordnernamen ein"
+msgid "Enter the new forder name"
+msgstr "Geben Sie den neuen Ordnernamen ein"

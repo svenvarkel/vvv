@@ -36,7 +36,6 @@ def RemoveIBPP( poFile ):
 
 RemoveIBPP( "empty .po file/vvv.po" )
 RemoveIBPP( "vvv-bg.po" )
-RemoveIBPP( "vvv-cn.po" )
 RemoveIBPP( "vvv-cs.po" )
 RemoveIBPP( "vvv-de.po" )
 RemoveIBPP( "vvv-es.po" )
@@ -50,7 +49,10 @@ RemoveIBPP( "vvv-pl.po" )
 RemoveIBPP( "vvv-pt.po" )
 RemoveIBPP( "vvv-ro.po" )
 RemoveIBPP( "vvv-ru.po" )
+RemoveIBPP( "vvv-se.po" )
 RemoveIBPP( "vvv-sr.po" )
 RemoveIBPP( "vvv-sr@latin.po" )
 RemoveIBPP( "vvv-uk.po" )
+RemoveIBPP( "vvv-zh_CN.po" )
+RemoveIBPP( "vvv-zh_TW.po" )
 
