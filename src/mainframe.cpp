@@ -2466,7 +2466,8 @@ void CMainFrame::OnABOUTClick( wxCommandEvent& WXUNUSED(event) )
 	info.AddTranslator( wxString("\n") + wxT("David de Castro: ") + _("Spanish") );
 	info.AddTranslator( wxString("\n") + wxT("Michel Comblen, Fr\u00E9d\u00E9ric Gacquer, TheG!: ") + _("French") );
 	info.AddTranslator( wxString("\n") + wxT("Steve K\u00F6hler, Oliver: ") + _("German") );
-	info.AddTranslator( wxString("\n") + wxT("Kriszti\u00E1n Mukli: ") + _("Hungarian") );
+	info.AddTranslator( wxString("\n") + wxT("Andreas Ch. Koskinas: ") + _("Greek") );
+    info.AddTranslator( wxString("\n") + wxT("Kriszti\u00E1n Mukli: ") + _("Hungarian") );
 	info.AddTranslator( wxString("\n") + wxT("Karel Kozl\u00EDk: ") + _("Czech") );
 	info.AddTranslator( wxString("\n") + wxT("Dariusz Liszewski: ") + _("Polish") );
 	info.AddTranslator( wxString("\n") + wxT("Krisztian Mukli: ") + _("Hungarian") );

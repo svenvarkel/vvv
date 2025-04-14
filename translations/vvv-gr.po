@@ -1,0 +1,1490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VVV 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-13 16:52+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Andreas Koskinas <corfusite@gmail.com>\n"
+"Language-Team: \n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: Z:/Sviluppo_C++/VVV/src\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: Z:/Sviluppo_C++/VVV/src\n"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:177
+msgid "Enter or select the volume to catalog"
+msgstr "Εισάγετε ή επιλέξτε τον τόμο για καταλογογράφηση"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:186
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:222
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:173
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:166
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:178
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:195
+msgid "..."
+msgstr "..."
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:189
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:386
+msgid "Volume name"
+msgstr "Όνομα τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:199
+msgid "Get volume name"
+msgstr "Λήψη ονόματος τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:207
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:172
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:229
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:247
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:897
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:185
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:203
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:201
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:141
+msgid "&Help"
+msgstr "&Βοήθεια"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:212
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:910
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4208
+msgid "Catalog"
+msgstr "Κατάλογος"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:215
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:209
+msgid "&Close"
+msgstr "&Κλείσιμο"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:218
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:212
+msgid "Current folder"
+msgstr "Τρέχων φάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:221
+msgid "Previously cataloged volumes"
+msgstr "Προηγούμενοι καταλογογραφημένοι τόμοι"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:291
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:267
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:424
+msgid "The volume path is missing"
+msgstr "Δεν υπάρχει η διαδρομή του τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:296
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:420
+msgid "The volume name is missing"
+msgstr "Δεν έχει οριστεί όνομα τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:313
+msgid "This volume name is already present in the database"
+msgstr "Το όνομα αυτού του τόμου υπάρχει ήδη στη βάση δεδομένων"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.cpp:360
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:294
+msgid "Select the volume to catalog"
+msgstr "Επιλέξτε τον τόμο για καταλογογράφηση"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:341
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:335
+msgid "Number of added files: "
+msgstr "Αριθμός προστιθέμενων αρχείων:"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:342
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:336
+msgid "Number of updated files: "
+msgstr "Αριθμός ενημερωμένων αρχείων:"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:343
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:337
+msgid "Number of deleted files (not counting those in deleted folders): "
+msgstr ""
+"Αριθμός αρχείων που διαγράφηκαν (εξαιρουμένων αυτών σε διαγραμμένους "
+"φακέλους):"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:344
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:338
+msgid "Number of deleted folders: "
+msgstr "Αριθμός διαγραμμένων φακέλων:"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:345
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:339
+msgid "Number of unchanged files: "
+msgstr "Αριθμός αμετάβλητων αρχείων:"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume_functions.cpp:346
+#: Z:/Sviluppo_C++/VVV/src/tmp_sorgenti_modificati/catalog_volume_functions.cpp:340
+msgid "Do you really want to update the volume?"
+msgstr "Θέλετε πραγματικά να ενημερώσετε τον τόμο;"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:77
+#, c-format
+msgid "Unknown locale code '%s' in registry."
+msgstr "Άγνωστος κωδικός τοπικών ρυθμίσεων '%s' στο μητρώο."
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:94
+msgid "(Use default language)"
+msgstr "(Χρήση προεπιλεγμένης γλώσσας)"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:96
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2480
+msgid "Bulgarian"
+msgstr "Βουλγαρικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:97
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2463
+msgid "Simplified Chinese"
+msgstr "Απλοποιημένα Κινεζικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:98
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2464
+msgid "Traditional Chinese"
+msgstr "Παραδοσιακά Κινεζικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:99
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2475
+msgid "Croatian"
+msgstr "Κροατικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:100
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2470
+msgid "Czech"
+msgstr "Τσεχικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:101
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2481
+msgid "Dutch"
+msgstr "Ολλανδικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:102
+msgid "English"
+msgstr "Αγγλικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:103
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2467
+msgid "French"
+msgstr "Γαλλικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:104
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2468
+msgid "German"
+msgstr "Γερμανικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:105
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2469
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2472
+msgid "Hungarian"
+msgstr "Ουγγρικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:106
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2478
+msgid "Italian"
+msgstr "Ιταλικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:107
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2477
+msgid "Japanese"
+msgstr "Ιαπωνικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:108
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2471
+msgid "Polish"
+msgstr "Πολωνικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:109
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2465
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:110
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2479
+msgid "Romanian"
+msgstr "Ρουμανικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:111
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2473
+msgid "Russian"
+msgstr "Ρωσικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:112
+msgid "Serbian (cyrillic)"
+msgstr "Σερβικά (κυριλλικά)"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:113
+msgid "Serbian (latin)"
+msgstr "Σερβικά (λατινικά)"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:114
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2466
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:115
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2474
+msgid "Ukrainian"
+msgstr "Ουκρανικά"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:124
+msgid "Select your preferred language"
+msgstr "Επιλέξτε την προτιμώμενη γλώσσα"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:125
+msgid "Language selection"
+msgstr "Επιλογή γλώσσας"
+
+#: Z:/Sviluppo_C++/VVV/src/chooselang.cpp:139
+msgid "You must restart the program for this change to take effect."
+msgstr "Πρέπει να επανεκκινήσετε το πρόγραμμα για να εφαρμοστεί αυτή η αλλαγή."
+
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.cpp:162
+msgid ""
+"Please select the virtual folder that will receive the selected files and/or "
+"folders:"
+msgstr ""
+"Παρακαλώ επιλέξτε τον εικονικό φάκελο που θα λάβει τα επιλεγμένα αρχεία ή "
+"φακέλους:"
+
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.cpp:174
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.cpp:192
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:166
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:234
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:255
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:159
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:175
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:180
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:196
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:190
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:211
+msgid "&OK"
+msgstr "&Εντάξει"
+
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.cpp:178
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.cpp:189
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:169
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:238
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:252
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:163
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:172
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:184
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:193
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:194
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:208
+msgid "&Cancel"
+msgstr "&Ακύρωση"
+
+#: Z:/Sviluppo_C++/VVV/src/convert_db_unicode.cpp:520
+msgid ""
+"Conversion is about to start: a message will tell you when it will be "
+"completed."
+msgstr ""
+"Η μετατροπή πρόκειται να ξεκινήσει: ένα μήνυμα θα σας ενημερώσει όταν "
+"ολοκληρωθεί."
+
+#: Z:/Sviluppo_C++/VVV/src/convert_db_unicode.cpp:546
+msgid "Conversion completed"
+msgstr "Η μετατροπή ολοκληρώθηκε"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:157
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:257
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1332
+msgid "Name"
+msgstr "Όνομα"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:261
+msgid "Value"
+msgstr "Τιμή"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:312
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1458
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:253
+msgid "Channels"
+msgstr "Κανάλια"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:314
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1453
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:249
+msgid "Sample rate"
+msgstr "Ρυθμός δειγματοληψίας"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:316
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1448
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:245
+msgid "Bitrate"
+msgstr "Ρυθμός μετάδοσης bit"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:317
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1443
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:241
+msgid "Length"
+msgstr "Διάρκεια"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:318
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1438
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:237
+msgid "Genre"
+msgstr "Είδος"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:320
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1433
+msgid "Number"
+msgstr "Αριθμός"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:321
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1428
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:229
+msgid "Comment"
+msgstr "Σχόλιο"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:323
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1423
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:225
+msgid "Year"
+msgstr "Έτος"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:324
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1418
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:221
+msgid "Title"
+msgstr "Τίτλος"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:325
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1413
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:217
+msgid "Album"
+msgstr "Άλμπουμ"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:326
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1408
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:213
+msgid "Artist"
+msgstr "Καλλιτέχνης"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:331
+msgid "File date"
+msgstr "Ημερομηνία αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:333
+msgid "File size"
+msgstr "Μέγεθος αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:333
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:358
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:385
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:400
+msgid "bytes"
+msgstr "bytes"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:334
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:978
+msgid "File name"
+msgstr "Όνομα αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:342
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:367
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:409
+msgid "Virtual path"
+msgstr "Εικονική διαδρομή"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:346
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:371
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:413
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1350
+msgid "Physical path"
+msgstr "Φυσική διαδρομή"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:356
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:398
+msgid "Folder date"
+msgstr "Ημερομηνία φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:358
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:400
+msgid "Folder size"
+msgstr "Μέγεθος φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:359
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:401
+msgid "Folder name"
+msgstr "Όνομα φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:379
+msgid "Last updated"
+msgstr "Τελευταία ενημέρωση"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:382
+msgid "Cataloged"
+msgstr "Καταλογογραφήθηκε"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:385
+msgid "Volume size"
+msgstr "Μέγεθος τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:437
+msgid "Folder information"
+msgstr "Πληροφορίες φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:441
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.h:45
+msgid "File information"
+msgstr "Πληροφορίες αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/dlg_file_information.cpp:469
+msgid "Copy to clipboard\tCtrl+C"
+msgstr "Αντιγραφή στο πρόχειρο Ctrl+C"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:190
+msgid "Use this window to export data to a CSV file"
+msgstr "Χρησιμοποιήστε αυτό για εξαγωγή δεδομένων σε αρχείο CSV"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:194
+msgid "Comma"
+msgstr "Κόμμα"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:195
+msgid "TAB"
+msgstr "TAB"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:196
+msgid "Pipe"
+msgstr "Κάθετος"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:197
+msgid "Separator"
+msgstr "Διαχωριστικό"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:201
+msgid "Include headers"
+msgstr "Συμπερίληψη επικεφαλίδων"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:206
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1009
+msgid "All physical volumes"
+msgstr "Όλοι οι φυσικοί τόμοι"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:207
+msgid "Selected physical volume/folder"
+msgstr "Επιλεγμένος φυσικός τόμος/φάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:208
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1011
+msgid "Selected virtual folder"
+msgstr "Επιλεγμένος εικονικός φάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:209
+msgid "Export"
+msgstr "Εξαγωγή"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:213
+msgid "File name:"
+msgstr "Όνομα αρχείου:"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:308
+msgid "CSV files (*.csv;*.txt)|*.csv;*.txt|All files (*.*)|*.*"
+msgstr "CSV αρχεία (*.csv;*.txt)|*.csv;*.txt|όλα τα αρχεία (*.*)|*.*"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:335
+msgid "Please enter a file name"
+msgstr "Παρακαλώ εισάγετε ένα όνομα αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:340
+msgid "The output file already exists: do you want to overwrite it?"
+msgstr "Το αρχείο εξόδου υπάρχει ήδη: θέλετε να το αντικαταστήσετε;"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:343
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:357
+msgid "Unable to create the file."
+msgstr "Αδύνατη η δημιουργία του αρχείου."
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1337
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1341
+msgid "Ext"
+msgstr "Επέκταση"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1345
+msgid "Last modified"
+msgstr "Τελευταία τροποποίηση"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+msgid "PhysicalPath"
+msgstr "Φυσική Διαδρομή"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:537
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:999
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1353
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1358
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+msgid "Volume"
+msgstr "Τόμος"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.cpp:539
+msgid "Path"
+msgstr "Διαδρομή"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:777
+msgid ""
+"This catalog file does not exist:\n"
+"\n"
+msgstr "Αυτό το αρχείο καταλόγου δεν υπάρχει:\n"
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:839
+msgid "&New..."
+msgstr "&Νέο..."
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:840
+msgid "&Open..."
+msgstr "&Άνοιγμα..."
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:841
+msgid "&Export..."
+msgstr "&Εξαγωγή..."
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:843
+msgid "&Backup..."
+msgstr "&Αντίγραφο ασφαλείας..."
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:844
+msgid "&Restore..."
+msgstr "&Επαναφορά..."
+
+# Part of the File menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:846
+msgid "E&xit"
+msgstr "Έ&ξοδος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:847
+msgid "&File"
+msgstr "&Αρχείο"
+
+# Part of the Edit menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:849
+msgid "&Add To Virtual Folder..."
+msgstr "&Προσθήκη σε Εικονικό Φάκελο..."
+
+# Part of the Edit menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:851
+msgid "&Rename...\tF2"
+msgstr "&Μετονομασία...F2"
+
+# Part of the Edit menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:852
+msgid "&Delete"
+msgstr "&Διαγραφή"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:854
+msgid "&Object Information..."
+msgstr "&Πληροφορίες Αντικειμένου..."
+
+# Part of the Edit menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:856
+msgid "&New Virtual Root Folder..."
+msgstr "&Νέος Εικονικός Ριζικός Φάκελος..."
+
+# Part of the Edit menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:857
+msgid "New Virtual &Subfolder..."
+msgstr "Νέος Εικονικός &Υποφάκελος..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:859
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:888
+msgid "&Options..."
+msgstr "&Επιλογές..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:861
+msgid "&Edit"
+msgstr "&Επεξεργασία"
+
+# Part of the Volumes menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:863
+msgid "&Catalog Volume..."
+msgstr "&Καταλογογράφηση Τόμου..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:864
+msgid "&Update Volume..."
+msgstr "&Ενημέρωση Τόμου..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:865
+msgid "&Volumes"
+msgstr "&Τόμοι"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:867
+msgid "&Physical View"
+msgstr "&Φυσική Προβολή"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:869
+msgid "&Virtual View"
+msgstr "&Εικονική Προβολή"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:870
+msgid "&Search View"
+msgstr "&Προβολή Αναζήτησης"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:872
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3311
+msgid "Show in physical view"
+msgstr "Εμφάνιση σε Φυσική Προβολή"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:873
+msgid "Go &Up One Level"
+msgstr "Μετάβαση &Ένα Επίπεδο Πάνω"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:874
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2712
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2745
+msgid "Expand"
+msgstr "Ανάπτυξη"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:875
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2713
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2746
+msgid "Collapse"
+msgstr "Σύμπτυξη"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:877
+msgid "&Toolbar"
+msgstr "&Γραμμή Εργαλείων"
+
+# Part of the View menu
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:879
+msgid "Status &Bar"
+msgstr "Γραμμή &Κατάστασης"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:881
+msgid "Vie&w"
+msgstr "Προβο&λή"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:883
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3320
+msgid "Open with default program"
+msgstr "Άνοιγμα με προεπιλεγμένο πρόγραμμα"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:890
+msgid "&Tools"
+msgstr "&Εργαλεία"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:892
+msgid "Help &Contents"
+msgstr "&Περιεχόμενα Βοήθειας"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:896
+msgid "&About VVV..."
+msgstr "&Σχετικά με VVV..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:904
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4202
+msgid "New"
+msgstr "Νέο"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:904
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4202
+msgid "Create a new catalog"
+msgstr "Δημιουργία νέου καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:907
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4205
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:907
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4205
+msgid "Open an existing catalog"
+msgstr "Άνοιγμα υπάρχοντος καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:910
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4208
+msgid "Catalog a new volume"
+msgstr "Καταλογογράφηση νέου τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:913
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4211
+msgid "Up"
+msgstr "Πάνω"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:913
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4211
+msgid "Move up one level"
+msgstr "Μετακίνηση ένα επίπεδο πάνω"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:917
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4215
+msgid "Physical"
+msgstr "Φυσικό"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:917
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4215
+msgid "Show the physical view"
+msgstr "Εμφάνιση της φυσικής προβολής"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:920
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4218
+msgid "Virtual"
+msgstr "Εικονικό"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:920
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4218
+msgid "Show the virtual view"
+msgstr "Εμφάνιση της εικονικής προβολής"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:923
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1012
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1018
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4221
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:923
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4221
+msgid "Show the search view"
+msgstr "Εμφάνιση της προβολής αναζήτησης"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:975
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:996
+msgid "Is equal to:"
+msgstr "Αντιστοιχεί σε:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:976
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:997
+msgid "Starts with:"
+msgstr "Αρχίζει με:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:977
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:998
+msgid "Contains:"
+msgstr "Περιέχει:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:987
+msgid "Extension:"
+msgstr "Επέκταση:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1010
+msgid "Selected physical folder"
+msgstr "Επιλεγμένος φυσικός φάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1487
+msgid "Open catalog"
+msgstr "Άνοιγμα καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:1491
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3795
+msgid "VVV  files (*.vvv)|*.vvv|All files (*.*)|*.*"
+msgstr "VVV  αρχεία (*.vvv)|*.vvv|όλα τα αρχεία (*.*)|*.*"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2064
+msgid "New virtual root folder"
+msgstr "Νέος εικονικός ριζικός φάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2092
+msgid "New virtual subfolder"
+msgstr "Νέος εικονικός υποφάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2110
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3553
+msgid "Enter the new folder name"
+msgstr "Εισάγετε το νέο όνομα φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2125
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3564
+msgid "The new folder name is already present in the database"
+msgstr "Το νέο όνομα φακέλου υπάρχει ήδη στη βάση δεδομένων"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2178
+msgid "This catalog file does not exist any more"
+msgstr "Αυτό το αρχείο καταλόγου δεν υπάρχει πλέον"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2208
+msgid ""
+"Catalog not found:\n"
+"\n"
+msgstr ""
+"Ο κατάλογος δεν βρέθηκε:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2212
+msgid ""
+"Incorrect username or password for the following database:\n"
+"\n"
+msgstr ""
+"Λανθασμένο όνομα χρήστη ή κωδικός πρόσβασης για την εξής βάση δεδομένων:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2217
+msgid ""
+"Unable to connect to the following server:\n"
+"\n"
+msgstr ""
+"Αδύνατη σύνδεση στον εξής διακομιστή:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2219
+msgid ""
+"Unable to open the catalog.\n"
+"Please note that you are not connected to a database server so you cannot "
+"open a catalog located on another computer in the network.\n"
+"If you want to open a catalog on another computer you must connect to the "
+"database server (Tools/Options menu)."
+msgstr ""
+"Αδύνατο το άνοιγμα του καταλόγου.\n"
+"Παρακαλώ σημειώστε ότι δεν είστε συνδεδεμένοι σε διακομιστή βάσης δεδομένων, "
+"οπότε δεν μπορείτε να ανοίξετε έναν κατάλογο που βρίσκεται σε άλλο "
+"υπολογιστή του δικτύου.\n"
+"Αν θέλετε να ανοίξετε έναν κατάλογο σε άλλο υπολογιστή, πρέπει να συνδεθείτε "
+"με τον διακομιστή βάσης δεδομένων (μενού Εργαλεία/Επιλογές)."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2241
+msgid ""
+"This catalog has been created with a previous version of the program and it "
+"needs to be upgraded, but the file containing the upgrades list is missing.\n"
+"\n"
+"You can try reinstalling the program to solve this problem."
+msgstr ""
+"Αυτός ο κατάλογος έχει δημιουργηθεί με προηγούμενη έκδοση του προγράμματος "
+"και χρειάζεται αναβάθμιση, αλλά λείπει το αρχείο που περιέχει τη λίστα "
+"αναβαθμίσεων.\n"
+"\n"
+"Μπορείτε να δοκιμάσετε να εγκαταστήσετε ξανά το πρόγραμμα για να λύσετε το "
+"πρόβλημα."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2245
+msgid "Upgrading the catalog, please wait..."
+msgstr "Αναβάθμιση του καταλόγου, παρακαλώ περιμένετε..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2257
+msgid ""
+"This catalog has been created with an older version of VVV so you need to "
+"convert it to a newer format.\n"
+"\n"
+msgstr ""
+"Αυτός ο κατάλογος έχει δημιουργηθεί με παλαιότερη έκδοση του VVV, οπότε "
+"πρέπει να μετατραπεί σε νέο φορμάτ.\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2258
+msgid ""
+"The conversion will create a new catalog with the same data as the older "
+"one, then you will use this new catalog with VVV. You will not use the older "
+"catalog any more.\n"
+"\n"
+msgstr ""
+"Η μετατροπή θα δημιουργήσει έναν νέο κατάλογο με τα ίδια δεδομένα όπως ο "
+"παλιός· κατόπιν, θα χρησιμοποιήσετε αυτόν τον νέο κατάλογο με το VVV. Δεν θα "
+"χρησιμοποιήσετε πια τον παλιό κατάλογο.\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2259
+msgid "Do you want to convert the catalog creating a new one?"
+msgstr "Θέλετε να μετατρέψετε τον κατάλογο δημιουργώντας έναν καινούριο;"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2263
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2493
+msgid ""
+"Unable to create a new catalog.\n"
+"\n"
+"You are connecting to a database server on another computer. You must "
+"execute this program on the server to be able to create a new catalog."
+msgstr ""
+"Αδύνατη η δημιουργία νέου καταλόγου.\n"
+"\n"
+"Συνδέεστε με διακομιστή βάσης δεδομένων σε άλλο υπολογιστή. Πρέπει να "
+"εκτελέσετε αυτό το πρόγραμμα στον διακομιστή για να μπορέσετε να "
+"δημιουργήσετε έναν νέο κατάλογο."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2267
+msgid "Convert to a new catalog"
+msgstr "Μετατροπή σε νέο κατάλογο"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2275
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2505
+msgid ""
+"Unable to find the database backup to restore.\n"
+"\n"
+"You can try reinstalling the program to solve this problem."
+msgstr ""
+"Αδύνατη η εύρεση αντιγράφου ασφαλείας της βάσης δεδομένων για επαναφορά.\n"
+"\n"
+"Μπορείτε να δοκιμάσετε να εγκαταστήσετε ξανά το πρόγραμμα για να λύσετε το "
+"πρόβλημα."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2457
+msgid ""
+"VVV (Virtual Volumes View): a program to catalog removable devices like CDs "
+"and DVDs"
+msgstr ""
+"VVV (Virtual Volumes View): ένα πρόγραμμα για καταλογογράφηση αφαιρούμενων "
+"συσκευών όπως CD και DVD"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2458
+msgid "Copyright (C) 2007-2024 The VVV Team"
+msgstr "Πνευματικά δικαιώματα (C) 2007–2024 Η Ομάδα VVV"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2459
+msgid "Fulvio Senore: main developer"
+msgstr "Fulvio Senore: κύριος προγραμματιστής"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2460
+msgid ""
+"\n"
+"Jan Albartus: worked at the portable version and designed the application's "
+"icon"
+msgstr ""
+"\n"
+"Jan Albartus: εργάστηκε στην φορητή έκδοση και σχεδίασε το εικονίδιο της "
+"εφαρμογής"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2461
+msgid ""
+"This program uses icons from the Gnome, Ubuntu and Crystal icons projects"
+msgstr ""
+"Αυτό το πρόγραμμα χρησιμοποιεί εικονίδια από τα έργα Gnome, Ubuntu και "
+"Crystal"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2462
+msgid ""
+"This is open source software, distributed under the GNU GENERAL PUBLIC "
+"LICENSE"
+msgstr ""
+"Αυτό είναι λογισμικό ανοιχτού κώδικα, που διανέμεται υπό την Άδεια GNU "
+"GENERAL PUBLIC LICENSE"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2476
+msgid "Serbian"
+msgstr "Σερβικά"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2497
+msgid "New catalog"
+msgstr "Νέος κατάλογος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2547
+msgid "Multiple items"
+msgstr "Πολλαπλά αντικείμενα"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2710
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3317
+msgid "Add To Virtual Folder"
+msgstr "Προσθήκη στον Εικονικό Φάκελο"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2715
+msgid "Object information..."
+msgstr "Πληροφορίες αντικειμένου..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2718
+msgid "Rename..."
+msgstr "Μετονομασία..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2719
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2750
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3313
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2720
+msgid "Update Volume..."
+msgstr "Ενημέρωση Τόμου..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2743
+msgid "New Subfolder"
+msgstr "Νέος Υποφάκελος"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2749
+msgid "Rename"
+msgstr "Μετονομασία"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2891
+msgid "Please enter some search data"
+msgstr "Εισάγετε δεδομένα αναζήτησης"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2910
+msgid "Incorrect file name search data"
+msgstr "Λανθασμένα δεδομένα αναζήτησης ονόματος αρχείου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2921
+msgid "Incorrect extension search data"
+msgstr "Λανθασμένα δεδομένα αναζήτησης επέκτασης"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:2933
+msgid "Incorrect description search data"
+msgstr "Λανθασμένα δεδομένα αναζήτησης περιγραφής"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3044
+msgid "The search did not find anything"
+msgstr "Η αναζήτηση δεν βρήκε αποτελέσματα"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3203
+msgid "Objects: "
+msgstr "Αντικείμενα: "
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3210
+msgid "Total size: "
+msgstr "Συνολικό μέγεθος:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3323
+msgid "Object Information..."
+msgstr "Πληροφορίες Αντικειμένου..."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3461
+msgid ""
+"This command will delete the selected virtual folder, but it will not change "
+"the folders in the physical view.\n"
+"\n"
+"Do you really want to delete the selected virtual folder?"
+msgstr ""
+"Αυτή η εντολή θα διαγράψει τον επιλεγμένο εικονικό φάκελο, αλλά δεν θα "
+"αλλάξει τους φακέλους στην φυσική προβολή.\n"
+"\n"
+"Θέλετε σίγουρα να διαγράψετε τον επιλεγμένο εικονικό φάκελο;"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3487
+msgid ""
+"This command will delete this volume:\n"
+"\n"
+msgstr ""
+"Αυτή η εντολή θα διαγράψει αυτόν τον τόμο:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3487
+msgid ""
+"\n"
+"\n"
+"from the VVV catalog. It will not delete any file from your disk.\n"
+"\n"
+"Do you really want to delete this volume?"
+msgstr ""
+"\n"
+"\n"
+"από τον κατάλογο του VVV. Δεν θα διαγράψει κανένα αρχείο από τον δίσκο σας.\n"
+"\n"
+"Θέλετε σίγουρα να διαγράψετε αυτόν τον τόμο;"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3497
+msgid ""
+"Unable to delete this volume: at least one of its files is used in the "
+"virtual view"
+msgstr ""
+"Αδύνατη η διαγραφή αυτού του τόμου: τουλάχιστον ένα από τα αρχεία του "
+"χρησιμοποιείται στην εικονική προβολή"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3519
+msgid "Enter the new volume name"
+msgstr "Εισάγετε το νέο όνομα τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3519
+msgid "Rename volume"
+msgstr "Μετονομασία τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3532
+msgid "The new volume name is already present in the database"
+msgstr "Το νέο όνομα τόμου υπάρχει ήδη στη βάση δεδομένων"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3553
+msgid "Rename virtual folder"
+msgstr "Μετονομασία εικονικού φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3676
+msgid ""
+"This command will delete the selected files from the virtual view, but it "
+"will not change the files in the physical view.\n"
+"\n"
+"Do you really want to delete the selected virtual files?"
+msgstr ""
+"Αυτή η εντολή θα διαγράψει τα επιλεγμένα αρχεία από την εικονική προβολή, "
+"αλλά δεν θα αλλάξει τα αρχεία στην φυσική προβολή.\n"
+"\n"
+"Θέλετε σίγουρα να διαγράψετε τα επιλεγμένα εικονικά αρχεία;"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3818
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3895
+msgid ""
+"Unable to continue. You have choosen an existing file:\n"
+"\n"
+msgstr ""
+"Αδύνατη η συνέχεια. Έχετε επιλέξει υπάρχον αρχείο:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3818
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3895
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3977
+msgid ""
+"\n"
+"\n"
+"You must type the name of a non-existing file."
+msgstr ""
+"\n"
+"\n"
+"Πρέπει να πληκτρολογήσετε το όνομα ενός μη υπάρχοντος αρχείου."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3827
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3904
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3986
+msgid ""
+"Unable to continue: you have choosen a folder where you do not have the "
+"right to create a file."
+msgstr ""
+"Αδύνατη η συνέχεια: έχετε επιλέξει φάκελο όπου δεν έχετε το δικαίωμα να "
+"δημιουργήσετε αρχείο."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3872
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:254
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:285
+msgid "VVV backup files (*.vvvbk)|*.vvvbk|All files (*.*)|*.*"
+msgstr ""
+"Αρχεία αντιγράφων ασφαλείας VVV (*.vvvbk)|*.vvvbk|Όλα τα αρχεία (*.*)|*.*"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3873
+msgid "Backup catalog"
+msgstr "Κατάλογος αντιγράφων ασφαλείας"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3918
+msgid "Backup completed"
+msgstr "Το αντίγραφο ασφαλείας ολοκληρώθηκε"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3941
+msgid ""
+"Unable to restore.\n"
+"\n"
+"You are connecting to a database server on another computer. You must "
+"execute this command on the server to be able to restore a catalog."
+msgstr ""
+"Αδύνατη η επαναφορά.\n"
+"\n"
+"Συνδέεστε σε διακομιστή βάσης δεδομένων σε άλλο υπολογιστή. Πρέπει να "
+"εκτελέσετε αυτή την εντολή στον διακομιστή για να μπορέσετε να επαναφέρετε "
+"έναν κατάλογο."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3955
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:416
+msgid "The catalog name is missing"
+msgstr "Λείπει το όνομα του καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3959
+msgid "The backup name is missing"
+msgstr "Λείπει το όνομα του αντιγράφου ασφαλείας"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:3977
+msgid ""
+"Unable to continue. You have choosen an existing catalog:\n"
+"\n"
+msgstr ""
+"Αδύνατη η συνέχεια. Έχετε επιλέξει υπάρχον κατάλογο:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4014
+msgid "Restore completed"
+msgstr "Η επαναφορά ολοκληρώθηκε"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4424
+msgid ""
+"This volume has been cataloged with an older version of VVV. You need to "
+"update it in order to open files."
+msgstr ""
+"Αυτός ο τόμος έχει καταχωρηθεί με παλαιότερη έκδοση του VVV. Πρέπει να τον "
+"ενημερώσετε για να ανοίξετε αρχεία."
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4445
+msgid "Unable to find the folder:"
+msgstr "Αδύνατη η εύρεση του φακέλου:"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.cpp:4451
+msgid "Unable to find the file:"
+msgstr "Αδύνατη η εύρεση του αρχείου:"
+
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:146
+msgid "Please enter the description for the following object:"
+msgstr "Εισάγετε την περιγραφή για το εξής αντικείμενο:"
+
+#: Z:/Sviluppo_C++/VVV/src/object_description.cpp:149
+msgid "OBJECT NAME"
+msgstr "ΟΝΟΜΑ ΑΝΤΙΚΕΙΜΕΝΟΥ"
+
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:162
+msgid ""
+"You are about to open a catalog located on the server.\n"
+"\n"
+"Enter the alias or the complete path to the catalog file.\n"
+"Remember that the path must be relative to the server, not to the client."
+msgstr ""
+"Είστε έτοιμοι να ανοίξετε έναν κατάλογο που βρίσκεται στον διακομιστή.\n"
+"\n"
+"Εισάγετε το ψευδώνυμο ή την πλήρη διαδρομή προς το αρχείο καταλόγου.\n"
+"Θυμηθείτε ότι η διαδρομή πρέπει να είναι σχετική προς τον διακομιστή, όχι "
+"προς τον πελάτη."
+
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:256
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:303
+msgid "VVV files (*.vvv)|*.vvv|All files (*.*)|*.*"
+msgstr "Αρχεία VVV (*.vvv)|*.vvv|Όλα τα αρχεία (*.*)|*.*"
+
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:276
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.h:63
+msgid "Open Catalog"
+msgstr "Άνοιγμα Καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:280
+msgid "New Catalog"
+msgstr "Νέος Κατάλογος"
+
+#: Z:/Sviluppo_C++/VVV/src/opencatalog.cpp:284
+msgid "Backup"
+msgstr "Αντίγραφο Ασφαλείας"
+
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:152
+msgid ""
+"You are about to create a new catalog from a backup file.\n"
+"\n"
+"Enter the complete path to the backup file and to the catalog file that will "
+"be created.\n"
+"You cannot enter the name of an existing catalog."
+msgstr ""
+"Είστε έτοιμοι να δημιουργήσετε έναν νέο κατάλογο από ένα αρχείο αντιγράφου "
+"ασφαλείας.\n"
+"\n"
+"Εισάγετε την πλήρη διαδρομή στο αρχείο αντιγράφου ασφαλείας και στον "
+"κατάλογο που θα δημιουργηθεί.\n"
+"Δεν μπορείτε να εισάγετε το όνομα ενός υπάρχοντος καταλόγου."
+
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:157
+msgid "Backup file:"
+msgstr "Αρχείο αντιγράφου ασφαλείας:"
+
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:169
+msgid "New catalog:"
+msgstr "Νέος κατάλογος:"
+
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:284
+msgid "Select backup file"
+msgstr "Επιλογή αρχείου αντιγράφου ασφαλείας"
+
+#: Z:/Sviluppo_C++/VVV/src/restore.cpp:302
+msgid "Catalog file"
+msgstr "Αρχείο καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:175
+msgid "Reopen the last used catalog at startup"
+msgstr ""
+"Επαναφόρτωση του τελευταίου χρησιμοποιημένου καταλόγου κατά την εκκίνηση"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:179
+msgid "Alternate row colors"
+msgstr "Εναλλακτικά χρώματα σειρών"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:185
+msgid "Beep for tasks longer than (seconds):"
+msgstr "Ηχητική ειδοποίηση για εργασίες διάρκειας άνω των (δευτερολέπτων):"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:193
+msgid "Change language"
+msgstr "Αλλαγή γλώσσας"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:196
+msgid "General"
+msgstr "Γενικά"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:204
+msgid "Catalog audio metadata"
+msgstr "Καταλογογράφηση μεταδεδομένων ήχου"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:210
+msgid "Show the following data for audio files:"
+msgstr "Εμφάνιση των εξής δεδομένων για αρχεία ήχου:"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:233
+msgid "Track number"
+msgstr "Αριθμός κομματιού"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:259
+msgid "Audio files"
+msgstr "Αρχεία ήχου"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:267
+msgid ""
+"Check the checkbox below if you want to access catalogs stored\n"
+"in a network server. Each computer in the network will be able to\n"
+"access the same catalogs stored in the server.\n"
+"DO NOT check the checkbox if you only want to access catalogs\n"
+"stored in this computer and you do not want to share them\n"
+"with other computers."
+msgstr ""
+"Επιλέξτε το παρακάτω πλαίσιο αν θέλετε να έχετε πρόσβαση σε καταλόγους που "
+"είναι αποθηκευμένοι\n"
+"σε διακομιστή δικτύου. Κάθε υπολογιστής στο δίκτυο θα μπορεί να έχει\n"
+"πρόσβαση στους ίδιους καταλόγους που αποθηκεύονται στον διακομιστή.\n"
+"ΜΗΝ επιλέξετε το πλαίσιο αν θέλετε να έχετε πρόσβαση μόνο στους καταλόγους\n"
+"που αποθηκεύονται σε αυτόν τον υπολογιστή και δεν θέλετε να τους "
+"μοιραστείτε\n"
+"με άλλους υπολογιστές."
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:272
+msgid "Connect to a network server"
+msgstr "Σύνδεση με διακομιστή δικτύου"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:278
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:303
+msgid "Server"
+msgstr "Διακομιστής"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:284
+msgid "Username"
+msgstr "Όνομα χρήστη"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:290
+msgid "Password"
+msgstr "Κωδικός πρόσβασης"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:300
+msgid "Test server connection"
+msgstr "Δοκιμή σύνδεσης με τον διακομιστή"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:392
+msgid "You must enter a server name or address"
+msgstr "Πρέπει να εισάγετε ένα όνομα ή διεύθυνση διακομιστή"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:396
+msgid "You must enter a username"
+msgstr "Πρέπει να εισάγετε ένα όνομα χρήστη"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:400
+msgid "You must enter a password"
+msgstr "Πρέπει να εισάγετε έναν κωδικό πρόσβασης"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:463
+msgid "You must enter the server name or address"
+msgstr "Πρέπει να εισάγετε το όνομα ή τη διεύθυνση του διακομιστή"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:468
+msgid "Unable to connect to the server"
+msgstr "Αδύνατη η σύνδεση με τον διακομιστή"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.cpp:470
+msgid "Server connection successful"
+msgstr "Επιτυχής σύνδεση με τον διακομιστή"
+
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:178
+msgid "You are about to update the following volume:"
+msgstr "Είστε έτοιμοι να ενημερώσετε τον εξής τόμο:"
+
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:181
+msgid "VOLUME NAME"
+msgstr "ΟΝΟΜΑ ΤΟΜΟΥ"
+
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:186
+msgid "Enter or select the path to volume to update"
+msgstr "Εισάγετε ή επιλέξτε τη διαδρομή στον τόμο προς ενημέρωση"
+
+#: Z:/Sviluppo_C++/VVV/src/update_volume.cpp:206
+msgid "Update"
+msgstr "Ενημέρωση"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:184
+msgid "An error happened while parsing the command line"
+msgstr "Παρουσιάστηκε σφάλμα κατά την ανάλυση της γραμμής εντολών"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:248
+msgid ""
+"The command line asks for a volume update but the catalog name is missing"
+msgstr ""
+"Η γραμμή εντολών ζητά ενημέρωση τόμου αλλά λείπει το όνομα του καταλόγου"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:251
+msgid ""
+"The command line asks for a volume update but the volume name is missing"
+msgstr "Η γραμμή εντολών ζητά ενημέρωση τόμου αλλά λείπει το όνομα του τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:254
+msgid ""
+"The command line asks for a volume update but the volume path is missing"
+msgstr "Η γραμμή εντολών ζητά ενημέρωση τόμου αλλά λείπει η διαδρομή του τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:320 Z:/Sviluppo_C++/VVV/src/vvv.cpp:376
+msgid ""
+"Unable to connect to the server\n"
+"\n"
+msgstr "Αδύνατη η σύνδεση με τον διακομιστή\n"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:322 Z:/Sviluppo_C++/VVV/src/vvv.cpp:328
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:378 Z:/Sviluppo_C++/VVV/src/vvv.cpp:384
+msgid ""
+"An unexpected error has occurred. Here is a description of the error:\n"
+"\n"
+msgstr ""
+"Παρουσιάστηκε ένα απροσδόκητο σφάλμα. Εδώ είναι η περιγραφή του σφάλματος.\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:334 Z:/Sviluppo_C++/VVV/src/vvv.cpp:390
+msgid "An unexpected error has occurred. This application will be terminated"
+msgstr "Παρουσιάστηκε ένα απροσδόκητο σφάλμα. Αυτή η εφαρμογή θα τερματιστεί"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:402 Z:/Sviluppo_C++/VVV/src/vvv.cpp:486
+msgid ""
+"An unexpected error has happened. Here is a description of the error:\n"
+"\n"
+msgstr ""
+"Παρουσιάστηκε ένα απροσδόκητο σφάλμα. Εδώ είναι η περιγραφή του σφάλματος:\n"
+"\n"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:428
+msgid "The volume path does not exists"
+msgstr "Η διαδρομή του τόμου δεν υπάρχει"
+
+#: Z:/Sviluppo_C++/VVV/src/vvv.cpp:469
+msgid "Volume name not found"
+msgstr "Το όνομα του τόμου δεν βρέθηκε"
+
+#: Z:/Sviluppo_C++/VVV/src/catalog_volume.h:72
+msgid "Catalog volume"
+msgstr "Κατάλογος τόμου"
+
+#: Z:/Sviluppo_C++/VVV/src/choose_virtual_folder.h:68
+msgid "Choose virtual folder"
+msgstr "Επιλογή εικονικού φακέλου"
+
+#: Z:/Sviluppo_C++/VVV/src/exportdata.h:65
+msgid "Export data"
+msgstr "Εξαγωγή δεδομένων"
+
+#: Z:/Sviluppo_C++/VVV/src/mainframe.h:85
+msgid "VVV"
+msgstr "VVV"
+
+#: Z:/Sviluppo_C++/VVV/src/object_description.h:51
+msgid "Object Description"
+msgstr "Περιγραφή Αντικειμένου"
+
+#: Z:/Sviluppo_C++/VVV/src/restore.h:41
+msgid "Restore"
+msgstr "Επαναφορά"
+
+#: Z:/Sviluppo_C++/VVV/src/settings.h:56
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: Z:/Sviluppo_C++/VVV/src/update_volume.h:62
+msgid "Update Volume"
+msgstr "Ενημέρωση Τόμου"

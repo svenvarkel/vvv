@@ -55,6 +55,7 @@ Source: "..\translations\vvv-es.mo"; DestDir: "{app}\languages\es"; DestName: "v
 Source: "..\translations\es\wxstd.mo"; DestDir: "{app}\languages\es"
 Source: "..\translations\vvv-fr.mo"; DestDir: "{app}\languages\fr"; DestName: "vvv.mo"
 Source: "..\translations\fr\wxstd.mo"; DestDir: "{app}\languages\fr"
+Source: "..\translations\vvv-gr.mo"; DestDir: "{app}\languages\gr"; DestName: "vvv.mo"
 Source: "..\translations\vvv-hr.mo"; DestDir: "{app}\languages\hr"; DestName: "vvv.mo"
 Source: "..\translations\hr\wxstd.mo"; DestDir: "{app}\languages\hr"
 Source: "..\translations\vvv-hu.mo"; DestDir: "{app}\languages\hu"; DestName: "vvv.mo"

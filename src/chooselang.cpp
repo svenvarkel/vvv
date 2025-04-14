@@ -102,6 +102,7 @@ wxLanguage ChooseLanguage()
         { _("English"), wxLANGUAGE_ENGLISH },
         { _("French"), wxLANGUAGE_FRENCH },
         { _("German"), wxLANGUAGE_GERMAN },
+        { _("Greek"), wxLANGUAGE_GREEK },
         { _("Hungarian"), wxLANGUAGE_HUNGARIAN },
         { _("Italian"), wxLANGUAGE_ITALIAN },
         { _("Japanese"), wxLANGUAGE_JAPANESE },

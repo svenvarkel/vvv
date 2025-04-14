@@ -183,6 +183,8 @@ if( UNIX )
            DESTINATION ${RESOURCES_INTALL_PATH}/languages/es RENAME vvv.mo )
   install( FILES ${PROJECT_SOURCE_DIR}/translations/vvv-fr.mo 
            DESTINATION ${RESOURCES_INTALL_PATH}/languages/fr RENAME vvv.mo )
+  install( FILES ${PROJECT_SOURCE_DIR}/translations/vvv-gr.mo 
+           DESTINATION ${RESOURCES_INTALL_PATH}/languages/gr RENAME vvv.mo )
   install( FILES ${PROJECT_SOURCE_DIR}/translations/vvv-hr.mo 
            DESTINATION ${RESOURCES_INTALL_PATH}/languages/hr RENAME vvv.mo )
   install( FILES ${PROJECT_SOURCE_DIR}/translations/vvv-hu.mo 
