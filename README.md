@@ -78,6 +78,9 @@ Reviewed 2026-09-28 (Codex security review, findings verified).
 
 ## License
 
+Contributors are listed in [CONTRIBUTORS.md](CONTRIBUTORS.md).
+
+
 GPL v2 or later, see [COPYING](COPYING). Bundled components keep their own licenses:
 Firebird (IPL/IDPL, `Contents/Resources/firebird/License.txt`), IBPP (IBPP License,
 `src/ibpp/license.txt`), wxWidgets (wxWindows Library Licence), TagLib (LGPL 2.1 / MPL 1.1).
