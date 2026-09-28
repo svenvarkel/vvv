@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Makes vvv.app self-contained (called by "cmake --install"):
+# Makes VVV.app self-contained (called by "cmake --install"):
 #  - Firebird 5 runtime in Contents/Resources/firebird gets relocatable install names
 #  - Homebrew dylibs (wxWidgets, TagLib and their dependencies) are copied to Contents/Frameworks
 #  - everything is signed ad-hoc
@@ -9,7 +9,7 @@
 set -euo pipefail
 
 BUNDLEPATH="$1"
-EXECFILE="${BUNDLEPATH}/Contents/MacOS/vvv"
+EXECFILE="${BUNDLEPATH}/Contents/MacOS/VVV"
 FWPATH="${BUNDLEPATH}/Contents/Frameworks"
 FBPATH="${BUNDLEPATH}/Contents/Resources/firebird"
 mkdir -p "${FWPATH}"
@@ -109,4 +109,4 @@ while read -r f; do
   done
 done < <(macho_files)
 [ $bad -eq 0 ] || exit 1
-echo "vvv.app is self-contained"
+echo "VVV.app is self-contained"

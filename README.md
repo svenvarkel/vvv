@@ -12,8 +12,8 @@ It builds and runs natively on arm64 macOS. The full upstream SVN history
 
 - Native arm64 build with wxWidgets 3.3 and TagLib 2 from Homebrew.
 - The embedded database moved from Firebird 2.1 (x86_64 only) to **Firebird 5**. The runtime is
-  bundled in `vvv.app/Contents/Resources/firebird`.
-- `vvv.app` is self-contained: the wxWidgets and TagLib dylibs are copied into the bundle,
+  bundled in `VVV.app/Contents/Resources/firebird`.
+- `VVV.app` is self-contained: the wxWidgets and TagLib dylibs are copied into the bundle,
   and the bundle is signed ad-hoc.
 - Catalogs made by VVV 1.5 and older must be converted once (see below).
 
@@ -26,14 +26,14 @@ brew install cmake wxwidgets taglib
 scripts/fetch-firebird.sh                  # official Firebird 5 arm64 pkg, extracted to deps/, no install
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$PWD/build/install"
 cmake --build build -j
-cmake --install build                      # assembles and checks build/install/vvv.app
+cmake --install build                      # assembles and checks build/install/VVV.app
 ```
 
 `cmake --install` fails if any library in the bundle still points outside the bundle or macOS.
 
 The app is not notarized yet. On first launch, macOS may block it: open
 *System Settings → Privacy & Security* and choose *Open Anyway*, or run
-`xattr -dr com.apple.quarantine vvv.app`.
+`xattr -dr com.apple.quarantine VVV.app`.
 
 ## Converting catalogs from VVV 1.5 and older
 

@@ -114,6 +114,10 @@ if(APPLE)
 ENDIF(APPLE)
 
 add_executable( vvv WIN32 MACOSX_BUNDLE ${SRCS} )
+if(APPLE)
+  # VVV.app / Contents/MacOS/VVV, as the upstream macOS releases were named
+  set_target_properties( vvv PROPERTIES OUTPUT_NAME VVV )
+endif(APPLE)
 
 if(APPLE)
   # configure CMake to use a custom Info.plist
@@ -160,7 +164,7 @@ install( TARGETS vvv DESTINATION . )
 
 if( APPLE )
   # copy the Firebird 5 runtime (embedded engine = libfbclient + plugins/libEngine13), Resources, not Frameworks: it contains data files; vvv.cpp points FIREBIRD at it
-  set( FB_BUNDLE_DIR vvv.app/Contents/Resources/firebird )
+  set( FB_BUNDLE_DIR VVV.app/Contents/Resources/firebird )
   install( DIRECTORY ${FIREBIRD_ROOT}/lib ${FIREBIRD_ROOT}/intl ${FIREBIRD_ROOT}/tzdata
            DESTINATION ${FB_BUNDLE_DIR} USE_SOURCE_PERMISSIONS )
   # only the plugins an embedded connection needs (no sample crypt, UDR, trace, profiler)
@@ -186,8 +190,8 @@ endif( UNIX AND NOT APPLE )
 if( UNIX )
   # set the installation path of the executable file and the resources (in OS X they are inside the bundle )
   if( APPLE )
-    set( EXECUTABLE_INTALL_PATH vvv.app/Contents/MacOS )
-    set( RESOURCES_INTALL_PATH vvv.app/Contents/Resources )
+    set( EXECUTABLE_INTALL_PATH VVV.app/Contents/MacOS )
+    set( RESOURCES_INTALL_PATH VVV.app/Contents/Resources )
   else( APPLE )
     set( EXECUTABLE_INTALL_PATH . )
     set( RESOURCES_INTALL_PATH . )
@@ -258,7 +262,13 @@ if( UNIX )
 #           PATTERN ".svn" EXCLUDE )
 
   # copy other files to the installation path
-  install( FILES ${PROJECT_SOURCE_DIR}/vvv-struct-update.fdb 
+  # the macOS build ships a Firebird 5 (ODS 13) copy; Windows/Linux keep the Firebird 2 one
+  if( APPLE )
+    set( STRUCT_UPDATE_DB ${PROJECT_SOURCE_DIR}/osx_specific/vvv-struct-update.fdb )
+  else( APPLE )
+    set( STRUCT_UPDATE_DB ${PROJECT_SOURCE_DIR}/vvv-struct-update.fdb )
+  endif( APPLE )
+  install( FILES ${STRUCT_UPDATE_DB}
                  ${PROJECT_SOURCE_DIR}/VVV.fbk
                  ${PROJECT_SOURCE_DIR}/help/en/vvv.htb
                  DESTINATION ${RESOURCES_INTALL_PATH} )  # Contents/Resources on APPLE, see CUtils::GetDataFilesPath
@@ -267,5 +277,5 @@ endif( UNIX )
 
 if( APPLE )
   # must stay the last install rule: fixes library references, bundles wxWidgets/TagLib, signs
-  install( CODE "execute_process( COMMAND ${PROJECT_SOURCE_DIR}/MACOSX_fixup_bundle.sh \"\${CMAKE_INSTALL_PREFIX}/vvv.app\" COMMAND_ERROR_IS_FATAL ANY )" )
+  install( CODE "execute_process( COMMAND ${PROJECT_SOURCE_DIR}/MACOSX_fixup_bundle.sh \"\${CMAKE_INSTALL_PREFIX}/VVV.app\" COMMAND_ERROR_IS_FATAL ANY )" )
 endif( APPLE )
