@@ -93,11 +93,16 @@ while read -r f; do
   done
 done < <(macho_files)
 
-# --- sign (install_name_tool invalidates signatures): libraries first, then the bundle
+# --- sign (install_name_tool invalidates signatures): libraries first, then the bundle.
+# Ad-hoc by default; VVV_SIGN_IDENTITY="Developer ID Application: ..." adds hardened runtime and a
+# timestamp, as notarization requires. No entitlements needed: all code carries the same Team ID.
+IDENTITY="${VVV_SIGN_IDENTITY:--}"
+SIGN_OPTS=(--force --sign "${IDENTITY}")
+[ "${IDENTITY}" = "-" ] || SIGN_OPTS+=(--options runtime --timestamp)
 while read -r f; do
-  [ "$f" = "${EXECFILE}" ] || codesign --force --sign - "$f" 2>/dev/null
+  [ "$f" = "${EXECFILE}" ] || codesign "${SIGN_OPTS[@]}" "$f"
 done < <(macho_files)
-codesign --force --sign - "${BUNDLEPATH}"
+codesign "${SIGN_OPTS[@]}" "${BUNDLEPATH}"
 
 # --- gate: nothing may point outside the bundle, /System or /usr/lib
 bad=0
