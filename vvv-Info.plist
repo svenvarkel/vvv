@@ -24,7 +24,7 @@
 	<key>CFBundleIconFile</key>
 	<string>vvv.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.vvv</string>
+	<string>ee.wasabi.soft.vvv</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

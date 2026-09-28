@@ -73,8 +73,8 @@ Reviewed 2026-09-28 (Codex security review, findings verified).
   but do not store a real password there if you connect to a remote Firebird server.
 - The bundled libraries (Firebird, wxWidgets, TagLib, image and compression libraries) are frozen at
   build time: rebuild to pick up their security fixes.
-- Before giving the app to others: Developer ID signature with hardened runtime, notarization, a real
-  bundle identifier (now `com.yourcompany.vvv`) and pinned dependency versions.
+- Before giving the app to others: Developer ID signature with hardened runtime, notarization and
+  pinned dependency versions. The bundle identifier is `ee.wasabi.soft.vvv`.
 
 ## License
 
