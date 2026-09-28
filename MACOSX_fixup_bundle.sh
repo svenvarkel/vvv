@@ -38,9 +38,17 @@ external_deps() {
 # A library is referenced by several names (libwebp.7.dylib -> libwebp.7.2.0.dylib): it is copied once under its
 # real name and the other names become symlinks, so dyld loads a single image.
 # ponytail: O(files x deps) otool calls per pass, fine for a bundle of ~40 dylibs
+resolve() {  # like realpath, which macOS only has since 13
+  local p="$1" t
+  while [ -L "$p" ]; do
+    t=$(readlink "$p")
+    case "$t" in /*) p="$t" ;; *) p="$(dirname "$p")/$t" ;; esac
+  done
+  echo "$(cd "$(dirname "$p")" && pwd -P)/$(basename "$p")"
+}
 add_lib() {  # $1 = a library path in the Homebrew prefix
   local real canon alias
-  real=$(realpath "$1"); canon=$(basename "$real"); alias=$(basename "$1")
+  real=$(resolve "$1"); canon=$(basename "$real"); alias=$(basename "$1")
   if [ ! -f "${FWPATH}/${canon}" ]; then
     cp "$real" "${FWPATH}/${canon}"
     chmod u+w "${FWPATH}/${canon}"

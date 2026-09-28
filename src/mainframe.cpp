@@ -2213,7 +2213,7 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 				errorOpeningDB = true;
 				break;
 			case CDataErrorException::ecWrongODS:
-				CUtils::MsgErr( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nConvert it with scripts/migrate-catalog.sh (see README.md). The original file is not modified.") );
+				CUtils::MsgErr( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nHow to convert it: https://github.com/svenvarkel/vvv#converting-catalogs-from-vvv-15-and-older\nThe original file is not modified.") );
 				errorOpeningDB = true;
 				break;
 			case CDataErrorException::ecServerNotFound:
