@@ -26,7 +26,7 @@ arch -x86_64 /usr/bin/true 2>/dev/null || {
   echo "Rosetta is required: softwareupdate --install-rosetta --agree-to-license" >&2; exit 1; }
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-DEPS="${DEPS_DIR:-${ROOT}/deps}"
+DEPS="${ROOT}/deps"
 "${ROOT}/scripts/fetch-firebird.sh" >/dev/null
 NEWFB="${DEPS}/fb5/Resources"
 
