@@ -35,6 +35,24 @@ The app is not notarized yet. On first launch, macOS may block it: open
 *System Settings → Privacy & Security* and choose *Open Anyway*, or run
 `xattr -dr com.apple.quarantine VVV.app`.
 
+## Release build (signed and notarized)
+
+Needs an Apple Developer ID. One-time setup:
+
+1. Create a **Developer ID Application** certificate (developer.apple.com or Xcode) and keep it in the keychain.
+2. Store notarization credentials in the keychain (asks for an app-specific password from appleid.apple.com):
+   `xcrun notarytool store-credentials vvv-notary --apple-id <apple id> --team-id <TEAMID>`
+
+Then:
+
+```bash
+VVV_SIGN_IDENTITY="Developer ID Application: <company> (<TEAMID>)" \
+VVV_NOTARY_PROFILE=vvv-notary scripts/release-macos.sh
+```
+
+It builds from scratch in `build-release/`, signs every binary with the hardened runtime (no entitlements
+needed), packs `VVV-<version>-arm64.dmg`, notarizes and staples it, and prints its SHA-256.
+
 ## Converting catalogs from VVV 1.5 and older
 
 Old catalogs use the Firebird 2 on-disk format (ODS 11), and Firebird 5 cannot open it.
