@@ -58,6 +58,24 @@ file stays byte-identical. The target is never overwritten.
   so the next action fails with `Transaction::Start ... invalid database handle`. Quit with Cmd-Q
   instead of `kill`.
 
+## Security notes
+
+Reviewed 2026-09-28 (Codex security review, findings verified).
+
+- The app opens no network ports and makes no network connections, unless you configure a remote
+  Firebird server in the options. It writes only catalog files, `~/Library/Preferences/VVV Preferences`
+  and Firebird lock files in `/tmp/firebird` (mode 0770, owner only).
+- Untrusted input reaches C/C++ parsers: audio tags of files on cataloged volumes (TagLib), and catalogs
+  (`.vvv`) someone else gives you (Firebird). Treat foreign catalogs and crafted media like any other
+  file you open with a native app.
+- Search terms and names are escaped before they go into SQL; no injection path was found.
+- The Firebird password in the preferences is only obfuscated. It means nothing for local catalogs,
+  but do not store a real password there if you connect to a remote Firebird server.
+- The bundled libraries (Firebird, wxWidgets, TagLib, image and compression libraries) are frozen at
+  build time: rebuild to pick up their security fixes.
+- Before giving the app to others: Developer ID signature with hardened runtime, notarization, a real
+  bundle identifier (now `com.yourcompany.vvv`) and pinned dependency versions.
+
 ## License
 
 GPL v2 or later, see [COPYING](COPYING). Bundled components keep their own licenses:

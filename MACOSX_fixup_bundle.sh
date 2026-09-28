@@ -85,6 +85,14 @@ if ! otool -l "${EXECFILE}" | grep -q '@executable_path/../Frameworks$'; then
   install_name_tool -add_rpath @executable_path/../Frameworks "${EXECFILE}" 2>/dev/null
 fi
 
+# --- drop runpaths that point outside the bundle (Homebrew libraries carry their Cellar lib dir):
+# dyld would search them before the bundle for @rpath libraries
+while read -r f; do
+  for p in $(otool -l "$f" | awk '/LC_RPATH/ {getline; getline; print $2}' | grep -v '^@'); do
+    install_name_tool -delete_rpath "$p" "$f" 2>/dev/null
+  done
+done < <(macho_files)
+
 # --- sign (install_name_tool invalidates signatures): libraries first, then the bundle
 while read -r f; do
   [ "$f" = "${EXECFILE}" ] || codesign --force --sign - "$f" 2>/dev/null
@@ -107,6 +115,13 @@ while read -r f; do
       bad=1
     fi
   done
+done < <(macho_files)
+# and no runpath may point outside the bundle
+while read -r f; do
+  if otool -l "$f" | awk '/LC_RPATH/ {getline; getline; print $2}' | grep -v '^@'; then
+    echo "external LC_RPATH in $f" >&2
+    bad=1
+  fi
 done < <(macho_files)
 [ $bad -eq 0 ] || exit 1
 echo "VVV.app is self-contained"

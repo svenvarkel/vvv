@@ -13,7 +13,8 @@
 set -euo pipefail
 
 VVV15_URL="https://sourceforge.net/projects/vvvapp/files/VVV/1.5/VVV-1.5-x86_64.dmg/download"
-VVV15_MD5=d5f11fdd48551b1a1e4cfcc467112e12
+# SourceForge publishes MD5 d5f11fdd48551b1a1e4cfcc467112e12; SHA-256 taken from that verified file
+VVV15_SHA256=94605c4466f1706c1445f6a6e4ea44a2a4f306197f8fe435daac81dd36c92ca6
 TABLES="VOLUMES PATHS FILES FILES_AUDIO_METADATA VIRTUAL_PATHS VIRTUAL_FILES SERVICE"
 
 SRC="${1:?usage: $0 old.vvv [new.vvv]}"
@@ -36,7 +37,7 @@ OLDFB="${DEPS}/fb21"
 if [ ! -x "${OLDFB}/bin/gbak" ]; then
   DMG="${DEPS}/VVV-1.5-x86_64.dmg"
   [ -f "${DMG}" ] || curl -fL -o "${DMG}" "${VVV15_URL}"
-  [ "$(md5 -q "${DMG}")" = "${VVV15_MD5}" ] || { echo "checksum mismatch: ${DMG}" >&2; exit 1; }
+  echo "${VVV15_SHA256}  ${DMG}" | shasum -a 256 -c - >/dev/null || { echo "checksum mismatch: ${DMG}" >&2; exit 1; }
   MNT="$(mktemp -d)"
   hdiutil attach -nobrowse -readonly -mountpoint "${MNT}" "${DMG}" >/dev/null
   cp -R "${MNT}/VVV.app/Contents/MacOS/firebird" "${OLDFB}"
