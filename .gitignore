@@ -23,6 +23,9 @@ compile_commands.json
 *.app/
 *.dmg
 
+# Local test catalogs (testdata/ext_drive_catalog.fb5.pristine.vvv: migrated real catalog, 3.78M files)
+/testdata/
+
 # Catalogs and backups made while testing (shipped VVV.fbk and vvv-struct-update.fdb stay tracked)
 *.vvv
 /*.fbk
