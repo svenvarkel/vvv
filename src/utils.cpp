@@ -160,10 +160,19 @@ int CUtils::GetFirstUnicodeDatabaseVersion(void) {
 	return firstUnicodeDatabaseVersion;
 }
 
+// folder of the files shipped with the program (VVV.fbk, vvv-struct-update.fdb, help):
+// Contents/Resources in the macOS bundle (codesign does not allow data files in Contents/MacOS), else the exe folder
+wxString CUtils::GetDataFilesPath(void) {
+#ifdef __WXMAC__
+	return wxStandardPaths::Get().GetResourcesDir();
+#else
+	wxFileName fn( wxStandardPaths::Get().GetExecutablePath() );
+	return fn.GetPath();
+#endif
+}
+
 wxString CUtils::GetStructUpdateDbName(void) {
-	wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-	wxFileName fn( appPath );
-	fn.SetFullName( strucUpdateDbName );
+	wxFileName fn( GetDataFilesPath(), strucUpdateDbName );
 	wxString fullName = fn.GetFullPath();
 	return fullName;
 }
@@ -192,9 +201,7 @@ wxString CUtils::Encrypt( wxString s ) {
 }
 
 wxString CUtils::GetHelpFileName(void) {
-	wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-	wxFileName fn( appPath );
-	fn.SetFullName( wxT("vvv") );
+	wxFileName fn( GetDataFilesPath(), wxT("vvv") );
 	wxString fullName = fn.GetFullPath();
 	return fullName;
 }

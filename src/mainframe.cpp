@@ -2212,6 +2212,10 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 				CUtils::MsgErr( _("Incorrect username or password for the following database:\n\n") + fileName );
 				errorOpeningDB = true;
 				break;
+			case CDataErrorException::ecWrongODS:
+				CUtils::MsgErr( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nHow to convert it: https://github.com/svenvarkel/vvv#converting-catalogs-from-vvv-15-and-older\nThe original file is not modified.") );
+				errorOpeningDB = true;
+				break;
 			case CDataErrorException::ecServerNotFound:
 				if( DBConnectionData.connectToServer )
 					CUtils::MsgErr( _("Unable to connect to the following server:\n\n") + serverName );
@@ -2267,10 +2271,7 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 		wxString caption = _("Convert to a new catalog");
 
 		// creates the name of the database backup file to restore
-		wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-		wxFileName fn(appPath);
-		wxString path = fn.GetPath( wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR );
-		wxString backupName = path + _T("VVV.fbk");
+		wxString backupName = wxFileName( CUtils::GetDataFilesPath(), _T("VVV.fbk") ).GetFullPath();
 		if( !wxFileExists(backupName) ) {
 			CUtils::MsgErr( _("Unable to find the database backup to restore.\n\nYou can try reinstalling the program to solve this problem.") );
 			return;
@@ -2498,10 +2499,7 @@ void CMainFrame::OnNEWClick( wxCommandEvent& WXUNUSED(event) )
 	wxString caption = _("New catalog");
 
 	// creates the name of the database backup file to restore
-	wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-	wxFileName fn(appPath);
-	wxString path = fn.GetPath( wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR );
-	wxString backupName = path + _T("VVV.fbk");
+	wxString backupName = wxFileName( CUtils::GetDataFilesPath(), _T("VVV.fbk") ).GetFullPath();
 	if( !wxFileExists(backupName) ) {
 		CUtils::MsgErr( _("Unable to find the database backup to restore.\n\nYou can try reinstalling the program to solve this problem.") );
 		return;

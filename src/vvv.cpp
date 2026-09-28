@@ -137,7 +137,17 @@ bool CVvvApp::OnInit()
 	wxFileName fn( appPath );
 	appPath = fn.GetPath();
 	wxSetWorkingDirectory( appPath );
-	
+
+	// Firebird 5 embedded finds its root (plugins/libEngine13, firebird.msg, intl) through FIREBIRD;
+	// the runtime lives in Contents/Resources/firebird. An externally set FIREBIRD wins.
+	if( !wxGetEnv( wxT("FIREBIRD"), NULL ) ) {
+		wxFileName fbRoot( appPath, wxEmptyString );
+		fbRoot.RemoveLastDir();
+		fbRoot.AppendDir( wxT("Resources") );
+		fbRoot.AppendDir( wxT("firebird") );
+		wxSetEnv( wxT("FIREBIRD"), fbRoot.GetPath() );
+	}
+
 	s_macHelpMenuTitleName = _("&Help");
 #endif	
 

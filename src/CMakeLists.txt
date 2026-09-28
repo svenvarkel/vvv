@@ -9,11 +9,17 @@ include_directories( ${PROJECT_SOURCE_DIR}/src/ibpp/core
 ) 
 
 # look for TagLib
-find_path( TAGLIB_INCLUDE_PATH tag.h DOC "Path to TagLib header files" )
+find_path( TAGLIB_INCLUDE_PATH tag.h PATH_SUFFIXES taglib DOC "Path to TagLib header files" )
 message( STATUS "TagLib header files path: " ${TAGLIB_INCLUDE_PATH} )
 if(WIN32)
   find_file( TAGLIB_LIB_PATH_DEBUG tagd.lib DOC "Path to the DEBUG TagLib library" )
   find_file( TAGLIB_LIB_PATH_RELEASE tag.lib DOC "Path to the RELEASE TagLib library" )
+elseif(APPLE)
+  # Homebrew only ships the shared library; MACOSX_fixup_bundle.sh copies it into the bundle
+  find_library( TAGLIB_LIB tag )
+  if( NOT TAGLIB_LIB )
+    message( FATAL_ERROR "Unable to find TagLib" )
+  endif( NOT TAGLIB_LIB )
 else(WIN32)
   find_library( TAGLIB_LIB libtag.a PATHS /usr/lib /usr/local/lib )
   if( NOT TAGLIB_LIB )
@@ -24,7 +30,9 @@ else(WIN32)
 endif(WIN32)
 
 include_directories( ${TAGLIB_INCLUDE_PATH} )
-add_definitions( -DTAGLIB_STATIC )
+if( NOT APPLE )
+  add_definitions( -DTAGLIB_STATIC )
+endif( NOT APPLE )
 
 if( WIN32 )
   add_definitions( -DIBPP_WINDOWS )
@@ -118,7 +126,16 @@ else(WIN32)
   target_link_libraries( vvv ${TAGLIB_LIB} )
 endif(WIN32)
 target_link_libraries(vvv data_interface ibpp ${wxWidgets_LIBRARIES})
-if( UNIX )
+if( APPLE )
+  # Firebird 5 runtime extracted from the official arm64 pkg by scripts/fetch-firebird.sh
+  set( FIREBIRD_ROOT ${PROJECT_SOURCE_DIR}/deps/fb5/Resources CACHE PATH "Firebird 5 Resources folder" )
+  find_library( FB_LIB fbclient PATHS ${FIREBIRD_ROOT}/lib NO_DEFAULT_PATH )
+  if( NOT FB_LIB )
+    message( FATAL_ERROR "Unable to find libfbclient in ${FIREBIRD_ROOT}/lib, run scripts/fetch-firebird.sh" )
+  endif( NOT FB_LIB )
+  message( STATUS "Firebird interface: " ${FB_LIB} )
+  target_link_libraries( vvv ${FB_LIB} )
+elseif( UNIX )
   # link to the Firebird client library
   # the last path is used for OS X where I have a local copy (not installed)
   find_library( FB_LIB fbembed PATHS /usr/lib /usr/local/lib /opt/firebird/lib ${PROJECT_SOURCE_DIR}/firebird_runtime/firebird )
@@ -134,7 +151,7 @@ if( UNIX )
 
 #  target_link_libraries( vvv -lfbembed )
   target_link_libraries( vvv ${FB_LIB} )
-endif( UNIX )
+endif()
 
 
 # installation stuff
@@ -142,12 +159,16 @@ endif( UNIX )
 install( TARGETS vvv DESTINATION . )
 
 if( APPLE )
-  # copy the Firebird runtime
-  install( DIRECTORY ${FB_EMBEDDED_PATH}/ DESTINATION vvv.app/Contents/MacOS USE_SOURCE_PERMISSIONS )
-  install( FILES ${FB_EMBEDDED_PATH}/firebird/firebird.msg DESTINATION vvv.app/Contents/MacOS/firebird/bin/firebird )
-  # fix filename references in the runtime
-  set( FIXUP_COMMAND ${PROJECT_SOURCE_DIR}/MACOSX_fixup_bundle.sh " " ${CMAKE_INSTALL_PREFIX}/vvv.app )
-  install( CODE "execute_process( COMMAND ${FIXUP_COMMAND} )" )
+  # copy the Firebird 5 runtime (embedded engine = libfbclient + plugins/libEngine13), Resources, not Frameworks: it contains data files; vvv.cpp points FIREBIRD at it
+  set( FB_BUNDLE_DIR vvv.app/Contents/Resources/firebird )
+  install( DIRECTORY ${FIREBIRD_ROOT}/lib ${FIREBIRD_ROOT}/intl ${FIREBIRD_ROOT}/tzdata
+           DESTINATION ${FB_BUNDLE_DIR} USE_SOURCE_PERMISSIONS )
+  # only the plugins an embedded connection needs (no sample crypt, UDR, trace, profiler)
+  install( FILES ${FIREBIRD_ROOT}/plugins/libEngine13.dylib ${FIREBIRD_ROOT}/plugins/libSrp.dylib ${FIREBIRD_ROOT}/plugins/libLegacy_Auth.dylib
+           DESTINATION ${FB_BUNDLE_DIR}/plugins )
+  install( FILES ${FIREBIRD_ROOT}/firebird.conf ${FIREBIRD_ROOT}/firebird.msg ${FIREBIRD_ROOT}/plugins.conf
+                 ${FIREBIRD_ROOT}/databases.conf ${FIREBIRD_ROOT}/security5.fdb ${FIREBIRD_ROOT}/License.txt
+           DESTINATION ${FB_BUNDLE_DIR} )
 endif( APPLE )
 
 if( UNIX AND NOT APPLE )
@@ -240,8 +261,12 @@ if( UNIX )
   install( FILES ${PROJECT_SOURCE_DIR}/vvv-struct-update.fdb 
                  ${PROJECT_SOURCE_DIR}/VVV.fbk
                  ${PROJECT_SOURCE_DIR}/help/en/vvv.htb
-                 DESTINATION ${EXECUTABLE_INTALL_PATH} )
+                 DESTINATION ${RESOURCES_INTALL_PATH} )  # Contents/Resources on APPLE, see CUtils::GetDataFilesPath
 
 endif( UNIX )
 
-
+if( APPLE )
+  # must stay the last install rule: fixes library references, bundles wxWidgets/TagLib, signs
+  # fix library references, bundle wxWidgets/TagLib, sign
+  install( CODE "execute_process( COMMAND ${PROJECT_SOURCE_DIR}/MACOSX_fixup_bundle.sh \"\${CMAKE_INSTALL_PREFIX}/vvv.app\" COMMAND_ERROR_IS_FATAL ANY )" )
+endif( APPLE )
