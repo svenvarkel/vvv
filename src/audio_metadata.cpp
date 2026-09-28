@@ -61,7 +61,7 @@ bool CAudioMetadata::ReadAudioMetadata( wxString fileName, CFilesAudioMetadata& 
 
 	if( f.tag() ) {
 		wxString s;
-		TagLib::uint i;
+		unsigned int i;
 
 		TagLib::Tag *tag = f.tag();
 

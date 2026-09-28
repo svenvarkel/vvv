@@ -86,6 +86,7 @@ public:
 
 	// returns the name of the database containing the catalog structure changes, used to dynamically update a catalog
 	static wxString GetStructUpdateDbName(void);
+	static wxString GetDataFilesPath(void);
 
 	// encrypts/decrypts a string with a simple XOR
 	static wxString Encrypt( wxString s );

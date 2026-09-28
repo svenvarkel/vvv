@@ -35,7 +35,7 @@ class CDataErrorException : public runtime_error {
 public:
 
 	// cause of the error
-	enum ErrorCause { ecUnique, ecReferentialIntegrity, ecCheck, ecServerNotFound, ecDatabaseNotFound, ecWrongUsernameOrPassword };
+	enum ErrorCause { ecUnique, ecReferentialIntegrity, ecCheck, ecServerNotFound, ecDatabaseNotFound, ecWrongUsernameOrPassword, ecWrongODS };
 
 	CDataErrorException( wxString errMsg, ErrorCause ec );
 
