@@ -48,7 +48,8 @@ scripts/migrate-catalog.sh ~/Catalogs/drives.vvv new.vvv    # or pick the name
 The script downloads the VVV 1.5 DMG from SourceForge to get its Firebird 2.1 engine,
 which runs under Rosetta (`softwareupdate --install-rosetta` if needed). It backs up the
 old catalog with that engine, restores the backup with Firebird 5, and compares the row
-counts of every table. The original file is only read. The target is never overwritten.
+counts of every table. The old engine only works on a copy (an APFS clone when possible), so the original
+file stays byte-identical. The target is never overwritten.
 
 ## Known issues
 

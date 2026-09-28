@@ -5,7 +5,8 @@
 #
 #   scripts/migrate-catalog.sh old.vvv [new.vvv]
 #
-# The old file is only read. The new file is written next to it (default: old-fb5.vvv),
+# The old engine updates the header of every database it opens, so it only gets a copy
+# (an APFS clone: instant, no extra space). The new file is written next to it (default: old-fb5.vvv),
 # row counts are compared, and only then the result is moved into place.
 # Needs Rosetta: the old Firebird engine (from the VVV 1.5 DMG) is x86_64 only.
 
@@ -59,12 +60,14 @@ WORK="$(mktemp -d "${DST}.XXXX")"
 # the old engine leaves its lock manager daemon behind
 trap 'rm -rf "${WORK}"; pkill -f "${OLDFB}/bin/fb_lock_mgr" || true' EXIT
 
+# a clone when source and target share an APFS volume, a full copy otherwise
+cp -c "${SRC}" "${WORK}/source.vvv" 2>/dev/null || cp "${SRC}" "${WORK}/source.vvv"
 echo "backup (Firebird 2.1): ${SRC}"
-old gbak -b -g "${SRC}" "${WORK}/catalog.fbk"
+old gbak -b -g "${WORK}/source.vvv" "${WORK}/catalog.fbk"
 echo "restore (Firebird 5): ${WORK}/catalog.vvv"
 new gbak -c -page_size 8192 "${WORK}/catalog.fbk" "${WORK}/catalog.vvv"
 
-counts old "${SRC}" > "${WORK}/old.txt"
+counts old "${WORK}/source.vvv" > "${WORK}/old.txt"
 counts new "${WORK}/catalog.vvv" > "${WORK}/new.txt"
 if ! diff "${WORK}/old.txt" "${WORK}/new.txt"; then
   echo "row counts differ, nothing written" >&2; exit 1
