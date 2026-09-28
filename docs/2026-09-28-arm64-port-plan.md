@@ -82,3 +82,17 @@ Codex (gpt-5.6-sol), findings verified against the code:
    and never overwrites an existing target. The original ODS 11 file is only read. In-place `UpgradeDatabase` only runs when
    `DB_VERSION` < expected; a catalog from 1.5 is already current. Rollback = rerun the migration from the original.
 5. **Low, rejected.** History preservation is part of the fork Sven asked for ("kas ma võiks teha forki enda githubi alla").
+
+## Diff review (Codex, 2026-09-28)
+
+- P1 `realpath` needs macOS 13+ → replaced with a `readlink` loop. Fixed.
+- P2 ODS 11 message pointed to `scripts/`, which the installed app does not have → links the README section. Fixed.
+- Follow-up: gate does not prove `@loader_path`/`@executable_path` targets or the effective rpath chain.
+  Covered by the runtime check (`DYLD_PRINT_LIBRARIES=1`, nothing loaded from outside the bundle or OS). Not changed.
+
+## Known issues
+
+- The Firebird engine traps SIGTERM: it shuts down all attachments and leaves the process running, so the
+  next UI action fails with `Transaction::Start ... 335544324 invalid database handle`. Seen after `kill -TERM`
+  during testing (reproduced 2026-09-28). Cmd-Q and closing the window are not affected.
+- Search and cataloging a volume through the GUI have not been smoke-tested yet (no GUI driver on the dev Mac).
