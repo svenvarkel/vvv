@@ -328,6 +328,7 @@ public:
     wxToolBar* m_ToolbarCtrl;
     wxMenu* m_fileMenu;
     wxStatusBar* m_StatusBar;
+    wxButton* m_AppearanceButton;  // sun/moon in the status bar, macOS only
     /// Control identifiers
     enum {
         ID_MAIN_FRAME = 10006,
@@ -482,6 +483,7 @@ private:
 
     // if true show alternate row colors in the list controls
     bool m_AlternateRowColors;
+    int m_Appearance;  // 0 = system, 1 = light, 2 = dark
 
 	// pointers to some windows used in the main frame
 	CRightPaneList* m_listCtl;	// the list control
@@ -565,6 +567,9 @@ private:
 	void HideSearchView(void);
 	// redraws the current view (conceptually equivalent to switching to another view and back to the original)
 	void RefreshCurrentView(void);
+	static void ApplyAppearance( int appearance );
+	void CreateAppearanceButton(void);
+	void UpdateAppearanceButton(void);
 
 	// searches a physical folder for files, appends them to the list control, then recursion
 	void SearchPhysicalFolder( long folderID, long volumeID, const wxString& wh );
