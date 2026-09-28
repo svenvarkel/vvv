@@ -50,6 +50,13 @@ which runs under Rosetta (`softwareupdate --install-rosetta` if needed). It back
 old catalog with that engine, restores the backup with Firebird 5, and compares the row
 counts of every table. The original file is only read. The target is never overwritten.
 
+## Known issues
+
+- Search and cataloging a volume have not been tested through the GUI of this build yet.
+- The Firebird engine traps SIGTERM: it closes all database connections and leaves the app running,
+  so the next action fails with `Transaction::Start ... invalid database handle`. Quit with Cmd-Q
+  instead of `kill`.
+
 ## License
 
 GPL v2 or later, see [COPYING](COPYING). Bundled components keep their own licenses:

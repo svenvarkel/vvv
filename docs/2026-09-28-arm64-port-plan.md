@@ -92,7 +92,4 @@ Codex (gpt-5.6-sol), findings verified against the code:
 
 ## Known issues
 
-- The Firebird engine traps SIGTERM: it shuts down all attachments and leaves the process running, so the
-  next UI action fails with `Transaction::Start ... 335544324 invalid database handle`. Seen after `kill -TERM`
-  during testing (reproduced 2026-09-28). Cmd-Q and closing the window are not affected.
-- Search and cataloging a volume through the GUI have not been smoke-tested yet (no GUI driver on the dev Mac).
+Moved to [README.md](../README.md#known-issues).

@@ -128,7 +128,7 @@ endif(WIN32)
 target_link_libraries(vvv data_interface ibpp ${wxWidgets_LIBRARIES})
 if( APPLE )
   # Firebird 5 runtime extracted from the official arm64 pkg by scripts/fetch-firebird.sh
-  set( FIREBIRD_ROOT ${PROJECT_SOURCE_DIR}/deps/fb5/Resources CACHE PATH "Firebird 5 Resources folder" )
+  set( FIREBIRD_ROOT ${PROJECT_SOURCE_DIR}/deps/fb5/Resources )
   find_library( FB_LIB fbclient PATHS ${FIREBIRD_ROOT}/lib NO_DEFAULT_PATH )
   if( NOT FB_LIB )
     message( FATAL_ERROR "Unable to find libfbclient in ${FIREBIRD_ROOT}/lib, run scripts/fetch-firebird.sh" )
@@ -267,6 +267,5 @@ endif( UNIX )
 
 if( APPLE )
   # must stay the last install rule: fixes library references, bundles wxWidgets/TagLib, signs
-  # fix library references, bundle wxWidgets/TagLib, sign
   install( CODE "execute_process( COMMAND ${PROJECT_SOURCE_DIR}/MACOSX_fixup_bundle.sh \"\${CMAKE_INSTALL_PREFIX}/vvv.app\" COMMAND_ERROR_IS_FATAL ANY )" )
 endif( APPLE )

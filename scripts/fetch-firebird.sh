@@ -10,7 +10,7 @@ FB_SHA256=0c3495ec457720f3b3b51e1be0f36485f589732d6af38c9b04f1eb171d8d5509
 FB_URL="https://github.com/FirebirdSQL/firebird/releases/download/v5.0.4/Firebird-${FB_VERSION}-macos-arm64.pkg"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-DEPS="${DEPS_DIR:-${ROOT}/deps}"
+DEPS="${ROOT}/deps"
 PKG="${DEPS}/Firebird-${FB_VERSION}-macos-arm64.pkg"
 
 mkdir -p "${DEPS}"
