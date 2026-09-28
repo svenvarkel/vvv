@@ -741,6 +741,9 @@ bool CMainFrame::Create( wxWindow* parent, wxWindowID id, const wxString& captio
 	pConfig->Read( wxT("ForceEnglish"), &m_forceEnglishLanguage, false );
 	pConfig->Read( wxT("LongTaskBeepTime"), &m_BeepTime, 5 );
 	pConfig->Read( wxT("CatalogAudioMetadata"), &m_CatalogAudioMetadata, true );
+	pConfig->Read( wxT("Appearance"), &m_Appearance, 0 );
+	ApplyAppearance( m_Appearance );
+	CreateAppearanceButton();
 	pConfig->SetPath(wxT("/Settings/DatabaseServer"));
 	pConfig->Read( wxT("ConnectToServer"), &DBConnectionData.connectToServer, false );
 	DBConnectionData.serverName = pConfig->Read( wxT("ServerName"), wxEmptyString );
@@ -798,6 +801,7 @@ void CMainFrame::Init()
     m_ToolbarCtrl = NULL;
     m_fileMenu = NULL;
     m_StatusBar = NULL;
+    m_AppearanceButton = NULL;
 ////@end CMainFrame member initialisation
 
     m_SearchPanel = NULL;
@@ -1610,6 +1614,7 @@ CMainFrame::~CMainFrame() {
 	pConfig->Write( wxT("ReopenCatalog"), m_reopenLastUsedCatalog );
 	pConfig->Write( wxT("ForceEnglish"), m_forceEnglishLanguage );
 	pConfig->Write( wxT("LongTaskBeepTime"), m_BeepTime );
+	pConfig->Write( wxT("Appearance"), m_Appearance );
 	pConfig->Write( wxT("CatalogAudioMetadata"), m_CatalogAudioMetadata );
 	pConfig->SetPath(wxT("/Settings/DatabaseServer"));
 	pConfig->Write( wxT("ConnectToServer"), DBConnectionData.connectToServer );
@@ -2866,6 +2871,55 @@ void CMainFrame::HideSearchView(void) {
 	m_SearchPanel->Show( false );
 }
 
+// 0 = follow the system, 1 = light, 2 = dark; wxApp::SetAppearance is only implemented for macOS (wxWidgets 3.3+)
+void CMainFrame::ApplyAppearance( int appearance ) {
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+	static const wxApp::Appearance values[] = { wxApp::Appearance::System, wxApp::Appearance::Light, wxApp::Appearance::Dark };
+	if( appearance >= 0 && appearance < 3 )
+		wxTheApp->SetAppearance( values[appearance] );
+#endif
+}
+
+// a borderless button in an extra, last status bar field; a click cycles system -> light -> dark
+void CMainFrame::CreateAppearanceButton(void) {
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+	int widths[5] = { 300, 150, 150, -1, 44 };
+	m_StatusBar->SetFieldsCount( 5, widths );
+	m_AppearanceButton = new wxButton( m_StatusBar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT | wxBORDER_NONE );
+	m_AppearanceButton->SetFont( m_AppearanceButton->GetFont().Scaled( 1.5f ) );
+	m_AppearanceButton->Bind( wxEVT_BUTTON, [this]( wxCommandEvent& ) {
+		m_Appearance = ( m_Appearance + 1 ) % 3;
+		ApplyAppearance( m_Appearance );
+		UpdateAppearanceButton();
+	} );
+	auto placeButton = [this]() {
+		wxRect r;
+		if( m_StatusBar->GetFieldRect( 4, r ) ) m_AppearanceButton->SetSize( r );
+	};
+	m_StatusBar->Bind( wxEVT_SIZE, [placeButton]( wxSizeEvent& event ) { placeButton(); event.Skip(); } );
+	placeButton();
+	UpdateAppearanceButton();
+#endif
+}
+
+void CMainFrame::UpdateAppearanceButton(void) {
+	if( m_AppearanceButton == NULL ) return;
+	switch( m_Appearance ) {
+		case 1:
+			m_AppearanceButton->SetLabel( wxT("\u2600\uFE0E") );	// sun
+			m_AppearanceButton->SetToolTip( _("Light appearance. Click to switch to dark.") );
+			break;
+		case 2:
+			m_AppearanceButton->SetLabel( wxT("\u263E") );		// moon
+			m_AppearanceButton->SetToolTip( _("Dark appearance. Click to follow the system setting.") );
+			break;
+		default:
+			m_AppearanceButton->SetLabel( wxT("\u25D0") );		// half circle
+			m_AppearanceButton->SetToolTip( _("Appearance follows the system. Click to switch to light.") );
+			break;
+	}
+}
+
 void CMainFrame::RefreshCurrentView(void) {
 	switch( m_CurrentView ) {
 		case cvPhysical:
@@ -3373,6 +3427,7 @@ void CMainFrame::OnPreferencesClick( wxCommandEvent& WXUNUSED(event) )
 	dlg.SetBeepTime( m_BeepTime );
 	dlg.SetCatalogAudioMetadata( m_CatalogAudioMetadata );
     dlg.SetAlternateRowColors( m_AlternateRowColors );
+	dlg.SetAppearance( m_Appearance );
 	if( dlg.ShowModal() ) {
 		m_reopenLastUsedCatalog = dlg.GetReopenCatalog();
 		m_amdColumnsToShow = dlg.GetAmdColumnsToShow();
@@ -3384,6 +3439,9 @@ void CMainFrame::OnPreferencesClick( wxCommandEvent& WXUNUSED(event) )
 		CLongTaskBeep::SetMinSecondsForBell( m_BeepTime );
 		m_CatalogAudioMetadata = dlg.GetCatalogAudioMetadata();
         m_AlternateRowColors = dlg.GetAlternateRowColors();
+		m_Appearance = dlg.GetAppearance();
+		ApplyAppearance( m_Appearance );
+		UpdateAppearanceButton();
 		RefreshCurrentView();	// if the user changes the columns to show
 	}
 
