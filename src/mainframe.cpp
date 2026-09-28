@@ -2464,6 +2464,7 @@ void CMainFrame::OnABOUTClick( wxCommandEvent& WXUNUSED(event) )
 	info.SetCopyright( _("Copyright (C) 2007-2024 The VVV Team") );
 	info.AddDeveloper( _("Fulvio Senore: main developer") );
 	info.AddDeveloper( _("\nJan Albartus: worked at the portable version and designed the application's icon") );
+	info.AddDeveloper( wxT("\nSven Varkel <sven@wasabi.ee>: ") + _("Apple Silicon port") );
 	info.AddArtist( _("This program uses icons from the Gnome, Ubuntu and Crystal icons projects") );
 	info.SetLicence( _("This is open source software, distributed under the GNU GENERAL PUBLIC LICENSE") );
 	info.AddTranslator( wxT("Zihan Zhu: ") + _("Simplified Chinese") );
