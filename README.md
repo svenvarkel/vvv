@@ -50,8 +50,10 @@ VVV_SIGN_IDENTITY="Developer ID Application: <company> (<TEAMID>)" \
 VVV_NOTARY_PROFILE=vvv-notary scripts/release-macos.sh
 ```
 
-It builds from scratch in `build-release/`, signs every binary with the hardened runtime (no entitlements
-needed), packs `VVV-<version>-arm64.dmg`, notarizes and staples it, and prints its SHA-256.
+It first builds static wxWidgets and TagLib for macOS 15 into `deps/prefix` (`scripts/build-deps-macos.sh`,
+about 3 minutes, once): Homebrew's bottles only run on the macOS they were built for. Then it builds from scratch
+in `build-release/`, signs every binary with the hardened runtime (no entitlements needed), checks that every
+binary is arm64 and needs at most macOS 15, packs `VVV-<version>-arm64.dmg`, notarizes and staples it, and prints its SHA-256.
 
 ## Converting catalogs from VVV 1.5 and older
 

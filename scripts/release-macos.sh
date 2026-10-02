@@ -22,11 +22,17 @@ if [ "${IDENTITY}" != "-" ]; then
     echo "signing identity not in the keychain: ${IDENTITY}" >&2; exit 1; }
 fi
 
+MIN_MACOS=15.0   # keep in sync with scripts/build-deps-macos.sh and LSMinimumSystemVersion in vvv-Info.plist
+DEPS="${ROOT}/deps/prefix"
 "${ROOT}/scripts/fetch-firebird.sh" >/dev/null
+"${ROOT}/scripts/build-deps-macos.sh"   # static wxWidgets + TagLib for macOS 15, not the Homebrew bottles
 rm -rf "${BUILD}"
-cmake -S "${ROOT}" -B "${BUILD}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${BUILD}/install" >/dev/null
+cmake -S "${ROOT}" -B "${BUILD}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${BUILD}/install" \
+  -DCMAKE_OSX_DEPLOYMENT_TARGET="${MIN_MACOS}" -DwxWidgets_CONFIG_EXECUTABLE="${DEPS}/bin/wx-config" \
+  -DCMAKE_PREFIX_PATH="${DEPS}" -DCMAKE_IGNORE_PREFIX_PATH="/opt/homebrew;/usr/local" >/dev/null
 cmake --build "${BUILD}" -j
-VVV_SIGN_IDENTITY="${IDENTITY}" cmake --install "${BUILD}" | tail -1   # MACOSX_fixup_bundle.sh signs
+# MACOSX_fixup_bundle.sh signs, and fails on any binary that is not arm64 or needs more than MIN_MACOS
+VVV_SIGN_IDENTITY="${IDENTITY}" VVV_MIN_MACOS="${MIN_MACOS}" cmake --install "${BUILD}" | tail -1
 
 APP="${BUILD}/install/VVV.app"
 codesign --verify --deep --strict "${APP}"

@@ -15,7 +15,8 @@ if(WIN32)
   find_file( TAGLIB_LIB_PATH_DEBUG tagd.lib DOC "Path to the DEBUG TagLib library" )
   find_file( TAGLIB_LIB_PATH_RELEASE tag.lib DOC "Path to the RELEASE TagLib library" )
 elseif(APPLE)
-  # Homebrew only ships the shared library; MACOSX_fixup_bundle.sh copies it into the bundle
+  # dev builds: Homebrew's shared library, copied into the bundle by MACOSX_fixup_bundle.sh;
+  # release builds: the static one from scripts/build-deps-macos.sh
   find_library( TAGLIB_LIB tag )
   if( NOT TAGLIB_LIB )
     message( FATAL_ERROR "Unable to find TagLib" )
@@ -30,9 +31,9 @@ else(WIN32)
 endif(WIN32)
 
 include_directories( ${TAGLIB_INCLUDE_PATH} )
-if( NOT APPLE )
+if( NOT APPLE OR TAGLIB_LIB MATCHES "\\.a$" )   # the release build links deps/prefix/lib/libtag.a
   add_definitions( -DTAGLIB_STATIC )
-endif( NOT APPLE )
+endif()
 
 if( WIN32 )
   add_definitions( -DIBPP_WINDOWS )
