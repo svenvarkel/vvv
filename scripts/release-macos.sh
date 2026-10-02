@@ -15,7 +15,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 ARCH="${VVV_ARCH:-arm64}"   # x86_64 for Intel Macs: a separate DMG, cross-compiled on Apple silicon
-BUILD="${ROOT}/build-release-${ARCH}"
+DIST="${ROOT}/dist"                # finished DMGs of both architectures
+BUILD="${ROOT}/build-release/${ARCH}" # this architecture's build tree, rebuilt from scratch
 IDENTITY="${VVV_SIGN_IDENTITY:--}"
 if [ "${IDENTITY}" != "-" ]; then
   : "${VVV_NOTARY_PROFILE:?set VVV_NOTARY_PROFILE, see the header of this script}"
@@ -45,12 +46,13 @@ VVV_SIGN_IDENTITY="${IDENTITY}" VVV_MIN_MACOS="${MIN_MACOS}" cmake --install "${
 APP="${BUILD}/install/VVV.app"
 codesign --verify --deep --strict "${APP}"
 VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${APP}/Contents/Info.plist")
-DMG="${BUILD}/VVV-${VERSION}-${ARCH}.dmg"
+DMG="${DIST}/VVV-${VERSION}-${ARCH}.dmg"
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "${STAGE}"' EXIT
 ditto "${APP}" "${STAGE}/VVV.app"
 ln -s /Applications "${STAGE}/Applications"
+mkdir -p "${DIST}"
 hdiutil create -quiet -volname "VVV ${VERSION}" -srcfolder "${STAGE}" -format UDZO -ov "${DMG}"
 
 if [ "${IDENTITY}" != "-" ]; then
