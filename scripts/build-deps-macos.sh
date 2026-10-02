@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Builds static wxWidgets and TagLib into deps/prefix for the release build (arm64, macOS 15+).
+# Builds static wxWidgets and TagLib into deps/prefix for the release build (macOS 15+): arm64 by default,
+# VVV_ARCH=x86_64 into deps/prefix-x86_64 (cross-compiled, works on Apple silicon).
 # Homebrew bottles target the macOS they were built on, so a bundle made from them only runs there.
 # wx uses its built-in jpeg/png/tiff/zlib/expat/regex: no third-party dylib ends up in VVV.app.
 # Dev builds keep using Homebrew; scripts/release-macos.sh calls this and points CMake here.
@@ -8,7 +9,7 @@
 set -euo pipefail
 
 MIN_MACOS=15.0
-ARCH=arm64
+ARCH="${VVV_ARCH:-arm64}"
 WX_VERSION=3.3.3
 WX_SHA256=81b09d6dd9f1ed9301f8c55a968a488d0491f264dc2bab19a7e407ac67009482
 WX_URL="https://github.com/wxWidgets/wxWidgets/releases/download/v${WX_VERSION}/wxWidgets-${WX_VERSION}.tar.bz2"
@@ -19,6 +20,7 @@ TAGLIB_URL="https://taglib.org/releases/taglib-${TAGLIB_VERSION}.tar.gz"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="${ROOT}/deps/src"
 PREFIX="${ROOT}/deps/prefix"
+[ "${ARCH}" = arm64 ] || PREFIX="${PREFIX}-${ARCH}"
 STAMP="wx ${WX_VERSION} taglib ${TAGLIB_VERSION} macos ${MIN_MACOS} ${ARCH}"
 
 if [ "$(cat "${PREFIX}/.stamp" 2>/dev/null)" = "${STAMP}" ]; then
@@ -55,11 +57,13 @@ cmake --install "${tb}/build" >/dev/null
 # --- wxWidgets
 tar xjf "${wx_tar}" -C "${tb}"
 mkdir "${tb}/wxbuild"
+CROSS=""   # configure must not try to run x86_64 test programs; expat's config.sub knows aarch64, not arm64
+[ "${ARCH}" = "$(uname -m)" ] || CROSS="--host=${ARCH}-apple-darwin --build=$(uname -m | sed s/arm64/aarch64/)-apple-darwin"
 (cd "${tb}/wxbuild" && "${tb}/wxWidgets-${WX_VERSION}/configure" --prefix="${PREFIX}" \
   --with-osx_cocoa --with-macosx-version-min="${MIN_MACOS}" --enable-macosx_arch="${ARCH}" \
   --disable-shared --disable-sys-libs --without-libwebp --without-liblzma --without-libcurl \
   --disable-webview --disable-mediactrl --disable-stc --disable-webrequest --disable-secretstore \
-  --disable-tests --without-subdirs > configure.out)
+  --disable-tests --without-subdirs ${CROSS} > configure.out)
 if grep -i 'unrecognized option' "${tb}/wxbuild/configure.out" "${tb}/wxbuild/config.log"; then
   echo "wx configure rejected an option" >&2; exit 1
 fi

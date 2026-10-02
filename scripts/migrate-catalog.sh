@@ -29,7 +29,7 @@ arch -x86_64 /usr/bin/true 2>/dev/null || {
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEPS="${ROOT}/deps"
-"${ROOT}/scripts/fetch-firebird.sh" >/dev/null
+VVV_ARCH=arm64 "${ROOT}/scripts/fetch-firebird.sh" >/dev/null   # runs here, on Apple silicon
 NEWFB="${DEPS}/fb5/Resources"
 
 # old Firebird 2.1 embedded runtime, taken from the VVV 1.5 DMG

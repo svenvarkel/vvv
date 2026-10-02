@@ -135,7 +135,7 @@ while read -r f; do
     bad=1
   fi
 done < <(macho_files)
-# release builds (VVV_MIN_MACOS=15.0, scripts/release-macos.sh): every Mach-O is arm64 only and needs at most that
+# release builds (VVV_MIN_MACOS=15.0, scripts/release-macos.sh): every Mach-O is VVV_ARCH only (default arm64), needs at most that
 # macOS. Dev builds link Homebrew bottles made for the host macOS and skip this.
 if [ -n "${VVV_MIN_MACOS:-}" ]; then
   plist_min=$(/usr/libexec/PlistBuddy -c 'Print LSMinimumSystemVersion' "${BUNDLEPATH}/Contents/Info.plist" 2>/dev/null || true)
@@ -145,7 +145,7 @@ if [ -n "${VVV_MIN_MACOS:-}" ]; then
   fi
   while read -r f; do
     archs=$(lipo -archs "$f" 2>/dev/null || true)
-    [ "$archs" = arm64 ] || { echo "architectures '${archs}' in $f, expected arm64" >&2; bad=1; }
+    [ "$archs" = "${VVV_ARCH:-arm64}" ] || { echo "architectures '${archs}' in $f, expected ${VVV_ARCH:-arm64}" >&2; bad=1; }
     # LC_BUILD_VERSION: "minos 15.0"; older binaries: LC_VERSION_MIN_MACOSX "version 12.7"
     minos=$(otool -l "$f" | awk '/LC_BUILD_VERSION/ {k="minos"} /LC_VERSION_MIN_MACOSX/ {k="version"}
                                  k && $1 == k {print $2; exit}')

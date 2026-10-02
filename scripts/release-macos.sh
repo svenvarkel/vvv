@@ -14,7 +14,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-BUILD="${ROOT}/build-release"
+ARCH="${VVV_ARCH:-arm64}"   # x86_64 for Intel Macs: a separate DMG, cross-compiled on Apple silicon
+BUILD="${ROOT}/build-release-${ARCH}"
 IDENTITY="${VVV_SIGN_IDENTITY:--}"
 if [ "${IDENTITY}" != "-" ]; then
   : "${VVV_NOTARY_PROFILE:?set VVV_NOTARY_PROFILE, see the header of this script}"
@@ -27,21 +28,24 @@ if [ "${IDENTITY}" != "-" ]; then
 fi
 
 MIN_MACOS=15.0   # keep in sync with scripts/build-deps-macos.sh and LSMinimumSystemVersion in vvv-Info.plist
-DEPS="${ROOT}/deps/prefix"
+DEPS="${ROOT}/deps/prefix"; FB="${ROOT}/deps/fb5"
+[ "${ARCH}" = arm64 ] || { DEPS="${DEPS}-${ARCH}"; FB="${FB}-${ARCH}"; }
+export VVV_ARCH="${ARCH}"
 "${ROOT}/scripts/fetch-firebird.sh" >/dev/null
 "${ROOT}/scripts/build-deps-macos.sh"   # static wxWidgets + TagLib for macOS 15, not the Homebrew bottles
 rm -rf "${BUILD}"
 cmake -S "${ROOT}" -B "${BUILD}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${BUILD}/install" \
+  -DCMAKE_OSX_ARCHITECTURES="${ARCH}" -DFIREBIRD_ROOT="${FB}/Resources" \
   -DCMAKE_OSX_DEPLOYMENT_TARGET="${MIN_MACOS}" -DwxWidgets_CONFIG_EXECUTABLE="${DEPS}/bin/wx-config" \
   -DCMAKE_PREFIX_PATH="${DEPS}" -DCMAKE_IGNORE_PREFIX_PATH="/opt/homebrew;/usr/local" >/dev/null
 cmake --build "${BUILD}" -j
-# MACOSX_fixup_bundle.sh signs, and fails on any binary that is not arm64 or needs more than MIN_MACOS
+# MACOSX_fixup_bundle.sh signs, and fails on any binary that is not ARCH (VVV_ARCH) or needs more than MIN_MACOS
 VVV_SIGN_IDENTITY="${IDENTITY}" VVV_MIN_MACOS="${MIN_MACOS}" cmake --install "${BUILD}" | tail -1
 
 APP="${BUILD}/install/VVV.app"
 codesign --verify --deep --strict "${APP}"
 VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${APP}/Contents/Info.plist")
-DMG="${BUILD}/VVV-${VERSION}-arm64.dmg"
+DMG="${BUILD}/VVV-${VERSION}-${ARCH}.dmg"
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "${STAGE}"' EXIT
