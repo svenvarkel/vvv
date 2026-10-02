@@ -20,6 +20,10 @@ if [ "${IDENTITY}" != "-" ]; then
   : "${VVV_NOTARY_PROFILE:?set VVV_NOTARY_PROFILE, see the header of this script}"
   security find-identity -v -p codesigning | grep -qF "${IDENTITY}" || {
     echo "signing identity not in the keychain: ${IDENTITY}" >&2; exit 1; }
+  # the profile lives in the data-protection (iCloud / Local Items) keychain, unreadable while the screen is
+  # locked: notarytool then reports "No Keychain password item found". Check before a 10-minute build.
+  xcrun notarytool history --keychain-profile "${VVV_NOTARY_PROFILE}" >/dev/null || {
+    echo "notary profile ${VVV_NOTARY_PROFILE} unreadable: keep the Mac unlocked, or run store-credentials" >&2; exit 1; }
 fi
 
 MIN_MACOS=15.0   # keep in sync with scripts/build-deps-macos.sh and LSMinimumSystemVersion in vvv-Info.plist
