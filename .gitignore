@@ -16,6 +16,9 @@ compile_commands.json
 # Downloaded third-party runtimes (scripts/fetch-firebird.sh, scripts/migrate-catalog.sh)
 /deps/
 
+# Release DMGs (scripts/release-macos.sh)
+/dist/
+
 # Build outputs
 *.o
 *.a

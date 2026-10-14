@@ -15,7 +15,8 @@ if(WIN32)
   find_file( TAGLIB_LIB_PATH_DEBUG tagd.lib DOC "Path to the DEBUG TagLib library" )
   find_file( TAGLIB_LIB_PATH_RELEASE tag.lib DOC "Path to the RELEASE TagLib library" )
 elseif(APPLE)
-  # Homebrew only ships the shared library; MACOSX_fixup_bundle.sh copies it into the bundle
+  # dev builds: Homebrew's shared library, copied into the bundle by MACOSX_fixup_bundle.sh;
+  # release builds: the static one from scripts/build-deps-macos.sh
   find_library( TAGLIB_LIB tag )
   if( NOT TAGLIB_LIB )
     message( FATAL_ERROR "Unable to find TagLib" )
@@ -30,9 +31,9 @@ else(WIN32)
 endif(WIN32)
 
 include_directories( ${TAGLIB_INCLUDE_PATH} )
-if( NOT APPLE )
+if( NOT APPLE OR TAGLIB_LIB MATCHES "\\.a$" )   # the release build links deps/prefix/lib/libtag.a
   add_definitions( -DTAGLIB_STATIC )
-endif( NOT APPLE )
+endif()
 
 if( WIN32 )
   add_definitions( -DIBPP_WINDOWS )
@@ -131,8 +132,8 @@ else(WIN32)
 endif(WIN32)
 target_link_libraries(vvv data_interface ibpp ${wxWidgets_LIBRARIES})
 if( APPLE )
-  # Firebird 5 runtime extracted from the official arm64 pkg by scripts/fetch-firebird.sh
-  set( FIREBIRD_ROOT ${PROJECT_SOURCE_DIR}/deps/fb5/Resources )
+  # Firebird 5 runtime extracted from the official pkg by scripts/fetch-firebird.sh (x86_64: deps/fb5-x86_64)
+  set( FIREBIRD_ROOT ${PROJECT_SOURCE_DIR}/deps/fb5/Resources CACHE PATH "Firebird 5 Resources folder" )
   find_library( FB_LIB fbclient PATHS ${FIREBIRD_ROOT}/lib NO_DEFAULT_PATH )
   if( NOT FB_LIB )
     message( FATAL_ERROR "Unable to find libfbclient in ${FIREBIRD_ROOT}/lib, run scripts/fetch-firebird.sh" )
