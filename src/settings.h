@@ -116,9 +116,6 @@ public:
     bool GetAlternateRowColors() const { return m_AlternateRowColors ; }
     void SetAlternateRowColors(bool value) { m_AlternateRowColors = value ; }
 
-    int GetAppearance() const { return m_Appearance ; }
-    void SetAppearance(int value) { m_Appearance = value ; }
-
     int GetBeepTime() const { return m_BeepTime ; }
     void SetBeepTime(int value) { m_BeepTime = value ; }
 
@@ -150,6 +147,9 @@ public:
     wxIcon GetIconResource( const wxString& name );
 ////@end CDialogSettings member function declarations
 
+    int GetAppearance() const { return m_Appearance ; }
+    void SetAppearance(int value) { m_Appearance = value ; }
+
     /// Should we show tooltips?
     static bool ShowToolTips();
 
@@ -175,7 +175,6 @@ public:
     bool m_CatalogAudioMetadata;
 private:
     int m_BeepTime;
-    int m_Appearance;  // 0 = system, 1 = light, 2 = dark
     bool m_ConnectServer;
     wxString m_Password;
     bool m_ReopenCatalog;
@@ -209,6 +208,8 @@ private:
         ID_DS_TEST_CONNECTION = 10068
     };
 ////@end CDialogSettings member variables
+
+    int m_Appearance;  // 0 = system, 1 = light, 2 = dark
 
 	bool TransferDataToWindow();
 	bool TransferDataFromWindow();

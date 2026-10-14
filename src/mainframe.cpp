@@ -801,8 +801,8 @@ void CMainFrame::Init()
     m_ToolbarCtrl = NULL;
     m_fileMenu = NULL;
     m_StatusBar = NULL;
-    m_AppearanceButton = NULL;
 ////@end CMainFrame member initialisation
+    m_AppearanceButton = NULL;
 
     m_SearchPanel = NULL;
     m_FilenameRadioBox = NULL;
@@ -953,6 +953,9 @@ void CMainFrame::CreateControls()
 	delete m_ToolbarCtrl;
 	SetToolBar( NULL );
 	CreateMacToolbar();
+
+	// Cmd-, opens the settings, as in every macOS app (the menu item is created in the DialogBlocks section)
+	GetMenuBar()->FindItem( wxID_PREFERENCES )->SetItemLabel( _("&Options...") + wxT("\tCtrl+,") );
 #endif
 
 	// creates the tree control used to show virtual folders
