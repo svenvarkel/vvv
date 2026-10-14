@@ -328,7 +328,6 @@ public:
     wxToolBar* m_ToolbarCtrl;
     wxMenu* m_fileMenu;
     wxStatusBar* m_StatusBar;
-    wxButton* m_AppearanceButton;  // sun/moon in the status bar, macOS only
     /// Control identifiers
     enum {
         ID_MAIN_FRAME = 10006,
@@ -360,6 +359,8 @@ public:
         ID_TREE_CONTROL = 10090
     };
 ////@end CMainFrame member variables
+
+    wxButton* m_AppearanceButton;  // sun/moon in the status bar, macOS only
 
 	// search panel member variables
     wxPanel* m_SearchPanel;
