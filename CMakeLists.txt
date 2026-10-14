@@ -1,7 +1,10 @@
 # The name of our project is "VVV". CMakeLists files in this project can
 # refer to the root source directory of the project as ${VVV_SOURCE_DIR} and
 # to the root binary directory of the project as ${VVV_BINARY_DIR}.
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.20)
+if(APPLE AND NOT CMAKE_OSX_ARCHITECTURES)
+  set( CMAKE_OSX_ARCHITECTURES arm64 CACHE STRING "" )
+endif()
 project (VVV)
 
 add_subdirectory( src ) 

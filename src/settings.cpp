@@ -135,6 +135,7 @@ CDialogSettings::~CDialogSettings()
 
 void CDialogSettings::Init()
 {
+    m_Appearance = 0;
 ////@begin CDialogSettings member initialisation
     m_BeepTimeCtrl = NULL;
     m_chkCatalogAudioMetadata = NULL;
@@ -187,6 +188,20 @@ void CDialogSettings::CreateControls()
 
     m_BeepTimeCtrl = new wxSpinCtrl( itemPanel2, ID_SPIN_BEEP_TIME, wxT("0"), wxDefaultPosition, wxSize(60, -1), wxSP_ARROW_KEYS, 0, 10000, 0 );
     itemBoxSizer7->Add(m_BeepTimeCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+    // light/dark appearance: wxApp::SetAppearance is only implemented for macOS (wxWidgets 3.3+)
+    wxBoxSizer* appearanceSizer = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer4->Add(appearanceSizer, 0, wxALIGN_LEFT|wxALL, 5);
+    appearanceSizer->Add(new wxStaticText( itemPanel2, wxID_STATIC, _("Appearance:") ), 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxTOP|wxBOTTOM, 5);
+    wxArrayString appearanceChoices;
+    appearanceChoices.Add(_("Same as the system"));
+    appearanceChoices.Add(_("Light"));
+    appearanceChoices.Add(_("Dark"));
+    wxChoice* appearanceCtrl = new wxChoice( itemPanel2, wxID_ANY, wxDefaultPosition, wxDefaultSize, appearanceChoices );
+    appearanceCtrl->SetValidator( wxGenericValidator(& m_Appearance) );
+    appearanceSizer->Add(appearanceCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+#endif
 
     itemBoxSizer4->Add(5, 5, 1, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 

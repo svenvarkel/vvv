@@ -20,11 +20,11 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>vvv.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.vvv</string>
+	<string>ee.wasabi.soft.vvv</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -33,10 +33,5 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.5.0.4</string>
-	<key>LSEnvironment</key>
-	<dict>
-		<key>FIREBIRD</key>
-		<string>.</string>
-	</dict>
 </dict>
 </plist>

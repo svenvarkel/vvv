@@ -741,6 +741,9 @@ bool CMainFrame::Create( wxWindow* parent, wxWindowID id, const wxString& captio
 	pConfig->Read( wxT("ForceEnglish"), &m_forceEnglishLanguage, false );
 	pConfig->Read( wxT("LongTaskBeepTime"), &m_BeepTime, 5 );
 	pConfig->Read( wxT("CatalogAudioMetadata"), &m_CatalogAudioMetadata, true );
+	pConfig->Read( wxT("Appearance"), &m_Appearance, 0 );
+	ApplyAppearance( m_Appearance );
+	CreateAppearanceButton();
 	pConfig->SetPath(wxT("/Settings/DatabaseServer"));
 	pConfig->Read( wxT("ConnectToServer"), &DBConnectionData.connectToServer, false );
 	DBConnectionData.serverName = pConfig->Read( wxT("ServerName"), wxEmptyString );
@@ -798,6 +801,7 @@ void CMainFrame::Init()
     m_ToolbarCtrl = NULL;
     m_fileMenu = NULL;
     m_StatusBar = NULL;
+    m_AppearanceButton = NULL;
 ////@end CMainFrame member initialisation
 
     m_SearchPanel = NULL;
@@ -1610,6 +1614,7 @@ CMainFrame::~CMainFrame() {
 	pConfig->Write( wxT("ReopenCatalog"), m_reopenLastUsedCatalog );
 	pConfig->Write( wxT("ForceEnglish"), m_forceEnglishLanguage );
 	pConfig->Write( wxT("LongTaskBeepTime"), m_BeepTime );
+	pConfig->Write( wxT("Appearance"), m_Appearance );
 	pConfig->Write( wxT("CatalogAudioMetadata"), m_CatalogAudioMetadata );
 	pConfig->SetPath(wxT("/Settings/DatabaseServer"));
 	pConfig->Write( wxT("ConnectToServer"), DBConnectionData.connectToServer );
@@ -2212,6 +2217,10 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 				CUtils::MsgErr( _("Incorrect username or password for the following database:\n\n") + fileName );
 				errorOpeningDB = true;
 				break;
+			case CDataErrorException::ecWrongODS:
+				CUtils::MsgErr( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nHow to convert it: https://github.com/svenvarkel/vvv#converting-catalogs-from-vvv-15-and-older\nThe original file is not modified.") );
+				errorOpeningDB = true;
+				break;
 			case CDataErrorException::ecServerNotFound:
 				if( DBConnectionData.connectToServer )
 					CUtils::MsgErr( _("Unable to connect to the following server:\n\n") + serverName );
@@ -2267,10 +2276,7 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 		wxString caption = _("Convert to a new catalog");
 
 		// creates the name of the database backup file to restore
-		wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-		wxFileName fn(appPath);
-		wxString path = fn.GetPath( wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR );
-		wxString backupName = path + _T("VVV.fbk");
+		wxString backupName = wxFileName( CUtils::GetDataFilesPath(), _T("VVV.fbk") ).GetFullPath();
 		if( !wxFileExists(backupName) ) {
 			CUtils::MsgErr( _("Unable to find the database backup to restore.\n\nYou can try reinstalling the program to solve this problem.") );
 			return;
@@ -2458,6 +2464,7 @@ void CMainFrame::OnABOUTClick( wxCommandEvent& WXUNUSED(event) )
 	info.SetCopyright( _("Copyright (C) 2007-2024 The VVV Team") );
 	info.AddDeveloper( _("Fulvio Senore: main developer") );
 	info.AddDeveloper( _("\nJan Albartus: worked at the portable version and designed the application's icon") );
+	info.AddDeveloper( wxT("\nSven Varkel <sven@wasabi.ee>: ") + _("Apple Silicon port") );
 	info.AddArtist( _("This program uses icons from the Gnome, Ubuntu and Crystal icons projects") );
 	info.SetLicence( _("This is open source software, distributed under the GNU GENERAL PUBLIC LICENSE") );
 	info.AddTranslator( wxT("Zihan Zhu: ") + _("Simplified Chinese") );
@@ -2498,10 +2505,7 @@ void CMainFrame::OnNEWClick( wxCommandEvent& WXUNUSED(event) )
 	wxString caption = _("New catalog");
 
 	// creates the name of the database backup file to restore
-	wxString appPath = wxStandardPaths::Get().GetExecutablePath();
-	wxFileName fn(appPath);
-	wxString path = fn.GetPath( wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR );
-	wxString backupName = path + _T("VVV.fbk");
+	wxString backupName = wxFileName( CUtils::GetDataFilesPath(), _T("VVV.fbk") ).GetFullPath();
 	if( !wxFileExists(backupName) ) {
 		CUtils::MsgErr( _("Unable to find the database backup to restore.\n\nYou can try reinstalling the program to solve this problem.") );
 		return;
@@ -2866,6 +2870,55 @@ void CMainFrame::ShowSearchView(void) {
 void CMainFrame::HideSearchView(void) {
 	StoreListControlSearchWidth();
 	m_SearchPanel->Show( false );
+}
+
+// 0 = follow the system, 1 = light, 2 = dark; wxApp::SetAppearance is only implemented for macOS (wxWidgets 3.3+)
+void CMainFrame::ApplyAppearance( int appearance ) {
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+	static const wxApp::Appearance values[] = { wxApp::Appearance::System, wxApp::Appearance::Light, wxApp::Appearance::Dark };
+	if( appearance >= 0 && appearance < 3 )
+		wxTheApp->SetAppearance( values[appearance] );
+#endif
+}
+
+// a borderless button in an extra, last status bar field; a click cycles system -> light -> dark
+void CMainFrame::CreateAppearanceButton(void) {
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+	int widths[5] = { 300, 150, 150, -1, 44 };
+	m_StatusBar->SetFieldsCount( 5, widths );
+	m_AppearanceButton = new wxButton( m_StatusBar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT | wxBORDER_NONE );
+	m_AppearanceButton->SetFont( m_AppearanceButton->GetFont().Scaled( 1.5f ) );
+	m_AppearanceButton->Bind( wxEVT_BUTTON, [this]( wxCommandEvent& ) {
+		m_Appearance = ( m_Appearance + 1 ) % 3;
+		ApplyAppearance( m_Appearance );
+		UpdateAppearanceButton();
+	} );
+	auto placeButton = [this]() {
+		wxRect r;
+		if( m_StatusBar->GetFieldRect( 4, r ) ) m_AppearanceButton->SetSize( r );
+	};
+	m_StatusBar->Bind( wxEVT_SIZE, [placeButton]( wxSizeEvent& event ) { placeButton(); event.Skip(); } );
+	placeButton();
+	UpdateAppearanceButton();
+#endif
+}
+
+void CMainFrame::UpdateAppearanceButton(void) {
+	if( m_AppearanceButton == NULL ) return;
+	switch( m_Appearance ) {
+		case 1:
+			m_AppearanceButton->SetLabel( wxT("\u2600\uFE0E") );	// sun
+			m_AppearanceButton->SetToolTip( _("Light appearance. Click to switch to dark.") );
+			break;
+		case 2:
+			m_AppearanceButton->SetLabel( wxT("\u263E") );		// moon
+			m_AppearanceButton->SetToolTip( _("Dark appearance. Click to follow the system setting.") );
+			break;
+		default:
+			m_AppearanceButton->SetLabel( wxT("\u25D0") );		// half circle
+			m_AppearanceButton->SetToolTip( _("Appearance follows the system. Click to switch to light.") );
+			break;
+	}
 }
 
 void CMainFrame::RefreshCurrentView(void) {
@@ -3375,6 +3428,7 @@ void CMainFrame::OnPreferencesClick( wxCommandEvent& WXUNUSED(event) )
 	dlg.SetBeepTime( m_BeepTime );
 	dlg.SetCatalogAudioMetadata( m_CatalogAudioMetadata );
     dlg.SetAlternateRowColors( m_AlternateRowColors );
+	dlg.SetAppearance( m_Appearance );
 	if( dlg.ShowModal() ) {
 		m_reopenLastUsedCatalog = dlg.GetReopenCatalog();
 		m_amdColumnsToShow = dlg.GetAmdColumnsToShow();
@@ -3386,6 +3440,9 @@ void CMainFrame::OnPreferencesClick( wxCommandEvent& WXUNUSED(event) )
 		CLongTaskBeep::SetMinSecondsForBell( m_BeepTime );
 		m_CatalogAudioMetadata = dlg.GetCatalogAudioMetadata();
         m_AlternateRowColors = dlg.GetAlternateRowColors();
+		m_Appearance = dlg.GetAppearance();
+		ApplyAppearance( m_Appearance );
+		UpdateAppearanceButton();
 		RefreshCurrentView();	// if the user changes the columns to show
 	}
 

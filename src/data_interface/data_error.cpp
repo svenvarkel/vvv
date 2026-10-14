@@ -66,6 +66,11 @@ bool CDataErrorException::ConvertFirebirdError( long gdscode, ErrorCause& ec ) {
 			ec = ecWrongUsernameOrPassword;
 			retVal = true;
 			break;
+		case 335544379:
+			// isc_wrong_ods: a catalog made by VVV <= 1.5 (Firebird 2, ODS 11) opened with Firebird 5
+			ec = ecWrongODS;
+			retVal = true;
+			break;
 	}
 
 	return retVal;
