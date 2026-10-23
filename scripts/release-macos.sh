@@ -28,12 +28,18 @@ if [ "${IDENTITY}" != "-" ]; then
     echo "notary profile ${VVV_NOTARY_PROFILE} unreadable: keep the Mac unlocked, or run store-credentials" >&2; exit 1; }
 fi
 
-MIN_MACOS=15.0   # keep in sync with scripts/build-deps-macos.sh and LSMinimumSystemVersion in vvv-Info.plist
+# oldest macOS the DMG runs on: Monterey 12.7 for Intel Macs (Firebird 5's own floor), 15 for Apple silicon.
+# MACOSX_fixup_bundle.sh writes it into the bundle's LSMinimumSystemVersion.
+case "${ARCH}" in
+  x86_64) MIN_MACOS=12.7 ;;
+  *)      MIN_MACOS=15.0 ;;
+esac
+export VVV_MIN_MACOS="${MIN_MACOS}"   # for build-deps-macos.sh
 DEPS="${ROOT}/deps/prefix"; FB="${ROOT}/deps/fb5"
 [ "${ARCH}" = arm64 ] || { DEPS="${DEPS}-${ARCH}"; FB="${FB}-${ARCH}"; }
 export VVV_ARCH="${ARCH}"
 "${ROOT}/scripts/fetch-firebird.sh" >/dev/null
-"${ROOT}/scripts/build-deps-macos.sh"   # static wxWidgets + TagLib for macOS 15, not the Homebrew bottles
+"${ROOT}/scripts/build-deps-macos.sh"   # static wxWidgets + TagLib for MIN_MACOS, not the Homebrew bottles
 rm -rf "${BUILD}"
 cmake -S "${ROOT}" -B "${BUILD}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${BUILD}/install" \
   -DCMAKE_OSX_ARCHITECTURES="${ARCH}" -DFIREBIRD_ROOT="${FB}/Resources" \

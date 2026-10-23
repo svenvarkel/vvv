@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Builds static wxWidgets and TagLib into deps/prefix for the release build (macOS 15+): arm64 by default,
+# Builds static wxWidgets and TagLib into deps/prefix for the release build (VVV_MIN_MACOS, default 15.0): arm64 by default,
 # VVV_ARCH=x86_64 into deps/prefix-x86_64 (cross-compiled, works on Apple silicon).
 # Homebrew bottles target the macOS they were built on, so a bundle made from them only runs there.
 # wx uses its built-in jpeg/png/tiff/zlib/expat/regex: no third-party dylib ends up in VVV.app.
@@ -8,7 +8,7 @@
 
 set -euo pipefail
 
-MIN_MACOS=15.0
+MIN_MACOS="${VVV_MIN_MACOS:-15.0}"   # scripts/release-macos.sh sets it per architecture
 ARCH="${VVV_ARCH:-arm64}"
 WX_VERSION=3.3.3
 WX_SHA256=81b09d6dd9f1ed9301f8c55a968a488d0491f264dc2bab19a7e407ac67009482
@@ -18,8 +18,10 @@ TAGLIB_SHA256=3ca2d8afaa7f1cf7f6ed10e511ebc368bfacd6dcaa3dbfa690b89e502e8963dc
 TAGLIB_URL="https://taglib.org/releases/taglib-${TAGLIB_VERSION}.tar.gz"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SRC="${ROOT}/deps/src"
-PREFIX="${ROOT}/deps/prefix"
+# physical path: a worktree's deps/ is a symlink to the main checkout's, and wx-config/*.pc keep PREFIX
+DEPS="$(cd "${ROOT}/deps" 2>/dev/null && pwd -P || echo "${ROOT}/deps")"
+SRC="${DEPS}/src"
+PREFIX="${DEPS}/prefix"
 [ "${ARCH}" = arm64 ] || PREFIX="${PREFIX}-${ARCH}"
 STAMP="wx ${WX_VERSION} taglib ${TAGLIB_VERSION} macos ${MIN_MACOS} ${ARCH}"
 

@@ -93,6 +93,9 @@ while read -r f; do
   done
 done < <(macho_files)
 
+# release builds: the bundle's minimum macOS follows the architecture (scripts/release-macos.sh)
+[ -z "${VVV_MIN_MACOS:-}" ] || /usr/libexec/PlistBuddy -c "Set :LSMinimumSystemVersion ${VVV_MIN_MACOS}" "${BUNDLEPATH}/Contents/Info.plist"
+
 # --- sign (install_name_tool invalidates signatures): libraries first, then the bundle.
 # Ad-hoc by default; VVV_SIGN_IDENTITY="Developer ID Application: ..." adds hardened runtime and a
 # timestamp, as notarization requires. No entitlements needed: all code carries the same Team ID.
@@ -135,8 +138,15 @@ while read -r f; do
     bad=1
   fi
 done < <(macho_files)
-# release builds (VVV_MIN_MACOS=15.0, scripts/release-macos.sh): every Mach-O is VVV_ARCH only (default arm64), needs at most that
+# release builds (VVV_MIN_MACOS, scripts/release-macos.sh): every Mach-O is VVV_ARCH only (default arm64), needs at most that
 # macOS. Dev builds link Homebrew bottles made for the host macOS and skip this.
+# ponytail: Firebird 5.0.4's ICU 71 dylibs say minos 15.0 and are let through, untested below 15: they link only
+# libSystem and libc++, but may still use newer symbols. If they fail on Monterey, build ICU 71 in build-deps-macos.sh.
+is_fb_icu() {
+  local n
+  for n in data i18n uc; do [ "$1" = "${FBPATH}/lib/libicu${n}.71.1.dylib" ] && return 0; done
+  return 1
+}
 if [ -n "${VVV_MIN_MACOS:-}" ]; then
   plist_min=$(/usr/libexec/PlistBuddy -c 'Print LSMinimumSystemVersion' "${BUNDLEPATH}/Contents/Info.plist" 2>/dev/null || true)
   if [ "${plist_min}" != "${VVV_MIN_MACOS}" ]; then
@@ -152,7 +162,8 @@ if [ -n "${VVV_MIN_MACOS:-}" ]; then
     if [ -z "$minos" ]; then
       echo "no minimum macOS version in $f" >&2
       bad=1
-    elif [ "$(printf '%s\n%s\n' "$minos" "${VVV_MIN_MACOS}" | sort -V | tail -1)" != "${VVV_MIN_MACOS}" ]; then
+    elif [ "$(printf '%s\n%s\n' "$minos" "${VVV_MIN_MACOS}" | sort -V | tail -1)" != "${VVV_MIN_MACOS}" ] \
+         && ! { [ "$minos" = 15.0 ] && is_fb_icu "$f"; }; then
       echo "$f needs macOS ${minos}, more than ${VVV_MIN_MACOS}" >&2
       bad=1
     fi
