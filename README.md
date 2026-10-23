@@ -63,7 +63,14 @@ notary profile is unreadable while the screen is locked.
 ## Converting catalogs from VVV 1.5 and older
 
 Old catalogs use the Firebird 2 on-disk format (ODS 11), and Firebird 5 cannot open it.
-Convert each catalog once:
+
+**On an Intel Mac** the app converts it: open the old catalog, answer Yes and pick a name for the new one
+(default `<name>-fb5.vvv` next to it). The first time it downloads VVV 1.5 from SourceForge (checked against its
+SHA-256) and keeps only its Firebird 2.1 engine in `~/Library/Application Support/VVV/fb21`. Then it opens the
+new catalog, which can also be copied to an Apple silicon Mac. This is `osx_specific/convert-old-catalog.sh`,
+the same converter as below.
+
+**On Apple silicon** (or from a source checkout) convert each catalog once:
 
 ```bash
 scripts/migrate-catalog.sh ~/Catalogs/drives.vvv            # writes ~/Catalogs/drives-fb5.vvv

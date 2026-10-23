@@ -174,6 +174,9 @@ if( APPLE )
   install( FILES ${FIREBIRD_ROOT}/firebird.conf ${FIREBIRD_ROOT}/firebird.msg ${FIREBIRD_ROOT}/plugins.conf
                  ${FIREBIRD_ROOT}/databases.conf ${FIREBIRD_ROOT}/security5.fdb ${FIREBIRD_ROOT}/License.txt
            DESTINATION ${FB_BUNDLE_DIR} )
+  # converting catalogs of VVV <= 1.5 (convert-old-catalog.sh): restore with gbak, compare row counts with isql
+  install( PROGRAMS ${FIREBIRD_ROOT}/bin/gbak ${FIREBIRD_ROOT}/bin/isql DESTINATION ${FB_BUNDLE_DIR}/bin )
+  install( PROGRAMS ${PROJECT_SOURCE_DIR}/osx_specific/convert-old-catalog.sh DESTINATION VVV.app/Contents/Resources )
 endif( APPLE )
 
 if( UNIX AND NOT APPLE )
