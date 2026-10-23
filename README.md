@@ -56,7 +56,8 @@ in `build-release/arm64/`, signs every binary with the hardened runtime (no enti
 binary is arm64 and needs at most macOS 15, packs `dist/VVV-<version>-arm64.dmg`, notarizes and staples it, and prints its SHA-256.
 
 `VVV_ARCH=x86_64` makes the Intel DMG the same way, cross-compiled on Apple silicon (`deps/prefix-x86_64`,
-`deps/fb5-x86_64`, `dist/VVV-<version>-x86_64.dmg`). Keep the Mac unlocked while it runs: the
+`deps/fb5-x86_64`, `dist/VVV-<version>-x86_64.dmg`), but for macOS 12.7 Monterey and later, the floor of
+Firebird 5's own libraries. Its ICU 71 dylibs are marked 15.0 and let through untested. Keep the Mac unlocked while it runs: the
 notary profile is unreadable while the screen is locked.
 
 ## Converting catalogs from VVV 1.5 and older
