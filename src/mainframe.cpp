@@ -958,7 +958,7 @@ void CMainFrame::CreateControls()
 	// Cmd-, opens the settings, as in every macOS app (the menu item is created in the DialogBlocks section)
 	GetMenuBar()->FindItem( wxID_PREFERENCES )->SetItemLabel( _("&Options...") + wxT("\tCtrl+,") );
 #endif
-#if defined(__WXOSX__) && defined(__x86_64__)
+#ifdef __WXOSX__
 	// an old catalog opened at startup is offered for conversion when the main window appears
 	Bind( wxEVT_SHOW, [this]( wxShowEvent& event ) {
 		event.Skip();
@@ -2230,8 +2230,8 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 				errorOpeningDB = true;
 				break;
 			case CDataErrorException::ecWrongODS:
-#if defined(__WXOSX__) && defined(__x86_64__)
-				// Intel Macs run the old Firebird 2 engine natively, so this build converts the catalog itself.
+#ifdef __WXOSX__
+				// convert-old-catalog.sh runs the old Firebird 2 engine (x86_64: natively on Intel, under Rosetta on Apple silicon)
 				// Never asked from here: at startup this runs while the main frame is being created (see wxEVT_SHOW)
 				if( !DBConnectionData.connectToServer ) {
 					m_OldCatalogToConvert = fileName;
@@ -2258,7 +2258,7 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 			LoadTreeControl();
 			LoadVirtualTreeControl();
 			DeleteAllListControlItems();
-#if defined(__WXOSX__) && defined(__x86_64__)
+#ifdef __WXOSX__
 			// posted only now: LoadTreeControl() yields, and the conversion must not run in the middle of this cleanup
 			if( !m_OldCatalogToConvert.empty() && IsShown() )
 				CallAfter( &CMainFrame::OfferOldCatalogConversion );
@@ -3870,13 +3870,17 @@ void CMainFrame::OnFileExportUpdate( wxUpdateUIEvent& event )
 }
 
 
-#if defined(__WXOSX__) && defined(__x86_64__)
+#ifdef __WXOSX__
 void CMainFrame::OfferOldCatalogConversion() {
 
 	wxString fileName = m_OldCatalogToConvert;
 	m_OldCatalogToConvert = wxEmptyString;
 	if( fileName.empty() ) return;
-	if( !CUtils::MsgAskYes( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nDo you want to convert it into a new catalog now? The original file is not modified.\n\nThe first conversion downloads VVV 1.5 from SourceForge (about 30 MB) to read the old format.") ) )
+	wxString msg = _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nDo you want to convert it into a new catalog now? The original file is not modified.\n\nThe first conversion downloads VVV 1.5 from SourceForge (about 30 MB) to read the old format.");
+#ifdef __arm64__
+	msg += _(" Its database engine is for Intel Macs, so this Mac needs Rosetta.");
+#endif
+	if( !CUtils::MsgAskYes( msg ) )
 		return;
 	wxString newFile = ConvertOldCatalog( fileName );
 	if( !newFile.empty() )

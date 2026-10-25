@@ -625,7 +625,7 @@ private:
 	// returns an empty string if the database has not been restored
 	wxString RestoreDatabase( wxString caption, wxString backupName );
 
-#if defined(__WXOSX__) && defined(__x86_64__)
+#ifdef __WXOSX__
 	// converts a catalog made by VVV 1.5 or older (Firebird 2) into a new catalog, leaving the old file unchanged.
 	// Returns the new catalog, or an empty string if it has not been converted
 	wxString ConvertOldCatalog( wxString fileName );
