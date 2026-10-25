@@ -64,13 +64,14 @@ notary profile is unreadable while the screen is locked.
 
 Old catalogs use the Firebird 2 on-disk format (ODS 11), and Firebird 5 cannot open it.
 
-**On an Intel Mac** the app converts it: open the old catalog, answer Yes and pick a name for the new one
+The app converts it: open the old catalog, answer Yes and pick a name for the new one
 (default `<name>-fb5.vvv` next to it). The first time it downloads VVV 1.5 from SourceForge (checked against its
 SHA-256) and keeps only its Firebird 2.1 engine in `~/Library/Application Support/VVV/fb21`. Then it opens the
-new catalog, which can also be copied to an Apple silicon Mac. This is `osx_specific/convert-old-catalog.sh`,
-the same converter as below.
+new catalog. That engine is x86_64: Intel Macs run it natively, Apple silicon needs Rosetta
+(`softwareupdate --install-rosetta --agree-to-license`, the app says so if it is missing). A catalog converted
+on an Intel Mac also opens on Apple silicon.
 
-**On Apple silicon** (or from a source checkout) convert each catalog once:
+The converter is `osx_specific/convert-old-catalog.sh`; from a source checkout:
 
 ```bash
 scripts/migrate-catalog.sh ~/Catalogs/drives.vvv            # writes ~/Catalogs/drives-fb5.vvv
@@ -78,7 +79,7 @@ scripts/migrate-catalog.sh ~/Catalogs/drives.vvv new.vvv    # or pick the name
 ```
 
 The script downloads the VVV 1.5 DMG from SourceForge to get its Firebird 2.1 engine,
-which runs under Rosetta (`softwareupdate --install-rosetta` if needed). It backs up the
+which runs natively on Intel and under Rosetta on Apple silicon. It backs up the
 old catalog with that engine, restores the backup with Firebird 5, and compares the row
 counts of every table. The old engine only works on a copy (an APFS clone when possible), so the original
 file stays byte-identical. The target is never overwritten.

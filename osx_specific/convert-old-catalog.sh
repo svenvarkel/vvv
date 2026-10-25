@@ -5,7 +5,7 @@
 #
 #   convert-old-catalog.sh old.vvv new.vvv [log]
 #
-# Run by VVV.app from Contents/Resources (the Intel build offers it when it opens an old catalog), and by
+# Run by VVV.app from Contents/Resources (it offers the conversion when it opens an old catalog), and by
 # scripts/migrate-catalog.sh. The old engine comes from the VVV 1.5 DMG on SourceForge, downloaded once into
 # VVV_FB21 (default ~/Library/Application Support/VVV/fb21); VVV_FB5 is a Firebird 5 folder with bin/gbak and
 # bin/isql (default: the "firebird" folder next to this script).
@@ -34,7 +34,9 @@ SRC="$(cd "$(dirname "${SRC}")" && pwd)/$(basename "${SRC}")"
 DST="$(cd "$(dirname "${DST}")" && pwd)/$(basename "${DST}")"
 
 [ "$(uname -m)" = x86_64 ] || arch -x86_64 /usr/bin/true 2>/dev/null || {
-  echo "Rosetta is required: softwareupdate --install-rosetta --agree-to-license" >&2; exit 1; }
+  echo "The old database engine is for Intel Macs and needs Rosetta, which is not installed on this Mac." >&2
+  echo "Install it in Terminal with: softwareupdate --install-rosetta --agree-to-license" >&2
+  echo "Then open the old catalog again." >&2; exit 1; }
 
 # old Firebird 2.1 embedded runtime, taken from the VVV 1.5 DMG; only a complete copy is moved into place
 if [ ! -x "${OLDFB}/bin/gbak" ]; then

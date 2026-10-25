@@ -69,3 +69,9 @@ Real, and how the approach changes (Intent and criteria above stay as written):
 - Release gate: Sven converts a real VVV 1.5 catalog with the installed notarized x86_64 DMG, empty cache, on
   Monterey. Here: arm64 build with a fake old gbak for the app flow, script fetch/extract with an empty cache.
 - Rejected: proving the IBPP service restore (no longer used).
+
+## Follow-up (2026-10-25)
+
+Sven: "Testime lapse M3 peal ja tee see ära." The conversion is enabled on the arm64 build too; the old engine
+runs under Rosetta there, and without Rosetta the script stops before downloading and the app shows how to
+install it. Tested on the Intel Mac 2026-10-23 (works); arm64 + Rosetta to be tested on the M3.
