@@ -13,6 +13,8 @@ EXECFILE="${BUNDLEPATH}/Contents/MacOS/VVV"
 FWPATH="${BUNDLEPATH}/Contents/Frameworks"
 FBPATH="${BUNDLEPATH}/Contents/Resources/firebird"
 mkdir -p "${FWPATH}"
+# alias symlinks left by an older version of this script would keep their references from being canonicalized
+find "${FWPATH}" -type l -delete
 
 # --- Firebird: the pkg's libfbclient has the framework path as install name, the rest already uses @rpath
 FBCLIENT_OLD=/Library/Frameworks/Firebird.framework/Libraries/libfbclient.dylib
@@ -36,7 +38,8 @@ external_deps() {
 
 # --- copy Homebrew libraries into Contents/Frameworks, repeat until no new library shows up.
 # A library is referenced by several names (libwebp.7.dylib -> libwebp.7.2.0.dylib): it is copied once under its
-# real name and the other names become symlinks, so dyld loads a single image.
+# real name and every reference is rewritten to that name. No alias symlinks: with the hardened runtime, macOS 27
+# dyld refuses a library whose install name leaf differs from the requested one.
 # ponytail: O(files x deps) otool calls per pass, fine for a bundle of ~40 dylibs
 resolve() {  # like realpath, which macOS only has since 13
   local p="$1" t
@@ -46,17 +49,13 @@ resolve() {  # like realpath, which macOS only has since 13
   done
   echo "$(cd "$(dirname "$p")" && pwd -P)/$(basename "$p")"
 }
-add_lib() {  # $1 = a library path in the Homebrew prefix
-  local real canon alias
-  real=$(resolve "$1"); canon=$(basename "$real"); alias=$(basename "$1")
-  if [ ! -f "${FWPATH}/${canon}" ]; then
-    cp "$real" "${FWPATH}/${canon}"
-    chmod u+w "${FWPATH}/${canon}"
-    install_name_tool -id "@rpath/${canon}" "${FWPATH}/${canon}" 2>/dev/null
-    changed=1
-  fi
-  if [ "$alias" != "$canon" ] && [ ! -e "${FWPATH}/${alias}" ]; then
-    ln -s "$canon" "${FWPATH}/${alias}"
+add_lib() {  # $1 = a library path in the Homebrew prefix; sets CANON to its name in the bundle
+  local real
+  real=$(resolve "$1"); CANON=$(basename "$real")
+  if [ ! -f "${FWPATH}/${CANON}" ]; then
+    cp "$real" "${FWPATH}/${CANON}"
+    chmod u+w "${FWPATH}/${CANON}"
+    install_name_tool -id "@rpath/${CANON}" "${FWPATH}/${CANON}" 2>/dev/null
     changed=1
   fi
 }
@@ -66,12 +65,13 @@ while [ $changed -eq 1 ]; do
   while read -r f; do
     for dep in $(external_deps "$f"); do
       add_lib "$dep"
-      install_name_tool -change "$dep" "@rpath/$(basename "$dep")" "$f" 2>/dev/null
+      install_name_tool -change "$dep" "@rpath/${CANON}" "$f" 2>/dev/null
     done
     # Homebrew libraries that already use @rpath/<name> for their siblings
     for name in $(otool -L "$f" | tail -n +2 | awk '{print $1}' | sed -n 's#^@rpath/##p'); do
       if [ ! -e "${FWPATH}/${name}" ] && [ ! -e "${FBPATH}/${name}" ] && [ -e "/opt/homebrew/lib/${name}" ]; then
         add_lib "/opt/homebrew/lib/${name}"
+        [ "${CANON}" = "${name}" ] || install_name_tool -change "@rpath/${name}" "@rpath/${CANON}" "$f" 2>/dev/null
       fi
     done
   done < <(macho_files)
@@ -81,7 +81,7 @@ for f in "${FWPATH}"/*.dylib; do
   [ -e "$f" ] || continue
   otool -l "$f" | grep -q '@loader_path' || install_name_tool -add_rpath @loader_path "$f" 2>/dev/null
 done
-if ! otool -l "${EXECFILE}" | grep -q '@executable_path/../Frameworks$'; then
+if ! otool -l "${EXECFILE}" | grep -q '@executable_path/../Frameworks '; then
   install_name_tool -add_rpath @executable_path/../Frameworks "${EXECFILE}" 2>/dev/null
 fi
 
@@ -93,11 +93,19 @@ while read -r f; do
   done
 done < <(macho_files)
 
-# --- sign (install_name_tool invalidates signatures): libraries first, then the bundle
+# release builds: the bundle's minimum macOS follows the architecture (scripts/release-macos.sh)
+[ -z "${VVV_MIN_MACOS:-}" ] || /usr/libexec/PlistBuddy -c "Set :LSMinimumSystemVersion ${VVV_MIN_MACOS}" "${BUNDLEPATH}/Contents/Info.plist"
+
+# --- sign (install_name_tool invalidates signatures): libraries first, then the bundle.
+# Ad-hoc by default; VVV_SIGN_IDENTITY="Developer ID Application: ..." adds hardened runtime and a
+# timestamp, as notarization requires. No entitlements needed: all code carries the same Team ID.
+IDENTITY="${VVV_SIGN_IDENTITY:--}"
+SIGN_OPTS=(--force --sign "${IDENTITY}")
+[ "${IDENTITY}" = "-" ] || SIGN_OPTS+=(--options runtime --timestamp)
 while read -r f; do
-  [ "$f" = "${EXECFILE}" ] || codesign --force --sign - "$f" 2>/dev/null
+  [ "$f" = "${EXECFILE}" ] || codesign "${SIGN_OPTS[@]}" "$f"
 done < <(macho_files)
-codesign --force --sign - "${BUNDLEPATH}"
+codesign "${SIGN_OPTS[@]}" "${BUNDLEPATH}"
 
 # --- gate: nothing may point outside the bundle, /System or /usr/lib
 bad=0
@@ -107,11 +115,18 @@ while read -r f; do
     bad=1
   fi
 done < <(macho_files)
-# every @rpath/<name> must exist in one of the two rpath folders
+# every @rpath/<name> must exist in one of the two rpath folders, with an install name ending in that same leaf
 while read -r f; do
   for name in $(otool -L "$f" | tail -n +2 | awk '{print $1}' | sed -n 's#^@rpath/##p'); do
-    if [ ! -e "${FWPATH}/${name}" ] && [ ! -e "${FBPATH}/${name}" ]; then
+    target=""
+    for dir in "${FBPATH}" "${FWPATH}"; do  # the executable's rpath order
+      [ -e "${dir}/${name}" ] && { target="${dir}/${name}"; break; }
+    done
+    if [ -z "$target" ]; then
       echo "unresolved @rpath/${name} in $f" >&2
+      bad=1
+    elif [ "$(basename "$(otool -D "$target" | tail -1)")" != "$(basename "$name")" ]; then
+      echo "@rpath/${name} in $f resolves to a library with install name $(otool -D "$target" | tail -1)" >&2
       bad=1
     fi
   done
@@ -123,5 +138,36 @@ while read -r f; do
     bad=1
   fi
 done < <(macho_files)
+# release builds (VVV_MIN_MACOS, scripts/release-macos.sh): every Mach-O is VVV_ARCH only (default arm64), needs at most that
+# macOS. Dev builds link Homebrew bottles made for the host macOS and skip this.
+# ponytail: Firebird 5.0.4's ICU 71 dylibs say minos 15.0 and are let through, untested below 15: they link only
+# libSystem and libc++, but may still use newer symbols. If they fail on Monterey, build ICU 71 in build-deps-macos.sh.
+is_fb_icu() {
+  local n
+  for n in data i18n uc; do [ "$1" = "${FBPATH}/lib/libicu${n}.71.1.dylib" ] && return 0; done
+  return 1
+}
+if [ -n "${VVV_MIN_MACOS:-}" ]; then
+  plist_min=$(/usr/libexec/PlistBuddy -c 'Print LSMinimumSystemVersion' "${BUNDLEPATH}/Contents/Info.plist" 2>/dev/null || true)
+  if [ "${plist_min}" != "${VVV_MIN_MACOS}" ]; then
+    echo "Info.plist LSMinimumSystemVersion is '${plist_min}', expected ${VVV_MIN_MACOS}" >&2
+    bad=1
+  fi
+  while read -r f; do
+    archs=$(lipo -archs "$f" 2>/dev/null || true)
+    [ "$archs" = "${VVV_ARCH:-arm64}" ] || { echo "architectures '${archs}' in $f, expected ${VVV_ARCH:-arm64}" >&2; bad=1; }
+    # LC_BUILD_VERSION: "minos 15.0"; older binaries: LC_VERSION_MIN_MACOSX "version 12.7"
+    minos=$(otool -l "$f" | awk '/LC_BUILD_VERSION/ {k="minos"} /LC_VERSION_MIN_MACOSX/ {k="version"}
+                                 k && $1 == k {print $2; exit}')
+    if [ -z "$minos" ]; then
+      echo "no minimum macOS version in $f" >&2
+      bad=1
+    elif [ "$(printf '%s\n%s\n' "$minos" "${VVV_MIN_MACOS}" | sort -V | tail -1)" != "${VVV_MIN_MACOS}" ] \
+         && ! { [ "$minos" = 15.0 ] && is_fb_icu "$f"; }; then
+      echo "$f needs macOS ${minos}, more than ${VVV_MIN_MACOS}" >&2
+      bad=1
+    fi
+  done < <(macho_files)
+fi
 [ $bad -eq 0 ] || exit 1
 echo "VVV.app is self-contained"

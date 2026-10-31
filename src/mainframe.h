@@ -625,6 +625,16 @@ private:
 	// returns an empty string if the database has not been restored
 	wxString RestoreDatabase( wxString caption, wxString backupName );
 
+#ifdef __WXOSX__
+	// converts a catalog made by VVV 1.5 or older (Firebird 2) into a new catalog, leaving the old file unchanged.
+	// Returns the new catalog, or an empty string if it has not been converted
+	wxString ConvertOldCatalog( wxString fileName );
+	// asks whether to convert m_OldCatalogToConvert, converts it and opens the new catalog
+	void OfferOldCatalogConversion();
+	// set by OpenDatabase; offered only once the main window is on screen (no dialogs while it is being created)
+	wxString m_OldCatalogToConvert;
+#endif
+
 	// create a toolbar for the Mac version ( bitmaps are enlarged )
 	void CreateMacToolbar();
 

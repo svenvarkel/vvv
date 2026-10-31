@@ -56,6 +56,7 @@
 
 #include "wx/textdlg.h"
 #include "wx/filename.h"
+#include "wx/ffile.h"
 #include "wx/config.h"
 #include "wx/utils.h"
 #include "wx/aboutdlg.h"
@@ -801,8 +802,8 @@ void CMainFrame::Init()
     m_ToolbarCtrl = NULL;
     m_fileMenu = NULL;
     m_StatusBar = NULL;
-    m_AppearanceButton = NULL;
 ////@end CMainFrame member initialisation
+    m_AppearanceButton = NULL;
 
     m_SearchPanel = NULL;
     m_FilenameRadioBox = NULL;
@@ -953,6 +954,17 @@ void CMainFrame::CreateControls()
 	delete m_ToolbarCtrl;
 	SetToolBar( NULL );
 	CreateMacToolbar();
+
+	// Cmd-, opens the settings, as in every macOS app (the menu item is created in the DialogBlocks section)
+	GetMenuBar()->FindItem( wxID_PREFERENCES )->SetItemLabel( _("&Options...") + wxT("\tCtrl+,") );
+#endif
+#ifdef __WXOSX__
+	// an old catalog opened at startup is offered for conversion when the main window appears
+	Bind( wxEVT_SHOW, [this]( wxShowEvent& event ) {
+		event.Skip();
+		if( event.IsShown() && !m_OldCatalogToConvert.empty() )
+			CallAfter( &CMainFrame::OfferOldCatalogConversion );
+	} );
 #endif
 
 	// creates the tree control used to show virtual folders
@@ -2218,6 +2230,15 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 				errorOpeningDB = true;
 				break;
 			case CDataErrorException::ecWrongODS:
+#ifdef __WXOSX__
+				// convert-old-catalog.sh runs the old Firebird 2 engine (x86_64: natively on Intel, under Rosetta on Apple silicon)
+				// Never asked from here: at startup this runs while the main frame is being created (see wxEVT_SHOW)
+				if( !DBConnectionData.connectToServer ) {
+					m_OldCatalogToConvert = fileName;
+					errorOpeningDB = true;
+					break;
+				}
+#endif
 				CUtils::MsgErr( _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nHow to convert it: https://github.com/svenvarkel/vvv#converting-catalogs-from-vvv-15-and-older\nThe original file is not modified.") );
 				errorOpeningDB = true;
 				break;
@@ -2237,6 +2258,11 @@ void CMainFrame::OpenDatabase( wxString fileName, int expectedVersion ) {
 			LoadTreeControl();
 			LoadVirtualTreeControl();
 			DeleteAllListControlItems();
+#ifdef __WXOSX__
+			// posted only now: LoadTreeControl() yields, and the conversion must not run in the middle of this cleanup
+			if( !m_OldCatalogToConvert.empty() && IsShown() )
+				CallAfter( &CMainFrame::OfferOldCatalogConversion );
+#endif
 			return;
 		}
 	}
@@ -3843,6 +3869,60 @@ void CMainFrame::OnFileExportUpdate( wxUpdateUIEvent& event )
 	event.Enable( m_CurrentView != cvSearch );
 }
 
+
+#ifdef __WXOSX__
+void CMainFrame::OfferOldCatalogConversion() {
+
+	wxString fileName = m_OldCatalogToConvert;
+	m_OldCatalogToConvert = wxEmptyString;
+	if( fileName.empty() ) return;
+	wxString msg = _("This catalog has been created with VVV 1.5 or older and must be converted before this version can open it:\n\n") + fileName + _("\n\nDo you want to convert it into a new catalog now? The original file is not modified.\n\nThe first conversion downloads VVV 1.5 from SourceForge (about 30 MB) to read the old format.");
+#ifdef __arm64__
+	msg += _(" Its database engine is for Intel Macs, so this Mac needs Rosetta.");
+#endif
+	if( !CUtils::MsgAskYes( msg ) )
+		return;
+	wxString newFile = ConvertOldCatalog( fileName );
+	if( !newFile.empty() )
+		OpenDatabase( newFile, CUtils::GetExpectedDatabaseVersion() );
+}
+
+wxString CMainFrame::ConvertOldCatalog( wxString fileName ) {
+
+	wxFileName fn( fileName );
+	wxString wildcard = _("VVV  files (*.vvv)|*.vvv|All files (*.*)|*.*");
+	wxFileDialog fd( this, _("Convert to a new catalog"), fn.GetPath(), fn.GetName() + wxT("-fb5.vvv"), wildcard, wxFD_SAVE );
+	if( fd.ShowModal() != wxID_OK ) return wxEmptyString;
+	wxString newFile = fd.GetPath();
+	if( wxFileName(newFile).GetExt().empty() )
+		newFile += wxT(".vvv");
+	if( wxFileExists(newFile) ) {
+		CUtils::MsgErr( _("Unable to continue. You have choosen an existing file:\n\n") + newFile + _("\n\nYou must type the name of a non-existing file.") );
+		return wxEmptyString;
+	}
+
+	// convert-old-catalog.sh downloads the old engine once, works on a copy of the old file, checks the row counts
+	// and only then creates newFile; its output goes to logFile
+	wxString script = wxFileName( CUtils::GetDataFilesPath(), wxT("convert-old-catalog.sh") ).GetFullPath();
+	wxString logFile = wxFileName::CreateTempFileName( wxT("vvv-convert") );
+	long rc;
+	{
+		wxBusyInfo bi( _("Converting the catalog, please wait...") );
+		wxCharBuffer a0 = script.utf8_str(), a1 = fileName.utf8_str(), a2 = newFile.utf8_str(), a3 = logFile.utf8_str();
+		const char* argv[] = { a0.data(), a1.data(), a2.data(), a3.data(), NULL };
+		rc = wxExecute( argv, wxEXEC_SYNC );
+	}
+
+	wxString log;
+	wxFFile( logFile ).ReadAll( &log );
+	wxRemoveFile( logFile );
+	if( rc != 0 || !wxFileExists(newFile) ) {
+		CUtils::MsgErr( _("Unable to convert the catalog. The original file has not been modified.\n\n") + log.Right(1500) );
+		return wxEmptyString;
+	}
+	return newFile;
+}
+#endif
 
 wxString CMainFrame::RestoreDatabase( wxString caption, wxString backupName ) {
 

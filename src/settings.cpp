@@ -189,20 +189,6 @@ void CDialogSettings::CreateControls()
     m_BeepTimeCtrl = new wxSpinCtrl( itemPanel2, ID_SPIN_BEEP_TIME, wxT("0"), wxDefaultPosition, wxSize(60, -1), wxSP_ARROW_KEYS, 0, 10000, 0 );
     itemBoxSizer7->Add(m_BeepTimeCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
-    // light/dark appearance: wxApp::SetAppearance is only implemented for macOS (wxWidgets 3.3+)
-    wxBoxSizer* appearanceSizer = new wxBoxSizer(wxHORIZONTAL);
-    itemBoxSizer4->Add(appearanceSizer, 0, wxALIGN_LEFT|wxALL, 5);
-    appearanceSizer->Add(new wxStaticText( itemPanel2, wxID_STATIC, _("Appearance:") ), 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxTOP|wxBOTTOM, 5);
-    wxArrayString appearanceChoices;
-    appearanceChoices.Add(_("Same as the system"));
-    appearanceChoices.Add(_("Light"));
-    appearanceChoices.Add(_("Dark"));
-    wxChoice* appearanceCtrl = new wxChoice( itemPanel2, wxID_ANY, wxDefaultPosition, wxDefaultSize, appearanceChoices );
-    appearanceCtrl->SetValidator( wxGenericValidator(& m_Appearance) );
-    appearanceSizer->Add(appearanceCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
-#endif
-
     itemBoxSizer4->Add(5, 5, 1, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxButton* itemButton11 = new wxButton( itemPanel2, ID_BTN_CHANGE_LANGUAGE, _("Change language"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -327,6 +313,23 @@ void CDialogSettings::CreateControls()
     m_UsernameCtrl->SetValidator( wxGenericValidator(& m_Username) );
     m_PasswordCtrl->SetValidator( wxGenericValidator(& m_Password) );
 ////@end CDialogSettings content construction
+
+#if wxCHECK_VERSION(3, 3, 0) && defined(__WXOSX__)
+    // light/dark appearance: wxApp::SetAppearance is only implemented for macOS (wxWidgets 3.3+).
+    // Added outside the DialogBlocks section, into the General page before its spacer and "Change language" button.
+    wxWindow* generalPage = GetBookCtrl()->GetPage(0);
+    wxSizer* generalSizer = generalPage->GetSizer()->GetItem((size_t)0)->GetSizer();
+    wxBoxSizer* appearanceSizer = new wxBoxSizer(wxHORIZONTAL);
+    generalSizer->Insert(generalSizer->GetItemCount() - 2, appearanceSizer, 0, wxALIGN_LEFT|wxALL, 5);
+    appearanceSizer->Add(new wxStaticText( generalPage, wxID_STATIC, _("Appearance:") ), 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxTOP|wxBOTTOM, 5);
+    wxArrayString appearanceChoices;
+    appearanceChoices.Add(_("Same as the system"));
+    appearanceChoices.Add(_("Light"));
+    appearanceChoices.Add(_("Dark"));
+    wxChoice* appearanceCtrl = new wxChoice( generalPage, wxID_ANY, wxDefaultPosition, wxDefaultSize, appearanceChoices );
+    appearanceCtrl->SetValidator( wxGenericValidator(& m_Appearance) );
+    appearanceSizer->Add(appearanceCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+#endif
 }
 
 
